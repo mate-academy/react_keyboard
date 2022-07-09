@@ -12,8 +12,9 @@ Make the `App` a class component with `pressedKey` in the `state`.
 - `removeEventListener` when component is removed from the page 
 
 ## Instructions
+**IMPORTANT** This task does not have tests yet
+
 - Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline)
 - Use [React TypeScript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript)
-- Open 1 more terminal and run tests with `npm test` to ensure your solutions is correct
 - Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_keyboard/) and add it to PR description
 
