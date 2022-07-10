@@ -1,8 +1,50 @@
-import React from 'react';
+import { Component } from 'react';
 
-export const App: React.FC = () => (
-  <div className="App">
-    <p>Nothing was pressed yet</p>
-    <p>The last pressed key is [Enter]</p>
-  </div>
-);
+type State = {
+  tuch: boolean,
+  key: boolean,
+  n: string,
+};
+
+export class App extends Component<{}, State> {
+  state: Readonly<State> = {
+    tuch: true,
+    key: false,
+    n: 'Press any key',
+  };
+
+  // componentWillMount() {
+  //   document.removeEventListener('keyup', this.pressKey);
+  // }
+
+  componentDidMount() {
+    document.addEventListener('keyup', this.pressKey);
+  }
+
+  pressKey = (event: KeyboardEvent) => {
+    this.setState({ tuch: false });
+    this.setState({ key: true });
+    this.setState({ n: event.key });
+    if (event.key === ' ') {
+      this.setState({ n: 'Space' });
+    }
+  };
+
+  render() {
+    const { tuch, key, n } = this.state;
+
+    return (
+      <div className="App">
+        <p className="paragraph">
+          {tuch && 'Nothing was pressed yet'}
+        </p>
+        <p className="ourKey">
+          {key && 'The last pressed key is:'}
+          <div className="key">
+            {n}
+          </div>
+        </p>
+      </div>
+    );
+  }
+}
