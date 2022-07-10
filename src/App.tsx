@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 
 type State = {
   key: string;
@@ -17,10 +17,10 @@ export class App extends React.Component<{}, State> {
     document.removeEventListener('keyup', this.setKey);
   }
 
-  setKey = (event: KeyboardEvent) => {
-    this.setState(event.key === ' '
+  setKey = (btn: KeyboardEvent) => {
+    this.setState(btn.key === ' '
       ? { key: 'Space' }
-      : { key: event.key });
+      : { key: btn.key });
   };
 
   render(): React.ReactNode {
