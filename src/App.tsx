@@ -10,6 +10,7 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
+    window.console.log(this.state.pressedKey);
     document.addEventListener('keyup', this.outputPresedKey);
   }
 
@@ -18,11 +19,8 @@ export class App extends Component<{}, State> {
   }
 
   outputPresedKey = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: `The last pressed key is ${event.key}` });
     window.console.log(this.state.pressedKey);
-    if (event.key.length > 0) {
-      this.setState({ pressedKey: `The last pressed key is ${event.key}` });
-      window.console.log(this.state.pressedKey);
-    }
   };
 
   render() {
