@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import './App.scss';
 
 type State = {
   pressedKey: string,
