@@ -18,9 +18,6 @@ export class Keyboard extends React.Component<{}, State> {
   }
 
   callback = (event: KeyboardEvent) => {
-    // eslint-disable-next-line no-console
-    console.log(event.key);
-
     this.setState({ phrase: `The last pressed key is ${event.key}` });
   };
 

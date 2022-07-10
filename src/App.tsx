@@ -11,9 +11,9 @@ export class App extends React.Component<{}, State> {
   };
 
   switcher = () => {
-    return this.state.isVisible
-      ? this.setState({ isVisible: false })
-      : this.setState({ isVisible: true });
+    this.setState((currentState) => ({
+      isVisible: !currentState.isVisible,
+    }));
   };
 
   render() {
