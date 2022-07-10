@@ -9,7 +9,7 @@ Make the `App` a class component with `pressedKey` in the `state`.
       console.log(event.key);
     });
     ```
-- `removeEventListener` when component is removed from the page 
+- `removeEventListener` when component is removed from the page
 
 ## Instructions
 **IMPORTANT** This task does not have tests yet
