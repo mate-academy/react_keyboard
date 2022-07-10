@@ -19,7 +19,6 @@ export class App extends Component<{}, State> {
   }
 
   outputPresedKey = (event: KeyboardEvent) => {
-    window.console.log(event.key);
     this.setState({ pressedKey: `The last pressed key is ${event.key !== ' ' ? event.key : 'space'}` });
     window.console.log(this.state.pressedKey);
   };
