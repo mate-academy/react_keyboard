@@ -17,9 +17,14 @@ export class App extends Component<{}, State> {
   }
 
   listener = (event: KeyboardEvent) => {
-    this.setState({ key: event.key });
+    if (event.code === 'Space') {
+      this.setState({ key: 'Space' });
+    } else {
+      this.setState({ key: event.key });
+    }
+
     // eslint-disable-next-line no-console
-    console.log(event.key);
+    console.log(this.state.key);
   };
 
   render() {
