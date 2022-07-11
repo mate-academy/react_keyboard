@@ -19,8 +19,8 @@ export class App extends React.Component<{}, State> {
 
   setKey = (btn: KeyboardEvent) => {
     this.setState(btn.key === ' '
-      ? { key: 'Space' }
-      : { key: btn.key });
+      ? { key: `The last pressed key is 'Space'` }
+      : { key: `The last pressed key is ${btn.key}` });
   };
 
   render(): React.ReactNode {
