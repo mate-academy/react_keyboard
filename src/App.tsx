@@ -1,10 +1,10 @@
 import React from 'react';
 
 type State = {
-  message: string;
+  message: string,
 };
 
-class App extends React.Component<{}, State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     message: 'Nothing was pressed yet',
   };
@@ -35,5 +35,3 @@ class App extends React.Component<{}, State> {
     );
   }
 }
-
-export default App;
