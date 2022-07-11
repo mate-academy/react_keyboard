@@ -22,9 +22,6 @@ export class App extends Component<{}, State> {
     } else {
       this.setState({ key: event.key });
     }
-
-    // eslint-disable-next-line no-console
-    console.log(this.state.key);
   };
 
   render() {
