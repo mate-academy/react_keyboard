@@ -1,8 +1,34 @@
 import React from 'react';
+import { Keyboard } from './keyboard';
 
-export const App: React.FC = () => (
-  <div className="App">
-    <p>Nothing was pressed yet</p>
-    <p>The last pressed key is [Enter]</p>
-  </div>
-);
+interface State {
+  isVisible: boolean
+}
+
+export class App extends React.Component<{}, State> {
+  state = {
+    isVisible: true,
+  };
+
+  switcher = () => {
+    this.setState((currentState) => ({
+      isVisible: !currentState.isVisible,
+    }));
+  };
+
+  render() {
+    return (
+      <>
+        {this.state.isVisible && (
+          <Keyboard />
+        )}
+        <button
+          type="button"
+          onClick={this.switcher}
+        >
+          Switch
+        </button>
+      </>
+    );
+  }
+}
