@@ -20,7 +20,7 @@ export class App extends Component<{}, State> {
   handleDocumentKeyUp = (event: KeyboardEvent) => {
     if (event.key) {
       this.setState({
-        notification: `The last pressed key is [${event.key}]`,
+        notification: `The last pressed key is [${event.key === ' ' ? 'Space' : event.key}]`,
       });
     }
   };
