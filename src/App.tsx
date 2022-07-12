@@ -26,13 +26,10 @@ export class App extends Component<{}, State> {
 
     return (
       <div className="App">
-        <p>Nothing was pressed yet</p>
-        {pressedKey && (
-          <p>
-            The last pressed key is
-            {pressedKey}
-          </p>
-        )}
+
+        {pressedKey
+          ? <p>{`The last pressed key is ${pressedKey}`}</p>
+          : <p>Nothing was pressed yet</p>}
       </div>
     );
   }
