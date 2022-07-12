@@ -12,7 +12,7 @@ Make the `App` a class component with `pressedKey` in the `state`.
     });
     ```
     
-- use `removeEventListener` when component is removed from the page.
+- use `removeEventListener` to remove a global handler.
 
 ## Instructions
 
