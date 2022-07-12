@@ -13,12 +13,12 @@ export class App extends Component<{}, State> {
     n: 'Press any key',
   };
 
-  // componentWillMount() {
-  //   document.removeEventListener('keyup', this.pressKey);
-  // }
-
   componentDidMount() {
     document.addEventListener('keyup', this.pressKey);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.pressKey);
   }
 
   pressKey = (event: KeyboardEvent) => {
