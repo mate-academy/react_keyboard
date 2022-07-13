@@ -1,16 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  tuch: boolean,
-  key: boolean,
-  n: string,
+  key: string,
 };
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    tuch: true,
-    key: false,
-    n: 'Press any key',
+    key: '',
   };
 
   componentDidMount() {
@@ -22,28 +18,32 @@ export class App extends Component<{}, State> {
   }
 
   pressKey = (event: KeyboardEvent) => {
-    this.setState({ tuch: false });
-    this.setState({ key: true });
-    this.setState({ n: event.key });
+    this.setState({ key: event.key });
     if (event.key === ' ') {
-      this.setState({ n: 'Space' });
+      this.setState({ key: 'Space' });
     }
   };
 
   render() {
-    const { tuch, key, n } = this.state;
+    const { key } = this.state;
 
     return (
       <div className="App">
-        <p className="paragraph">
-          {tuch && 'Nothing was pressed yet'}
-        </p>
-        <p className="ourKey">
-          {key && 'The last pressed key is:'}
-          <div className="key">
-            {n}
-          </div>
-        </p>
+        {key.length === 0
+          ? (
+            <p className="paragraph">
+              Nothing was pressed yet
+            </p>
+          )
+
+          : (
+            <p className="ourKey">
+              The last pressed key is:
+              <div className="key">
+                {key}
+              </div>
+            </p>
+          )}
       </div>
     );
   }
