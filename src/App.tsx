@@ -18,7 +18,11 @@ export class App extends Component<{}, State> {
   }
 
   keyListener = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    if (event.key === ' ') {
+      this.setState({ pressedKey: '' });
+    } else {
+      this.setState({ pressedKey: event.key });
+    }
   };
 
   render() {
@@ -26,7 +30,6 @@ export class App extends Component<{}, State> {
 
     return (
       <div className="App">
-
         {pressedKey
           ? <p>{`The last pressed key is ${pressedKey}`}</p>
           : <p>Nothing was pressed yet</p>}
