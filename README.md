@@ -1,5 +1,7 @@
 # React Keyboard
 
+> [React + Typescript cheatsheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript)
+
 Make the `App` a class component with `pressedKey` in the `state`.
 
 - before any key was pressed show a `Nothing was pressed yet` message;
