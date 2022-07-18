@@ -17,10 +17,10 @@ export class App extends React.Component<{}, State> {
     document.removeEventListener('keyup', this.setKey);
   }
 
-  setKey = (btn: KeyboardEvent) => {
-    this.setState(btn.key === ' '
-      ? { key: `The last pressed key is 'Space'` }
-      : { key: `The last pressed key is ${btn.key}` });
+  setKey = (event: KeyboardEvent) => {
+    this.setState(event.key === ' '
+      ? { key: 'The last pressed key is \'Space\'' }
+      : { key: `The last pressed key is ${event.key}` });
   };
 
   render(): React.ReactNode {
