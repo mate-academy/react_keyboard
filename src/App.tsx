@@ -24,12 +24,14 @@ export class App extends Component<{}, State> {
   };
 
   render() {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
         <div>
           <h1 className="App__message">
-            {this.state.pressedKey ? (
-              `The last pressed key is [${this.state.pressedKey === ' ' ? 'Space' : this.state.pressedKey}]`
+            {pressedKey ? (
+              `The last pressed key is [${pressedKey === ' ' ? 'Space' : pressedKey}]`
             ) : ('Nothing was pressed yet')}
           </h1>
         </div>
