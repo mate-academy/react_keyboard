@@ -18,11 +18,11 @@ export class App extends React.Component<{}, State> {
   }
 
   onKeyUpHandler = (event: KeyboardEvent) => {
-    if (event.code === 'Space') {
-      this.setState({ pressedKey: 'SPACE' });
-    } else {
-      this.setState({ pressedKey: event.key });
-    }
+    const formattedKeyCode = event.code
+      .split('Key')
+      .join('');
+
+    this.setState({ pressedKey: formattedKeyCode });
   };
 
   render() {
