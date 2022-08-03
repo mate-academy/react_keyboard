@@ -31,18 +31,5 @@ export class App extends React.Component {
         <p className="App__message">{`The last pressed key is [${pressedKey}]`}</p>
       </div>
     );
-
-    // return (
-    //   <div className="App">
-    //     <p className="App__message">
-    //     {pressedKey ? () : () }
-    //     </p>
-    //   </div>
-    // );
   }
 }
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
