@@ -18,7 +18,11 @@ export class App extends React.Component<{}, State> {
   }
 
   onKeyUpHandler = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    if (event.code === 'Space') {
+      this.setState({ pressedKey: 'SPACE' });
+    } else {
+      this.setState({ pressedKey: event.key });
+    }
   };
 
   render() {
