@@ -30,3 +30,22 @@ GOOD EXAMPLE:
    : 'Nothing important'
  }
 ```
+4. [CODE KNOWLEDGE] - Avoid creating new timer before cleaning previous one. Maybe, you need **only** one timer.
+
+BAD EXAMPLE: (you will create new timer on each click and can't clear previous one)
+```jsx
+handleClick = () => {
+  this.id = window.setTimeout(() => {}, 0)
+}
+```
+
+GOOD EXAMPLE: (you will create **one** timer on mount and remove it on unmount.) 
+```jsx
+componentDidMount() {
+  this.id = window.setTimeout(() => {}, 0)
+}
+
+componentWillUnmount() {
+  window.clearTimeout(this.id);
+}
+```
