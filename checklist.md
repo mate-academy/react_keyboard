@@ -21,7 +21,7 @@ handleClick = () => {
 BAD EXAMPLE:
 ```jsx
  {condition ? 'Very important text': 'Nothing important'}
- 
+ ```
  
 GOOD EXAMPLE:
 ```jsx
