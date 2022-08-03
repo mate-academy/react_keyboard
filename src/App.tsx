@@ -18,8 +18,6 @@ export class App extends React.Component<{}, State> {
   }
 
   keyListener = (event: KeyboardEvent) => {
-    // eslint-disable-next-line no-console
-    console.log(event.code === 'Space');
     this.setState({
       pressedKey: event.code === 'Space'
         ? 'Space'
