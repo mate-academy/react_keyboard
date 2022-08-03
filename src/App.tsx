@@ -4,12 +4,12 @@ type Props = {
 };
 
 type State = {
-  pressedKey: string,
+  pressedKey: string | null,
 };
 
 export class App extends Component<Props, State> {
   state = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   componentDidMount() {
@@ -22,7 +22,7 @@ export class App extends Component<Props, State> {
 
   pressAnyKey = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: event.key,
+      pressedKey: event.code === 'Space' ? 'Space' : event.key,
     });
   };
 
@@ -30,7 +30,7 @@ export class App extends Component<Props, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.pressedKey.length === 0
+          {this.state.pressedKey === null
             ? 'Nothing was pressed yet'
             : `The last pressed key is [${this.state.pressedKey}]`}
         </p>
