@@ -10,19 +10,17 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.onKeyUpHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.onKeyUpHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  onKeyUpHandler = (event: KeyboardEvent) => {
-    const formattedKeyCode = event.code
-      .split('Key')
-      .join('');
-
-    this.setState({ pressedKey: formattedKeyCode });
+  handleKeyUp = (event: KeyboardEvent) => {
+    return event.code === 'Space'
+      ? this.setState({ pressedKey: 'SPACE' })
+      : this.setState({ pressedKey: event.key });
   };
 
   render() {
