@@ -11,7 +11,7 @@ export class App extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
+      this.setState({ pressedKey: event.key === ' ' ? 'space' : event.key });
     });
   }
 
