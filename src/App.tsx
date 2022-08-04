@@ -19,7 +19,7 @@ export class App extends Component<{}, State> {
 
   handlerKeyUp = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: event.key,
+      pressedKey: event.code,
     });
   };
 
