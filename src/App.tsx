@@ -10,14 +10,14 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyPress);
+    document.addEventListener('keyup', this.handleKeypress);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.keyPress);
+    document.removeEventListener('keyup', this.handleKeypress);
   }
 
-  keyPress = (event: KeyboardEvent) => {
+  handleKeypress = (event: KeyboardEvent) => {
     this.setState({
       pressedKey: event.key === ' '
         ? 'space'
