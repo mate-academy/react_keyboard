@@ -14,7 +14,7 @@ export class App extends Component<{}, State> {
   }
 
   componentWillUnmount() {
-    document.addEventListener('keyup', this.keyPressed);
+    document.removeEventListener('keyup', this.keyPressed);
   }
 
   keyPressed = (event: KeyboardEvent) => {
