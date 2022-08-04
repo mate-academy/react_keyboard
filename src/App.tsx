@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 type State = {
-  pressedKey: string | null;
+  pressedKey: string;
 };
 
 export class App extends Component<{}, State> {
@@ -18,7 +18,11 @@ export class App extends Component<{}, State> {
   }
 
   keyboardEvent = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key === ' ' ? 'Space' : event.key });
+    this.setState({
+      pressedKey: event.key === ' '
+        ? 'Space'
+        : event.key,
+    });
   };
 
   render() {
