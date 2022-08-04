@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Mouse } from './Mouse';
 
 type Props = {
 };
@@ -34,6 +35,7 @@ export class App extends Component<Props, State> {
             ? 'Nothing was pressed yet'
             : `The last pressed key is [${this.state.pressedKey}]`}
         </p>
+        <Mouse />
       </div>
     );
   }
