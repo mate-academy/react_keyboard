@@ -1,4 +1,4 @@
-import { Component }  from 'react';
+import { Component } from 'react';
 
 type State = {
   pressedKey: string;
@@ -10,15 +10,19 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyPress);
+    document.addEventListener('keyup', this.handleKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.keyPress);
+    document.removeEventListener('keyup', this.handleKey);
   }
 
-  keyPress = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+  handleKey = (event: KeyboardEvent) => {
+    this.setState({
+      pressedKey: event.key === ' '
+        ? 'Space'
+        : event.key,
+    });
   };
 
   render() {
