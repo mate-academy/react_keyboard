@@ -19,7 +19,7 @@ export class App extends Component<{}, State> {
 
   keypress = (event: KeyboardEvent) => {
     if (event.key) {
-      this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+      this.setState({ pressedKey: `The last pressed key is [${event.code}]` });
     }
   };
 
