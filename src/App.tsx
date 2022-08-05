@@ -20,8 +20,8 @@ export class App extends Component<{}, State> {
   }
 
   handleKey = (event: KeyboardEvent) => {
-    if (event.key === ' ') {
-      this.setState({ pressedKey: 'Space' });
+    if (event.code === 'Space') {
+      this.setState({ pressedKey: event.code });
     } else {
       this.setState({ pressedKey: event.key });
     }
