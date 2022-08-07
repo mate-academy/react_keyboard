@@ -24,14 +24,18 @@ export class App extends Component<{}, State> {
   render() {
     const { pressedKey } = this.state;
 
-    if (pressedKey === '') {
-      return 'Nothing was pressed yet';
-    }
-
-    if (pressedKey === ' ') {
-      return 'The last pressed key is Space';
-    }
-
-    return `The last pressed key is ${pressedKey}`;
+    return (
+      <div className="App">
+        {!pressedKey
+          ? <p className="App__message">Nothing was pressed yet</p>
+          : (
+            <p>
+              {pressedKey === ' '
+                ? 'The last pressed key is Space'
+                : `The last pressed key is ${pressedKey}`}
+            </p>
+          )}
+      </div>
+    );
   }
 }
