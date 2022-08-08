@@ -18,6 +18,12 @@ export class App extends React.Component<{}, State> {
   }
 
   handlerKey = (event: KeyboardEvent) => {
+    if (event.key === ' ') {
+      this.setState({ pressedKey: 'Space' });
+
+      return;
+    }
+
     this.setState({ pressedKey: event.key });
   };
 
