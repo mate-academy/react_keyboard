@@ -23,15 +23,15 @@ export class App extends React.Component {
 
   render() {
     const spaceHunter = this.state.keyboardKey === ' '
-      ? 'The last pressed key is [space]'
-      : `The last pressed key is [${this.state.keyboardKey}]`;
+      ? this.state.keyboardKey = 'space'
+      : this.state.keyboardKey;
 
     return (
       <div className="App">
         <p className="App__message">
           { (this.state.keyboardKey.length === 0
             ? 'Nothing was pressed yet'
-            : spaceHunter)}
+            : `The last pressed key is [${spaceHunter}]`)}
         </p>
       </div>
     );
