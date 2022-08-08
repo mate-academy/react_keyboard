@@ -22,6 +22,12 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
+    const { pressedKey } = this.state;
+
+    if (pressedKey === ' ') {
+      this.setState({ pressedKey: 'Space' });
+    }
+
     return (
       <div className="App">
         <p className="App__message">
