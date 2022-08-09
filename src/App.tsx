@@ -18,7 +18,7 @@ export class App extends Component<{}, State> {
   }
 
   handlePressedKey = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    this.setState({ pressedKey: event.code });
   };
 
   render(): React.ReactNode {
