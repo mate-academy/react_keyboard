@@ -18,7 +18,11 @@ export class App extends Component<{}, State> {
   }
 
   handlePressedKey = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.code });
+    if (event.code === 'Space') {
+      this.setState({ pressedKey: event.code });
+    } else {
+      this.setState({ pressedKey: event.key });
+    }
   };
 
   render(): React.ReactNode {
