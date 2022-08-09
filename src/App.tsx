@@ -17,13 +17,11 @@ export class App extends Component<{}, State> {
     document.removeEventListener('keyup', this.handlePressedKey);
   }
 
-  handlePressedKey = (event: KeyboardEvent) => {
-    if (event.code === 'Space') {
-      this.setState({ pressedKey: event.code });
-    } else {
-      this.setState({ pressedKey: event.key });
-    }
-  };
+  handlePressedKey = (event: KeyboardEvent) => (
+    event.code === 'Space'
+      ? this.setState({ pressedKey: event.code })
+      : this.setState({ pressedKey: event.key })
+  );
 
   render(): React.ReactNode {
     const { pressedKey } = this.state;
