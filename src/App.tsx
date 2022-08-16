@@ -18,7 +18,7 @@ export class App extends React.Component {
   }
 
   handleDocumentKey = (keys: string) => {
-    this.setState({ pressedKey: `The last pressed key is ${keys}` });
+    this.setState({ pressedKey: `The last pressed key is [${keys}]` });
   };
 
   render() {
