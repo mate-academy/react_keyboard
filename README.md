@@ -4,16 +4,16 @@
 
 Make the `App` a class component with `pressedKey` in the `state`.
 
-- before any key was pressed show a `Nothing was pressed yet` message;
-- when a key is pressed show a `The last pressed key is <event.key>` message;
-- use `componentDidMount` to add `keyup` handler:
+> Here is [the working version](https://mate-academy.github.io/react_keyboard/)
 
+- before any key was pressed show the `Nothing was pressed yet` message;
+- when a key is pressed show a `The last pressed key is [key]` message;
+- use `componentDidMount` to add `keyup` handler:
     ```js
     document.addEventListener('keyup', (event: KeyboardEvent) => {
       console.log(event.key);
     });
     ```
-    
 - use `removeEventListener` to remove a global handler in `componentWillUnmount`.
 
 ## Instructions
