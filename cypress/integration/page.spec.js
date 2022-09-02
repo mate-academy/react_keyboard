@@ -3,8 +3,17 @@ const page = {
   body: () => cy.get('body'),
 };
 
+let failed = false;
+
+Cypress.on('fail', (e) => {
+  failed = true;
+  throw e;
+});
+
 describe('Page', () => {
   beforeEach(() => {
+    if (failed) Cypress.runner.stop();
+
     cy.visit('/');
   });
 
