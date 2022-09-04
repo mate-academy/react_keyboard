@@ -2,13 +2,13 @@ import { Component } from 'react';
 
 type State = {
   pressedKey: string,
-  initial: boolean,
 };
 
-export class App extends Component<{}, State> {
+type Props = {};
+
+export class App extends Component<Props, State> {
   state: Readonly<State> = {
     pressedKey: '',
-    initial: true,
   };
 
   componentDidMount() {
@@ -22,17 +22,16 @@ export class App extends Component<{}, State> {
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
       pressedKey: event.key,
-      initial: false,
     });
   };
 
   render() {
-    const { pressedKey, initial } = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {initial ? 'Nothing was pressed yet' : `The last pressed key is [${pressedKey}]`}
+          {pressedKey ? 'Nothing was pressed yet' : `The last pressed key is [${pressedKey}]`}
         </p>
       </div>
     );
