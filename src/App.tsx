@@ -26,7 +26,8 @@ export class App extends Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {
-            !this.state.click ? ('Nothing was pressed yet')
+            !this.state.click
+              ? ('Nothing was pressed yet')
               : (`The last pressed key is [${this.state.click}]`)
           }
         </p>
