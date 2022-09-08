@@ -35,8 +35,8 @@ export class Click extends React.Component<{}, State> {
       <>
         {
           !pressedKey
-            ? <p>Nothing was pressed yet</p>
-            : <p>{`The last pressed key is [${userPressed}]`}</p>
+            ? <p className="App__message">Nothing was pressed yet</p>
+            : <p className="App__message">{`The last pressed key is [${userPressed}]`}</p>
         }
       </>
     );
