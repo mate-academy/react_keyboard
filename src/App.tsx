@@ -2,39 +2,49 @@ import { Component } from 'react';
 
 type State = {
   pressedKey: string;
+  history: string[];
 };
-
-let story: string[] = [];
 
 export class App extends Component<{}, State> {
   state = {
     pressedKey: 'null',
+    history: [],
   };
 
   componentDidMount() {
     const btn = document.getElementById('btn') as HTMLElement;
 
-    btn.addEventListener('click', () => {
-      story = [];
-    });
+    btn.addEventListener('click', this.clear);
 
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-      story.push(event.key);
-    });
+    document.addEventListener('keyup', this.click);
   }
+
+  componentWillUnmount() {
+    const btn = document.getElementById('btn') as HTMLElement;
+
+    document.removeEventListener('keyup', this.click);
+    btn.removeEventListener('click', this.clear);
+  }
+
+  click = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+    this.state.history.push(event.key as never);
+  };
+
+  clear = () => {
+    this.state.history = [];
+  };
 
   render() {
     const { pressedKey } = this.state;
+    let id = 0;
 
     return (
       <div className="App">
-        {story.length
+        {this.state.history.length
           ? (
             <p className="App__message">
-              The last pressed key is
-              {' - '}
-              {`[${pressedKey}]`}
+              {`The last pressed key is - [${pressedKey}]`}
             </p>
           )
           : <p className="App__message">Nothing was pressed yet</p>}
@@ -43,12 +53,15 @@ export class App extends Component<{}, State> {
             Click to Clear and Press the key
           </button>
 
-          {story.map((el, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <li key={index} className="App__story-element">
-              {el}
-            </li>
-          ))}
+          {this.state.history.map((el) => {
+            id += 1;
+
+            return (
+              <li key={id} className="App__story-element">
+                {el}
+              </li>
+            );
+          })}
         </ol>
       </div>
     );
