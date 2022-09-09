@@ -20,12 +20,10 @@ export class Click extends React.Component<{}, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    if (event.key) {
-      this.setState({
-        pressedKey: true,
-        pressedUserKey: event.key,
-      });
-    }
+    this.setState({
+      pressedKey: true,
+      pressedUserKey: event.key,
+    });
   };
 
   render() {
