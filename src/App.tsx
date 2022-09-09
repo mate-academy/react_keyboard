@@ -14,15 +14,17 @@ export class App extends Component<{}, State> {
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
+    document.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
     document.removeEventListener('keyup', this.handleKeyUp);
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
     const eventKey = event.key === ' '
-      ? 'backspace'
+      ? 'Space'
       : event.key;
 
     this.setState({ key: eventKey, isKeyDown: false });
@@ -36,8 +38,6 @@ export class App extends Component<{}, State> {
 
   render() {
     const { key, isKeyDown } = this.state;
-
-    document.addEventListener('keydown', this.handleKeyDown);
 
     return (
       <div className="App">
