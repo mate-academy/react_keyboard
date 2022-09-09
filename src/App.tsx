@@ -2,24 +2,24 @@ import { Component } from 'react';
 
 type State = {
   pressedKey: string;
-}
+};
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: '',
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key })
-    })
-  };
+      this.setState({ pressedKey: event.key });
+    });
+  }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key })
-    })
-  };
+      this.setState({ pressedKey: event.key });
+    });
+  }
 
   render() {
     const { pressedKey } = this.state;
@@ -28,11 +28,10 @@ export class App extends Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {pressedKey
-          ? `The last pressed key is [${pressedKey}]`
-          : 'No pressed button yet'
-        }
+            ? `The last pressed key is [${pressedKey}]`
+            : 'No pressed button yet'}
         </p>
       </div>
-    )
+    );
   }
-};
+}
