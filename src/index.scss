@@ -7,16 +7,16 @@ html {
   font-size: 18px;
 }
 
-.App{
+.App {
   width: 300px;
   height: 200px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 100px;
 
-  &__message{
+  &__message {
     text-align: center;
   }
 }
