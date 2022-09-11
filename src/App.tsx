@@ -1,11 +1,5 @@
 import { Component } from 'react';
 
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">Nothing was pressed yet</p>
-//   </div>
-// );
-
 type State = {
   message: string;
 };
