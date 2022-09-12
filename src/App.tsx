@@ -1,14 +1,14 @@
 import React from 'react';
 
 type State = {
-  pressedKey: boolean;
-  pressedUserKey: string;
+  pressedKey: string;
 };
 
-export class Click extends React.Component<{}, State> {
+type Props = {};
+
+export class Click extends React.Component<Props, State> {
   state: Readonly<State> = {
-    pressedKey: false,
-    pressedUserKey: '',
+    pressedKey: '',
   };
 
   componentDidMount() {
@@ -21,8 +21,7 @@ export class Click extends React.Component<{}, State> {
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: true,
-      pressedUserKey: event.key,
+      pressedKey: event.key,
     });
   };
 
@@ -33,7 +32,7 @@ export class Click extends React.Component<{}, State> {
         <p className="App__message">
           {
             this.state.pressedKey
-              ? `The last pressed key is [${this.state.pressedUserKey}]`
+              ? `The last pressed key is [${this.state.pressedKey}]`
               : 'Nothing was pressed yet'
           }
         </p>
