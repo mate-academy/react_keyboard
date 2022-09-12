@@ -18,15 +18,25 @@ export class App extends Component<{}, State> {
   }
 
   handleKeyup = (event: KeyboardEvent) => {
-    this.setState({ button: event.key });
+    if (event.code === 'Space') {
+      this.setState({
+        button: event.code,
+      });
+    } else {
+      this.setState({
+        button: event.key,
+      });
+    }
   };
 
   render() {
+    const { button } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.button
-            ? `The last pressed key is [${this.state.button}]`
+          {button
+            ? `The last pressed key is [${button}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
