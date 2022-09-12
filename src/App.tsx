@@ -10,10 +10,7 @@ export class App extends PureComponent<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener(
-      'keyup',
-      this.handleKeyup,
-    );
+    document.addEventListener('keyup', this.handleKeyup);
   }
 
   componentWillUnmount() {
