@@ -1,12 +1,16 @@
 import { Component } from 'react';
 
 type State = {
-  click: string;
+  pressedButton: string;
 };
 
-export class App extends Component<{}, State> {
+interface Props {
+
+}
+
+export class App extends Component<Props, State> {
   state: Readonly<State> = {
-    click: '',
+    pressedButton: '',
   };
 
   componentDidMount() {
@@ -17,18 +21,24 @@ export class App extends Component<{}, State> {
     document.removeEventListener('keyup', this.handleKeyup);
   }
 
-  handleKeyup = (event: KeyboardEvent) => {
-    this.setState({ click: event.key });
+  handleKeyup = (event: KeyboardEvent): void => {
+    this.setState({ pressedButton: event.key });
+
+    if (this.state.pressedButton === ' ') {
+      this.setState({ pressedButton: 'space' });
+    }
   };
 
   render() {
+    const { pressedButton } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {
-            !this.state.click
+            !this.state.pressedButton
               ? ('Nothing was pressed yet')
-              : (`The last pressed key is [${this.state.click}]`)
+              : (`The last pressed key is [${pressedButton}]`)
           }
         </p>
       </div>
