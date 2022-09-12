@@ -4,22 +4,24 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends Component<{}, State> {
+type Props = {};
+
+export class App extends Component<Props, State> {
   state: Readonly<State> = {
     pressedKey: '',
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.addEventListener('keyup', this.setPressedKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.removeEventListener('keyup', this.setPressedKey);
   }
+
+  setPressedKey = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  };
 
   render() {
     const { pressedKey } = this.state;
