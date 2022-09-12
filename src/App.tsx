@@ -9,7 +9,7 @@ export class App extends React.Component<{}, State> {
     lastPressedKey: '',
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.getPressedKey);
   }
 
@@ -24,7 +24,11 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
-    const { lastPressedKey } = this.state;
+    let { lastPressedKey } = this.state;
+
+    if (lastPressedKey === ' ') {
+      lastPressedKey = 'space';
+    }
 
     return (
       <div className="App">
