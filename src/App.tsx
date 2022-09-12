@@ -4,7 +4,9 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends Component <{}, State> {
+type Props = {};
+
+export class App extends Component <Props, State> {
   state = {
     pressedKey: '',
   };
