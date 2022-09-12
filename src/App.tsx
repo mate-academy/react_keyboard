@@ -23,11 +23,13 @@ export class App extends PureComponent<{}, State> {
   handleKeyup = (event: KeyboardEvent) => this.setState({ key: event.key });
 
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.key ? (
-            `The last pressed key is [${this.state.key}]`
+          {key ? (
+            `The last pressed key is [${key}]`
           ) : (
             'Nothing was pressed yet'
           )}
