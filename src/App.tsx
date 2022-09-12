@@ -4,7 +4,9 @@ type State = {
   key: string;
 };
 
-export class App extends Component<{}, State> {
+type Props = {};
+
+export class App extends Component<Props, State> {
   state = {
     key: '',
   };
@@ -22,11 +24,13 @@ export class App extends Component<{}, State> {
   };
 
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {this.state.key
-            ? `The last pressed key is [${this.state.key}]`
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
