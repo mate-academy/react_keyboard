@@ -4,9 +4,7 @@ type State = {
   pressedButton: string;
 };
 
-interface Props {
-
-}
+type Props = {};
 
 export class App extends Component<Props, State> {
   state: Readonly<State> = {
