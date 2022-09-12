@@ -21,14 +21,13 @@ export class App extends React.Component<{}, State> {
     this.setState({
       lastPressedKey: event.key,
     });
+    if (this.state.lastPressedKey === ' ') {
+      this.state.lastPressedKey = 'space';
+    }
   };
 
   render() {
-    let { lastPressedKey } = this.state;
-
-    if (lastPressedKey === ' ') {
-      lastPressedKey = 'space';
-    }
+    const { lastPressedKey } = this.state;
 
     return (
       <div className="App">
