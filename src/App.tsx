@@ -17,7 +17,11 @@ export class App extends PureComponent<{}, State> {
     document.removeEventListener('keyup', this.handleKeyup);
   }
 
-  handleKeyup = (event: KeyboardEvent) => this.setState({ key: event.key });
+  handleKeyup = (event: KeyboardEvent) => (
+    event.code === 'Space'
+      ? this.setState({ key: event.code })
+      : this.setState({ key: event.key })
+  );
 
   render() {
     const { key } = this.state;
