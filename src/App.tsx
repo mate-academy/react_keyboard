@@ -6,7 +6,7 @@ type State = {
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: '',
+    pressedKey: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
@@ -18,18 +18,20 @@ export class App extends Component<{}, State> {
   }
 
   handleDocumentEvent = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    if (event.key === 'space') {
+      this.setState({ pressedKey: 'The last pressed key is [space]' });
+    } else {
+      this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+    }
   };
 
   render(): React.ReactNode {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {
-            this.state.pressedKey
-              ? `The last pressed key is [${this.state.pressedKey}]`
-              : 'Nothing was pressed yet'
-          }
+          {pressedKey}
         </p>
       </div>
     );
