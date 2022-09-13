@@ -9,11 +9,11 @@ export class App extends Component<{}, State> {
     pressedKey: '',
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handlePressKey);
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handlePressKey);
   }
 
