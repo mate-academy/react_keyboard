@@ -1,10 +1,5 @@
 import React from 'react';
 
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
 type State = {
   key: string;
 };
@@ -15,14 +10,14 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.pressButton);
+    document.addEventListener('keyup', this.handleKeypress);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.pressButton);
+    document.removeEventListener('keyup', this.handleKeypress);
   }
 
-  pressButton = (event: KeyboardEvent) => {
+  handleKeypress = (event: KeyboardEvent) => {
     this.setState({ key: event.key });
   };
 
@@ -32,11 +27,9 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {
-            key !== ''
-              ? `The last pressed key is [${key}]`
-              : 'Nothing was pressed yet'
-          }
+          {key !== ''
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
