@@ -2,7 +2,7 @@ import { Component, ReactNode } from 'react';
 
 export class App extends Component {
   state: Readonly<{ key?: string }> = {
-    key: undefined,
+    key: '',
   };
 
   componentDidMount() {
@@ -11,14 +11,14 @@ export class App extends Component {
         key: event.key,
       });
     });
+  }
 
-    return (
-      document.removeEventListener('keyup', (event: KeyboardEvent) => {
-        this.setState({
-          key: event.key,
-        });
-      })
-    );
+  componentWillUnmount() {
+    document.removeEventListener('keyup', (event: KeyboardEvent) => {
+      this.setState({
+        key: event.key,
+      });
+    });
   }
 
   render(): ReactNode {
