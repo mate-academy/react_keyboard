@@ -10,7 +10,7 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.removeEventListener('keyup', this.getCurrentKey);
+    document.addEventListener('keyup', this.getCurrentKey);
   }
 
   componentWillUnmount() {
