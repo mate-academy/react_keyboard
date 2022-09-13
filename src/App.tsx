@@ -1,13 +1,11 @@
 import React from 'react';
 
 type State = {
-  pressedKey: boolean,
   userPressed: string,
 };
 
 export class Click extends React.Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: false,
     userPressed: '',
   };
 
@@ -21,23 +19,20 @@ export class Click extends React.Component<{}, State> {
 
   handleDocumentClick = (event: KeyboardEvent) => {
     if (event.key) {
-      const userPressed1 = event.key;
+      const pressedKey = event.key;
 
-      this.setState({ userPressed: userPressed1 });
-      this.setState({ pressedKey: true });
+      this.setState({ userPressed: pressedKey });
     }
   };
 
   render() {
-    const { pressedKey, userPressed } = this.state;
+    const { userPressed } = this.state;
 
     return (
       <>
-        {
-          !pressedKey
-            ? <p className="App__message">Nothing was pressed yet</p>
-            : <p className="App__message">{`The last pressed key is [${userPressed}]`}</p>
-        }
+        {!userPressed
+          ? <p className="App__message">Nothing was pressed yet</p>
+          : <p className="App__message">{`The last pressed key is [${userPressed}]`}</p>}
       </>
     );
   }
