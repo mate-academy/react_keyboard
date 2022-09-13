@@ -12,6 +12,9 @@ GOOD EXAMPLE:
 handleClick = () => {
  console.log('Hello, world');
 }
+handleClick = () => {
+ console.log('Hello, world');
+}
 ```
 
 2. [CODE KNOWLEDGE] - Check if you remove your event listener, when component will unmount from page.
@@ -22,10 +25,10 @@ BAD EXAMPLE:
 ```jsx
  {condition ? 'Very important text': 'Nothing important'}
  ```
- 
+
 GOOD EXAMPLE:
 ```jsx
- {condition 
+ {condition
    ? 'Very important text'
    : 'Nothing important'
  }
