@@ -15,6 +15,12 @@ export class App extends Component<{}, State> {
     });
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keyup', (event: KeyboardEvent) => {
+      this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+    });
+  }
+
   render() {
     return (
       <div className="App">
