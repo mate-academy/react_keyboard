@@ -10,14 +10,20 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.separateMethod);
+    document.addEventListener(
+      'keyup',
+      this.changerOfPressedKeyValueInStateObject,
+    );
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.separateMethod);
+    document.removeEventListener(
+      'keyup',
+      this.changerOfPressedKeyValueInStateObject,
+    );
   }
 
-  separateMethod = (event: KeyboardEvent) => {
+  changerOfPressedKeyValueInStateObject = (event: KeyboardEvent) => {
     this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
   };
 
