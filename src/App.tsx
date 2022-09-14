@@ -1,33 +1,37 @@
 import { Component, ReactNode } from 'react';
 
+interface Key {
+  key: string;
+}
+
 export class App extends Component {
-  state: Readonly<{ key?: string }> = {
+  state: Key = {
     key: '',
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        key: event.key,
-      });
-    });
+    document.addEventListener('keyup', this.getKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        key: event.key,
-      });
-    });
+    document.removeEventListener('keyup', this.getKey);
   }
 
+  getKey = (event: KeyboardEvent) => {
+    this.setState({
+      key: event.key,
+    });
+  };
+
   render(): ReactNode {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {
-            this.state.key
-              ? `The last pressed key is [${this.state.key}]`
+            key
+              ? `The last pressed key is [${key}]`
               : 'Nothing was pressed yet'
           }
         </p>
