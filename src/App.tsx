@@ -1,11 +1,11 @@
-import { Component, ReactNode } from 'react';
+import { Component } from 'react';
 
-interface Key {
+interface State {
   key: string;
 }
 
 export class App extends Component {
-  state: Key = {
+  state: State = {
     key: '',
   };
 
@@ -23,17 +23,15 @@ export class App extends Component {
     });
   };
 
-  render(): ReactNode {
+  render() {
     const { key } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {
-            key
-              ? `The last pressed key is [${key}]`
-              : 'Nothing was pressed yet'
-          }
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
