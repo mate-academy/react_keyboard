@@ -18,7 +18,11 @@ export class App extends Component<{}, State> {
   }
 
   pressedKeyEvent = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    this.setState({
+      pressedKey: event.key === ' '
+        ? 'space'
+        : event.key,
+    });
   };
 
   render() {
