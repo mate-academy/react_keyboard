@@ -1,6 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 
-export class App extends React.Component {
+type State = {
+  pressedKey: string;
+};
+
+export class App extends Component<{}, State> {
   state = {
     pressedKey: 'Nothing was pressed yet',
   };
@@ -14,9 +18,7 @@ export class App extends React.Component {
   }
 
   handleDocumentKeyUp = (event: KeyboardEvent) => {
-    const pressedKey = `The last pressed key is [${event.key}]`;
-
-    this.setState({ pressedKey });
+    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
   };
 
   render() {
