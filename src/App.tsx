@@ -10,10 +10,16 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.addEventListener('keyup', this.hendlerKeyUp);
   }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.hendlerKeyUp);
+  }
+
+  hendlerKeyUp = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  };
 
   render() {
     const { pressedKey } = this.state;
@@ -21,7 +27,7 @@ export class App extends Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey.length !== 0 ? (
+          {pressedKey ? (
             `The last pressed key is ${pressedKey}`)
             : ('Nothing was pressed yet'
             )}
