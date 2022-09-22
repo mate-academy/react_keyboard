@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import 'bulma/css/bulma.min.css';
+import { Section, Container, Heading } from 'react-bulma-components';
 
 export class App extends Component<{}, { myKey: string; }> {
   state = {
@@ -23,14 +25,30 @@ export class App extends Component<{}, { myKey: string; }> {
     return (
 
       <div className="App">
-        <h1>Press KEY</h1>
-        <p className="App__message">
-          {myKey
-            ? (`The last pressed key is [
-          ${myKey}
-          ]`)
-            : ('Nothing was pressed yet')}
-        </p>
+        <Section>
+          <Container>
+            <Heading>
+              Press KEY
+            </Heading>
+            <Heading subtitle>
+              <p className="App__message">
+                {myKey
+                  ? (
+                    <span>
+                      {'The last pressed key is '}
+                      <strong>
+                        [
+                        {myKey}
+                        ]
+                      </strong>
+                    </span>
+                  )
+                  : ('Nothing was pressed yet')}
+              </p>
+            </Heading>
+          </Container>
+        </Section>
+
       </div>
     );
   }
