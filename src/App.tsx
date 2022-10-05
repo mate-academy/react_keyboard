@@ -2,24 +2,24 @@ import React from 'react';
 
 type State = {
   key: string | null,
-  callback: Function,
-}
+};
 
-export class App extends React.Component<{}, State>{
+export class App extends React.Component<{}, State> {
   state = {
     key: null,
-    callback: (event: KeyboardEvent) => {
-      this.setState({ key: event.key })
-    },
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.state.callback);
+    document.addEventListener('keyup', this.keyHandlerCallback);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.state.callback);
+    document.removeEventListener('keyup', this.keyHandlerCallback);
   }
+
+  keyHandlerCallback = (event: KeyboardEvent) => {
+    this.setState({ key: event.key });
+  };
 
   render(): React.ReactNode {
     return (
@@ -28,10 +28,10 @@ export class App extends React.Component<{}, State>{
           {this.state.key ? (
             `The last pressed key is [${this.state.key}]`
           ) : (
-            `Nothing was pressed yet`
+            'Nothing was pressed yet'
           )}
-          </p>
+        </p>
       </div>
-    )
-  };
+    );
+  }
 }
