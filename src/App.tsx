@@ -1,7 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import './index.scss';
 
-export class App extends React.Component {
+type State = {
+  message: string,
+};
+
+export class App extends Component<{}, State> {
   state = {
     message: 'Nothing was pressed yet',
   };
