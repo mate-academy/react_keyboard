@@ -19,9 +19,9 @@ export class App extends Component<{}, State> {
   }
 
   documentKeyUp = (event: KeyboardEvent) => {
-    const pressKeyMessage = `The last pressed key is [${event.key}]`;
+    const message = `The last pressed key is [${event.key}]`;
 
-    this.setState({ message: pressKeyMessage });
+    this.setState({ message });
   };
 
   render() {
