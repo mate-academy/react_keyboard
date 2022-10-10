@@ -18,10 +18,10 @@ export class App extends Component<{}, State> {
     document.removeEventListener('keyup', this.documentClick);
   }
 
-  documentClick = (e: KeyboardEvent) => {
-    const keyPressMessage = `The last pressed key is [${e.key}]`;
+  documentClick = (keyPress: KeyboardEvent) => {
+    const keyPressMessage = `The last pressed key is [${keyPress.key}]`;
 
-    if (e) {
+    if (keyPress) {
       this.setState({ message: keyPressMessage });
     }
   };
