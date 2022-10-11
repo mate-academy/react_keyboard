@@ -1,12 +1,12 @@
 import React from 'react';
 
 type State = {
-  key: string;
+  pressedKey: string;
 };
 
 export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
-    key: '',
+    pressedKey: '',
   };
 
   componentDidMount() {
@@ -19,13 +19,13 @@ export class App extends React.Component<{}, State> {
 
   handleKeyup = (event: KeyboardEvent) => {
     this.setState({
-      key: event.key,
+      pressedKey: event.key,
     });
   };
 
   render() {
     const {
-      key,
+      pressedKey: key,
     } = this.state;
 
     return (
