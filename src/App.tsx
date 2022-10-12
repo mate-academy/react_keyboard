@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 type State = {
-  key: string | null;
+  key: string;
 };
 
 export class App extends Component<{}, State> {
@@ -28,7 +28,7 @@ export class App extends Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {key
-            ? `The last pressed key is ${key}`
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
