@@ -9,16 +9,16 @@ export class App extends Component<{}, State> {
     key: '',
   };
 
+  componentDidMount() {
+    document.addEventListener('keyup', this.handleClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleClick);
+  }
+
   handleClick = (event: KeyboardEvent) => {
     this.setState({ key: event.key });
-  };
-
-  componentDidMount = () => {
-    document.addEventListener('keyup', this.handleClick);
-  };
-
-  componentWillUnmount = () => {
-    document.removeEventListener('keyup', this.handleClick);
   };
 
   render() {
