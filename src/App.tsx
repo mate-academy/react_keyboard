@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 export const App2: React.FC = () => (
   <div className="App">
@@ -10,7 +10,7 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<{}, State> {
+export class App extends Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: '',
   };
