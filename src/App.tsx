@@ -5,7 +5,7 @@ type State = {
 };
 
 export class App extends Component {
-  state: State = {
+  state: Readonly<State> = {
     activeKey: undefined,
   };
 
