@@ -16,13 +16,13 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', (event: KeyboardEvent) => {
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
       this.setState({ key: event.key });
     });
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', (event: KeyboardEvent) => {
+    document.removeEventListener('keyup', (event: KeyboardEvent) => {
       this.setState({ key: event.key });
     });
   }
