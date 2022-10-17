@@ -18,20 +18,18 @@ export class App extends Component<{}, State> {
   }
 
   Pressedkey = (event: KeyboardEvent) => {
-    if (event.key) {
-      this.setState({ key: event.key });
-    }
+    this.setState({ key: event.key });
   };
 
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {
-            this.state.key
-              ? `The last pressed key is [${this.state.key}]`
-              : 'Nothing was pressed yet'
-          }
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
