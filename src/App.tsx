@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  activeKey: string | undefined;
+  activeKey: string;
 };
 
-export class App extends Component {
+export class App extends Component<State> {
   state: Readonly<State> = {
-    activeKey: undefined,
+    activeKey: '',
   };
 
   componentDidMount() {
