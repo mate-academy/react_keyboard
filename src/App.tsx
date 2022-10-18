@@ -4,7 +4,7 @@ type State = {
   activeKey: string;
 };
 
-export class App extends Component<State> {
+export class App extends Component<{}, State> {
   state: Readonly<State> = {
     activeKey: '',
   };
