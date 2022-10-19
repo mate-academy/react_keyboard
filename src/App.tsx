@@ -5,7 +5,7 @@ type State = {
 };
 export class App extends React.Component<{}, State> {
   state = {
-    keyCode: 'Nothing was pressed yet',
+    keyCode: '',
   };
 
   componentDidMount() {
@@ -17,14 +17,16 @@ export class App extends React.Component<{}, State> {
   }
 
   handleKeyDown = (event: KeyboardEvent) => {
-    this.setState({ keyCode: `The last pressed key is [${event.code}]` });
+    this.setState({ keyCode: event.code });
   };
 
   render() {
+    const { keyCode } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.keyCode}
+          {keyCode ? `The last pressed key is [${keyCode}]` : 'Nothing was pressed yet'}
         </p>
       </div>
     );
