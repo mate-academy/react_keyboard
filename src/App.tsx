@@ -13,13 +13,13 @@ export class App extends Component<{}, Props> {
     document.addEventListener('keyup', this.handleButtonPress);
   }
 
-  handleButtonPress = (event: KeyboardEvent) => {
-    this.setState({ button: event.key});
-  };
-
-  componentUnmount() {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handleButtonPress);
   }
+
+  handleButtonPress = (event: KeyboardEvent) => {
+    this.setState({ button: event.key });
+  };
 
   render() {
     const { button } = this.state;
