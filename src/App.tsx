@@ -11,6 +11,9 @@ export class App extends React.Component<{}, State> {
 
   componentDidMount() {
     document.addEventListener('keyup', this.keyListener);
+    // document.addEventListener('contextmenu', (event: Event) => {
+    //   event.preventDefault();
+    // });
   }
 
   componentWillUnmount() {
@@ -22,13 +25,15 @@ export class App extends React.Component<{}, State> {
   };
 
   render(): React.ReactNode {
+    const { key } = this.state;
+
     return (
       <div className="App">
-        {
-          this.state.key
-            ? <p className="App__message">{`The last pressed key is [${this.state.key}]`}</p>
-            : <p className="App__message">Nothing was pressed yet</p>
-        }
+        <p className="App__message">
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
