@@ -33,7 +33,7 @@ export class App extends React.Component {
         <p className="App__message">
           {key === ''
             ? ('Nothing was pressed yet')
-            : (`The last pressed key is ${key}`)}
+            : (`The last pressed key is [${key}]`)}
         </p>
       </div>
     );
