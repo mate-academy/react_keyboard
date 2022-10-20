@@ -21,19 +21,16 @@ export class App extends Component<{}, State> {
     const keyPress = event.key;
 
     this.setState({ keyPress });
-
-    return keyPress;
   };
 
   render() {
     const { keyPress } = this.state;
-    const message = keyPress;
 
     return (
       <div className="App">
         <p className="App__keyPress">
-          {message
-            ? `The last pressed key is [${message}]`
+          {keyPress
+            ? `The last pressed key is [${keyPress}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
