@@ -9,17 +9,18 @@ export class App extends React.Component<{}, State> {
     pressedKey: '',
   };
 
+  // eslint-disable-next-line react/sort-comp
+  handlePressKey = ((event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  });
+
   componentDidMount() {
-    document.addEventListener('keyup', this.pressKey);
+    document.addEventListener('keyup', this.handlePressKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.pressKey);
+    document.removeEventListener('keyup', this.handlePressKey);
   }
-
-  pressKey = ((event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
-  });
 
   render() {
     const { pressedKey } = this.state;
