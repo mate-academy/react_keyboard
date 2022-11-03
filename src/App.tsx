@@ -2,8 +2,7 @@ import { Component } from 'react';
 
 export class App extends Component {
   state = {
-    pressedKey: false,
-    keySymbol: '',
+    pressedKey: null,
   };
 
   componentDidMount() {
@@ -16,19 +15,18 @@ export class App extends Component {
 
   handleDocumentKeyup = (e: KeyboardEvent) => {
     if (e.key) {
-      this.setState({ pressedKey: true });
-      this.setState({ keySymbol: e.key });
+      this.setState({ pressedKey: e.key });
     }
   };
 
   render() {
-    const { pressedKey, keySymbol } = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
           {pressedKey
-            ? `The last pressed key is [${keySymbol}]`
+            ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
