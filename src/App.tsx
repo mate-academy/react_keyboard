@@ -21,7 +21,7 @@ export class App extends Component<{}, State> {
     this.setState({ pressedKey: event.key });
   };
 
-  render(): unknown {
+  render() {
     const { pressedKey } = this.state;
 
     return (
