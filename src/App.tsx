@@ -24,8 +24,7 @@ export class App extends React.Component {
           {this.state.pressedKey
             ? (
               <>
-                {'The last pressed key is: '}
-                <b>{this.state.pressedKey}</b>
+                {`The last pressed key is [${this.state.pressedKey}]`}
               </>
             )
             : 'Nothing was pressed yet'}
