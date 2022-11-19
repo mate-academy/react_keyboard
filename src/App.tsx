@@ -10,14 +10,14 @@ export class App extends React.Component<{}, State> {
   };
 
   UNSAFE_componentWillMount() {
-    document.removeEventListener('keyup', this.keyPress);
+    document.removeEventListener('keyup', this.getKeyPress);
   }
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyPress);
+    document.addEventListener('keyup', this.getKeyPress);
   }
 
-  keyPress = (event: KeyboardEvent) => {
+  getKeyPress = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
@@ -27,17 +27,13 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {(pressedKey)
-            ? `The last pressed key is [${pressedKey}]`
-            : 'Nothing was pressed yet'}
+          {
+            (pressedKey)
+              ? `The last pressed key is [${pressedKey}]`
+              : 'Nothing was pressed yet'
+          }
         </p>
       </div>
     );
   }
 }
-
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
