@@ -1,20 +1,10 @@
 import { Component } from 'react';
 
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
-
-type Props = {
-
-};
-
 type State = {
   pressedKey: string
 };
 
-export class App extends Component<Props, State> {
+export class App extends Component<{}, State> {
   state: State = {
     pressedKey: '',
   };
@@ -24,26 +14,28 @@ export class App extends Component<Props, State> {
   updatedMessage = 'The last pressed key is';
 
   componentDidMount() {
-    document.addEventListener('keyup', this.eventHandler);
+    document.addEventListener('keyup', this.handleKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.eventHandler);
+    document.removeEventListener('keyup', this.handleKey);
   }
 
-  eventHandler = (e: KeyboardEvent) => {
+  handleKey = (e: KeyboardEvent) => {
     this.setState({
       pressedKey: e.key,
     });
   };
 
   render() {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.pressedKey.length === 0
+          {!pressedKey
             ? this.initialMessage
-            : `${this.updatedMessage} [${this.state.pressedKey}]`}
+            : `${this.updatedMessage} [${pressedKey}]`}
         </p>
       </div>
     );
