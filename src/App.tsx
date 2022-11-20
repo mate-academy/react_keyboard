@@ -9,12 +9,12 @@ export class App extends React.Component<{}, State> {
     pressedKey: null,
   };
 
-  UNSAFE_componentWillMount() {
-    document.removeEventListener('keyup', this.getKeyPress);
-  }
-
   componentDidMount() {
     document.addEventListener('keyup', this.getKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.getKeyPress);
   }
 
   getKeyPress = (event: KeyboardEvent) => {
