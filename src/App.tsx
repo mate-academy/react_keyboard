@@ -22,9 +22,11 @@ export class App extends Component<{}, State> {
   };
 
   render(): React.ReactNode {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
-        <p className="App__message">{this.state.pressedKey}</p>
+        <p className="App__message">{pressedKey}</p>
       </div>
     );
   }
