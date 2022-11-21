@@ -19,6 +19,10 @@ export class App extends React.Component<{}, State> {
 
   handleDocumentClick = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
+
+    if (event.key === ' ') {
+      this.setState({ pressedKey: 'Space' });
+    }
   };
 
   render() {
@@ -27,9 +31,9 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey
+          { pressedKey
             ? `The last pressed key is [${pressedKey}]`
-            : 'Nothing was pressed yet'}
+            : 'Nothing was pressed yet' }
         </p>
       </div>
     );
