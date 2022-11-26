@@ -5,11 +5,17 @@ class App extends React.Component {
     keyup: '',
   };
 
-  componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ keyup: event.key });
-    });
+  componentDidMount(): void {
+    document.addEventListener('keyup', this.getClickedKeyUp);
   }
+
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.getClickedKeyUp);
+  }
+
+  getClickedKeyUp = (e: KeyboardEvent) => {
+    this.setState({ keyup: e.key });
+  };
 
   render() {
     return (
