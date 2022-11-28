@@ -21,7 +21,7 @@ export class App extends Component<{}, State> {
     this.setState({ pressedKey: event.key });
 
     if (event.key === ' ') {
-      this.setState({ pressedKey: 'Spacebar' });
+      this.setState({ pressedKey: 'Space' });
     }
   };
 
