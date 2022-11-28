@@ -1,10 +1,10 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 
 type State = {
   key: string | null,
 };
 
-export class App extends PureComponent<{}, State> {
+export class App extends Component<{}, State> {
   state: Readonly<State> = {
     key: null,
   };
