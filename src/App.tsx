@@ -1,7 +1,37 @@
-import React from 'react';
+import { PureComponent } from 'react';
 
-export const App: React.FC = () => (
-  <div className="App">
-    <p className="App__message">The last pressed key is [Enter]</p>
-  </div>
-);
+type State = {
+  key: string | null,
+};
+
+export class App extends PureComponent<{}, State> {
+  state: Readonly<State> = {
+    key: null,
+  };
+
+  componentDidMount() {
+    document.addEventListener('keyup', this.keyHandler);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.keyHandler);
+  }
+
+  keyHandler = (e: KeyboardEvent) => {
+    this.setState({ key: e.key });
+  };
+
+  render() {
+    const { key } = this.state;
+
+    return (
+      <div className="App">
+        <p className="App__message">
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
+        </p>
+      </div>
+    );
+  }
+}
