@@ -5,7 +5,7 @@ export class App extends Component {
     pressedKey: '',
   };
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     document.removeEventListener('keyup', this.pressing);
   }
 
@@ -20,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <p className="App_message">
+        <p className="App__message">
           {this.state.pressedKey
             ? `The last pressed key is [${this.state.pressedKey}]`
             : 'Nothing was pressed yet'}
