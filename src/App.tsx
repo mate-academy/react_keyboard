@@ -5,12 +5,12 @@ export class App extends Component {
     pressedKey: '',
   };
 
-  componentWillMount() {
-    document.removeEventListener('keyup', this.pressing);
-  }
-
   componentDidMount() {
     document.addEventListener('keyup', this.pressing);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.pressing);
   }
 
   pressing = (event: KeyboardEvent) => {
