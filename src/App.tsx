@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 export class App extends Component {
   state = {
-    message: 'Nothing was presed yet',
+    message: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
