@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 export class App extends Component {
   state = {
-    message: 'Nothing was pressed yet',
+    message: '',
   };
 
   componentDidMount() {
@@ -23,7 +23,7 @@ export class App extends Component {
     return (
       <div className="App">
         <p className="App__message">
-          {message}
+          {message || 'Nothing was pressed yet'}
         </p>
       </div>
     );
