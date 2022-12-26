@@ -1,8 +1,12 @@
 import { Component } from 'react';
 
-export class App extends Component {
-  state = {
-    key: null,
+type State = {
+  key: string;
+};
+
+export class App extends Component<{}, State> {
+  state: State = {
+    key: '',
   };
 
   componentDidMount() {
