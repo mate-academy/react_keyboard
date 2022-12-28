@@ -3,5 +3,24 @@ iframe {
 }
 
 html {
+  height: 100vh;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url(https://r4.wallpaperflare.com/wallpaper/450/996/920/keyboards-mechanical-keyboard-wallpaper-fed16eb50b9d5b2b9508100cfc262a13.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+
+  &__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: normal;
+    color: #c8ffff;
+  }
 }
