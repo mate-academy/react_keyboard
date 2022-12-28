@@ -5,3 +5,10 @@ iframe {
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: yellowgreen;
+  padding-top: 300px;
+}

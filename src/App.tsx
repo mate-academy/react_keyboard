@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 
 type State = {
   pressedKey: string,
@@ -26,13 +27,15 @@ export class App extends React.Component <{}, State> {
 
     return (
       <div className="App">
-        <p className="App__message">
-          {
-            pressedKey
-              ? `The last pressed key is [${pressedKey}]`
-              : 'Nothing was pressed yet'
-          }
-        </p>
+        <Button variant="contained">
+          <p className="App__message">
+            {
+              pressedKey
+                ? `The last pressed key is [${pressedKey}]`
+                : 'Nothing was pressed yet'
+            }
+          </p>
+        </Button>
       </div>
     );
   }
