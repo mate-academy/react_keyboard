@@ -5,3 +5,35 @@ iframe {
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(205,45,253,1) 100%);
+  height: 100vh;
+  grid-row: 1fr;
+}
+
+.App {
+  padding: 40px;
+
+  background-color: #fff;
+  border-radius: 25px;
+  
+  transition: color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.5s ease;
+  
+  &__message {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.3);
+  }
+}
