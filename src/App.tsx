@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 type State = {
