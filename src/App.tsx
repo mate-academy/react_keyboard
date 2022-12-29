@@ -4,44 +4,42 @@ interface State {
   pressedKey: string | null
 }
 
-export class App extends React.Component<null, State> {
+export class App extends React.Component<{}, State> {
   state = {
-    pressedKey: null
-  }
+    pressedKey: null,
+  };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handleKeyUp)
+    document.addEventListener('keyup', this.handleKeyUp);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: event.key
-    })
+      pressedKey: event.key,
+    });
 
     if (event.key === ' ') {
       this.setState({
-        pressedKey: 'Space'
-      })
+        pressedKey: 'Space',
+      });
     }
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyUp)
-  }
+  };
 
   render() {
-    const { pressedKey } = this.state
+    const { pressedKey } = this.state;
 
     return (
-      <div className="App" >
+      <div className="App">
         <p className="App__message">
           {pressedKey
             ? `The last pressed key is [${pressedKey}]`
-            : `Nothing was pressed yet`
-          }
+            : 'Nothing was pressed yet'}
         </p>
-      </div >
-    )
+      </div>
+    );
   }
 }
-
