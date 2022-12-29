@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import cn from 'classnames';
+import './App.scss';
 
 export class App extends Component {
   state = { pressedKey: '' };
@@ -20,7 +22,13 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <p className="App__message">
+        <p className={cn(
+          'App__message',
+          {
+            'App__message--pressed': pressedKey,
+          },
+        )}
+        >
           {
             pressedKey
               ? `The last pressed key is [${pressedKey}]`

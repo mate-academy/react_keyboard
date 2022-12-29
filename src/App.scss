@@ -1,0 +1,10 @@
+.App {
+  &__message {
+    color: red;
+
+    &--pressed {
+      color: green;
+    }
+  }
+
+}
