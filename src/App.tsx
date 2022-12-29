@@ -6,7 +6,7 @@ type State = {
 
 export class App extends Component<{}, State> {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
   componentDidMount(): void {
@@ -18,7 +18,7 @@ export class App extends Component<{}, State> {
   }
 
   ourEvent = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+    this.setState({ pressedKey: event.key });
   };
 
   render() {
@@ -26,7 +26,9 @@ export class App extends Component<{}, State> {
 
     return (
       <div className="App">
-        <p className="App__message">{pressedKey}</p>
+        {pressedKey
+          ? <p className="App__message">{`The last pressed key is [${pressedKey}]` }</p>
+          : <p className="App__message">Nothing was pressed yet</p>}
       </div>
     );
   }
