@@ -1,0 +1,11 @@
+.App {
+  margin: 300px auto auto;
+  background-color: #8fbc8f;
+  width: 50%;
+  border-radius: 10px;
+
+  &__message {
+    text-align: center;
+    font-size: 50px;
+  }
+}
