@@ -26,7 +26,7 @@ export class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        <p>{pressedKey}</p>
+        <p className="App__message">{pressedKey}</p>
       </div>
     );
   }
