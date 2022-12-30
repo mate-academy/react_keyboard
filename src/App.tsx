@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 type State = {
-  key: string,
+  message: string,
 };
 
 export class App extends Component<{}, State> {
