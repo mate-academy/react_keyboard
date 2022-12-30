@@ -4,4 +4,13 @@ iframe {
 
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: gainsboro;
+  font-size: 20px;
+}
+
+.Box {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  text-align: center;
 }
