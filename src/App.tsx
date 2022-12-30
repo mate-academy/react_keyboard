@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-newline */
 import { Component } from 'react';
 
 type State = {
@@ -27,10 +28,9 @@ export class App extends Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {
-            key
-              ? `The last pressed key is [${key}]`
-              : 'Nothing was pressed yet'
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'
           }
         </p>
       </div>
