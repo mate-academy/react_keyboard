@@ -11,16 +11,16 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handlerKey);
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
+      this.setState({ pressedKey: event.key });
+    });
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handlerKey);
+    document.removeEventListener('keyup', (event: KeyboardEvent) => {
+      this.setState({ pressedKey: event.key });
+    });
   }
-
-  handlerKey = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
-  };
 
   render(): React.ReactNode {
     const { pressedKey } = this.state;
@@ -30,7 +30,7 @@ export class App extends React.Component<{}, State> {
         <p className="App__message">
           {
             pressedKey
-              ? (`The last pressed key is ${pressedKey}`)
+              ? (`The last pressed key is [${pressedKey}]`)
               : ('Nothing was pressed yet')
           }
         </p>
