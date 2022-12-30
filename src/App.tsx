@@ -1,8 +1,5 @@
 import React from 'react';
-
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import { Box, Paper } from '@mui/material';
 
 interface State {
   pressedKey: string | null;
@@ -29,21 +26,24 @@ export class App extends React.Component<{}, State> {
     const { pressedKey } = this.state;
 
     return (
-      <div className="wrapper">
-        <Box width="400px">
-          <Card>
-            <CardContent>
-              <div className="App">
-                <p className="App__message">
-                  {pressedKey
-                    ? `The last pressed key is [${pressedKey}]`
-                    : 'Nothing was pressed yet'}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </Box>
-      </div>
+      <Box
+        className="Box"
+        sx={{
+          '& > :not(style)': {
+            width: 400,
+          },
+        }}
+      >
+        <Paper>
+          <div className="App">
+            <p className="App__message">
+              {pressedKey
+                ? `The last pressed key is [${pressedKey}]`
+                : 'Nothing was pressed yet'}
+            </p>
+          </div>
+        </Paper>
+      </Box>
     );
   }
 }
