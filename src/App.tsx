@@ -1,7 +1,7 @@
 import React from 'react';
 
 type State = {
-  pressedKey: string;
+  pressedKey: string | null;
 };
 
 export class App extends React.Component<{}, State> {
@@ -10,20 +10,18 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        pressedKey: `The last pressed key is [${event.key}]`,
-      });
-    });
+    document.addEventListener('keyup', this.handlePressedKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        pressedKey: `The last pressed key is [${event.key}]`,
-      });
-    });
+    document.removeEventListener('keyup', this.handlePressedKey);
   }
+
+  handlePressedKey = (event: KeyboardEvent) => {
+    this.setState({
+      pressedKey: `The last pressed key is [${event.key}]`,
+    });
+  };
 
   render() {
     const { pressedKey } = this.state;
