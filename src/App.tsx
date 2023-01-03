@@ -3,20 +3,21 @@ import React from 'react';
 type State = {
   keyPressed: string;
 };
+
 export class App extends React.Component<{}, State> {
   state = {
-    keyPressed: '',
+    keyPressed: "",
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.Key);
+    document.addEventListener("keyup", this.handleKeypress);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.Key);
+    document.removeEventListener("keyup", this.handleKeypress);
   }
 
-  Key = (event: KeyboardEvent) => {
+  handleKeypress = (event: KeyboardEvent) => {
     this.setState({
       keyPressed: event.key,
     });
@@ -29,8 +30,8 @@ export class App extends React.Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {keyPressed
-            ? (`The last pressed key is [${keyPressed}]`)
-            : ('Nothing was pressed yet')}
+            ? `The last pressed key is [${keyPressed}]`
+            : "Nothing was pressed yet"}
         </p>
       </div>
     );
