@@ -1,19 +1,19 @@
 import { Component } from 'react';
 
 type State = {
-  pressedKey: string | boolean,
+  pressedKey: string,
 };
 
 export class App extends Component<{}, State> {
   state = {
-    pressedKey: false,
+    pressedKey: '',
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handleDocumentKeyUp);
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handleDocumentKeyUp);
   }
 
@@ -29,7 +29,7 @@ export class App extends Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey === false
+          {pressedKey.length === 0
             ? 'Nothing was pressed yet'
             : `The last pressed key is [${pressedKey}]`}
         </p>
