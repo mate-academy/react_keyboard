@@ -1,18 +1,16 @@
 import React from 'react';
 
-type AppProps = {};
-
 type AppState = {
   pressedKey: string;
 };
 
-export class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<{}, AppState> {
   state = {
     pressedKey: '',
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (e) => this.keyUpHandler(e));
+    document.addEventListener('keyup', this.keyUpHandler);
   }
 
   componentWillUnmount() {
