@@ -3,27 +3,28 @@ import React from 'react';
 export class App extends React.Component {
   state = {
     lastKey: '',
-    listener: (event: KeyboardEvent) => {
-      this.setState({ lastKey: event.key });
-    },
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.state.listener);
+    document.addEventListener('keyup', this.keyBoardListener);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.state.listener);
+    document.removeEventListener('keyup', this.keyBoardListener);
   }
+
+  keyBoardListener = (event: KeyboardEvent) => {
+    this.setState({ lastKey: event.key });
+  };
 
   render() {
     return (
-      <div
-        className="App"
-      >
-        {this.state.lastKey
-          ? <p className="App__message">{`The last pressed key is [${this.state.lastKey}]`}</p>
-          : <p className="App__message">Nothing was pressed yet</p>}
+      <div className="App">
+        <p className="App__message">
+          {this.state.lastKey
+            ? `The last pressed key is [${this.state.lastKey}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
