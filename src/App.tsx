@@ -1,5 +1,7 @@
 import React from 'react';
 
+import 'bulma/css/bulma.css';
+
 type State = {
   message: string;
 };
@@ -25,8 +27,8 @@ export class App extends React.Component<{}, State> {
     const { message } = this.state;
 
     return (
-      <div className="App">
-        <p className="App__message">
+      <div className="App button">
+        <p className="App__message notification is-info is-light">
           {message}
         </p>
       </div>
