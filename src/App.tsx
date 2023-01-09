@@ -10,26 +10,27 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ key: event.key });
-    });
+    document.addEventListener('keyup', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ key: event.key });
-    });
+    document.removeEventListener('keyup', this.handleClick);
   }
 
+  handleClick = (event: KeyboardEvent) => {
+    this.setState({ key: event.key });
+  };
+
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
-        {
-          this.state.key
-          // eslint-disable-next-line
-            ? <p className="App__message">The last pressed key is{`[${this.state.key}]`}</p>
-            : <p>Nothing was pressed yet</p>
-        }
+        <p className="App__message">
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
