@@ -1,7 +1,7 @@
 import React from 'react';
 
 type State = {
-  message: string | null;
+  message: string;
 };
 
 export class App extends React.Component<{}, State> {
@@ -10,14 +10,14 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.pressedKey);
+    document.addEventListener('keyup', this.setMessage);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.pressedKey);
+    document.removeEventListener('keyup', this.setMessage);
   }
 
-  pressedKey = (event: KeyboardEvent) => {
+  setMessage = (event: KeyboardEvent) => {
     this.setState({ message: `The last pressed key is [${event.key}]` });
   };
 
