@@ -18,7 +18,7 @@ export class App extends Component <{}, State> {
   }
 
   pressedKeyValue = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `The last pressed key is ${event.key}` });
+    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
   };
 
   render() {
