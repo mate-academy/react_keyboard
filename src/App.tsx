@@ -14,7 +14,7 @@ export class App extends Component<{}, State> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.onKeyDown);
+    document.removeEventListener('keyup', this.onKeyDown);
   }
 
   onKeyDown = (event:KeyboardEvent) => {
@@ -25,11 +25,13 @@ export class App extends Component<{}, State> {
     const { pressedKey } = this.state;
 
     return (
-      <p className="App__message">
-        {pressedKey
-          ? `The last pressed key is [${pressedKey}]`
-          : 'Nothing was pressed yet'}
-      </p>
+      <div className="App">
+        <p className="App__message">
+          {pressedKey
+            ? `The last pressed key is [${pressedKey}]`
+            : 'Nothing was pressed yet'}
+        </p>
+      </div>
     );
   }
 }
