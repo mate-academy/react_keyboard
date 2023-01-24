@@ -17,15 +17,11 @@ export const App: React.FC = () => {
     <div className="App">
       {/* Keep this input for tests */}
       <input type="text" className="hidden" />
-      {keyPressed
-        ? (
-          <p className="App__message">
-            The last pressed key is [
-            {keyPressed}
-            ]
-          </p>
-        )
-        : <p className="App__message">Nothing was pressed yet</p>}
+      <p className="App__message">
+        {keyPressed
+          ? `The last pressed key is[${keyPressed}]`
+          : 'Nothing was pressed yet'}
+      </p>
     </div>
   );
 };
