@@ -23,7 +23,7 @@ export class App extends Component<{}, Clock> {
 
   render() {
     const { pressedKey } = this.state;
-    const message = pressedKey ? `The last pressed key is ${pressedKey}` : 'Nothing was pressed yet';
+    const message = pressedKey ? `The last pressed key is [${pressedKey}]` : 'Nothing was pressed yet';
 
     return (
       <div className="App">
