@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import React from 'react';
 
 interface AppState {
   pressedKey: string | null
 }
 
-export class App extends Component<{}, AppState> {
+export class App extends React.Component<{}, AppState> {
   state = {
     pressedKey: null,
   };
