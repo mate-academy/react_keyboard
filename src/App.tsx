@@ -1,12 +1,12 @@
 import React from 'react';
 
 type State = {
-  pressedButton: string | boolean;
+  pressedButton: string;
 };
 
 export class App extends React.Component<{}, State> {
   state = {
-    pressedButton: false,
+    pressedButton: '',
   };
 
   componentDidMount() {
