@@ -14,13 +14,13 @@ export class App extends React.Component<{}, State> {
   }
 
   componentDidMount() {
-    this.handleClickButton();
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
+      this.handleClickButton(event);
+    });
   }
 
-  handleClickButton() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ text: `The last pressed key is [${event.key}]` });
-    });
+  handleClickButton(event: KeyboardEvent) {
+    this.setState({ text: `The last pressed key is [${event.key}]` });
   }
 
   render() {
