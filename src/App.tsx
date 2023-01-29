@@ -6,17 +6,19 @@ type State = {
 
 export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
-    text: 'Nothing was pressed yet',
+    text: '',
   };
 
-  UNSAFE_componentWillMount() {
-    document.removeEventListener('keyup', this.handleClickButton);
-  }
-
   componentDidMount() {
+    this.setState({ text: 'Nothing was pressed yet' });
+
     document.addEventListener('keyup', (event: KeyboardEvent) => {
       this.handleClickButton(event);
     });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleClickButton);
   }
 
   handleClickButton(event: KeyboardEvent) {
