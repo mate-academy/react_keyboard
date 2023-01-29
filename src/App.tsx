@@ -24,7 +24,7 @@ export class App extends Component<{}, State> {
 
   render() {
     return (
-      <div>
+      <div className="App__message">
         <p>{this.state.pressedKey}</p>
       </div>
     );
