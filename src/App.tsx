@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
-type State = {
+interface State {
   pressedKey: string;
-};
+}
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
@@ -10,14 +10,14 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyHandler);
+    document.addEventListener('keyup', this.handlePressedKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.keyHandler);
+    document.removeEventListener('keyup', this.handlePressedKey);
   }
 
-  keyHandler = (event: KeyboardEvent) => {
+  handlePressedKey = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
