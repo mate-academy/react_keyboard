@@ -12,10 +12,16 @@ export class App extends React.Component<{}, State> {
   message = 'Nothing was pressed yet';
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ key: event.key });
-    });
+    document.addEventListener('keyup', this.handleClick);
   }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleClick);
+  }
+
+  handleClick = (event: KeyboardEvent) => {
+    this.setState({ key: event.key });
+  };
 
   render() {
     const { key } = this.state;
