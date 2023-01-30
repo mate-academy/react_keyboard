@@ -1,13 +1,11 @@
 import { Component } from 'react';
 
 type State = {
-  // isPressedKey: boolean
   currentKey: string,
 };
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    // isPressedKey: false,
     currentKey: '',
   };
 
@@ -21,7 +19,6 @@ export class App extends Component<{}, State> {
 
   handlePress = (event: KeyboardEvent) => {
     this.setState({
-      // isPressedKey: true,
       currentKey: event.key,
     });
   };
