@@ -22,11 +22,13 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
+    const { pressedButton } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          { this.state.pressedButton
-            ? `The last pressed key is [${this.state.pressedButton}]`
+          { pressedButton
+            ? `The last pressed key is [${pressedButton}]`
             : 'Nothing was pressed yet' }
         </p>
       </div>
