@@ -4,8 +4,8 @@ type State = {
   pressedKey: string,
 };
 
-export class App extends Component {
-  state: State = {
+export class App extends Component<{}, State> {
+  state = {
     pressedKey: '',
   };
 
@@ -27,9 +27,9 @@ export class App extends Component {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey === ''
-            ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey}]`}
+          {pressedKey
+            ? `The last pressed key is [${pressedKey}]`
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
