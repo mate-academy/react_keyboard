@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  previous: string,
+  pressedButton: string,
 };
 
 export class App extends Component<{}, State> {
   state = {
-    previous: '',
+    pressedButton: '',
   };
 
   componentDidMount() {
@@ -18,15 +18,15 @@ export class App extends Component<{}, State> {
   }
 
   handleDocClick = (ev: KeyboardEvent) => {
-    this.setState({ previous: ev.key });
+    this.setState({ pressedButton: ev.key });
   };
 
   render() {
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.previous
-            ? `The last pressed key is [${this.state.previous}]`
+          {this.state.pressedButton
+            ? `The last pressed key is [${this.state.pressedButton}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
