@@ -26,11 +26,13 @@ export class App extends React.Component {
 
     return (
       <div className="App">
-        {
-          !(key)
-            ? <p className="App__message">Nothing was pressed yet</p>
-            : <p className="App__message">{`The last pressed key is [${key}]`}</p>
-        }
+        <p className="App__message">
+          {
+            !(key)
+              ? 'Nothing was pressed yet'
+              : `The last pressed key is [${key}]`
+          }
+        </p>
       </div>
     );
   }
