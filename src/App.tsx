@@ -16,6 +16,12 @@ export class App extends React.Component<{}, State> {
     });
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keydown', (event: KeyboardEvent) => {
+      this.setState({ pressedKey: event.key });
+    });
+  }
+
   render() {
     return (
       <div className="App">
