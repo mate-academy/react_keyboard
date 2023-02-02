@@ -6,12 +6,10 @@ type State = {
 
 export class App extends Component<{}, State> {
   state = {
-    phrase: '',
+    phrase: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
-    this.setState({ phrase: 'Nothing was pressed yet' });
-
     document.addEventListener('keydown', (event: KeyboardEvent) => {
       this.handleClickButton(event);
     });
