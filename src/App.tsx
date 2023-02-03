@@ -1,4 +1,3 @@
-//  import { prependOnceListener } from 'process';
 import React from 'react';
 
 type State = {
@@ -11,16 +10,16 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.addEventListener('keydown', this.keyPress);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.removeEventListener('keydown', this.keyPress);
   }
+
+  keyPress = (action: KeyboardEvent) => {
+    this.setState({ pressedKey: action.key });
+  };
 
   render() {
     return (
