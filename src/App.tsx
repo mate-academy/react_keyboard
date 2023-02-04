@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 
 type State = {
   pressedKey: string,
 };
 
-export class App extends React.Component<{}, State> {
-  state = {
+export class App extends Component<{}, State> {
+  state: Readonly<State> = {
     pressedKey: 'Nothing was pressed yet',
   };
 
@@ -22,9 +22,11 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
-        <p className="App__message">{this.state.pressedKey}</p>
+        <p className="App__message">{pressedKey}</p>
       </div>
     );
   }
