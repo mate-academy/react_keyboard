@@ -6,7 +6,7 @@ type State = {
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
   componentDidMount() {
@@ -26,7 +26,9 @@ export class App extends Component<{}, State> {
 
     return (
       <div className="App">
-        <p className="App__message">{pressedKey}</p>
+        <p className="App__message">
+          {pressedKey || 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
