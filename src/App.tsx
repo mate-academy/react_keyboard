@@ -10,14 +10,14 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyboardHandler);
+    document.addEventListener('keyup', this.handleKeyboard);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.keyboardHandler);
+    document.removeEventListener('keyup', this.handleKeyboard);
   }
 
-  keyboardHandler = (event: KeyboardEvent) => {
+  handleKeyboard = (event: KeyboardEvent) => {
     this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
   };
 
