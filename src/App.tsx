@@ -26,7 +26,7 @@ export class App extends React.Component<{}, State> {
   render() {
     const { pressedKey } = this.state;
     const textContent
-    = pressedKey === ''
+    = !pressedKey
       ? 'Nothing was pressed yet'
       : `The last pressed key is [${pressedKey}]`;
 
