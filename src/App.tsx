@@ -2,7 +2,7 @@ import React from 'react';
 
 export class App extends React.Component {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: null,
   };
 
   // eslint-disable-next-line react/sort-comp
@@ -19,6 +19,10 @@ export class App extends React.Component {
   }
 
   render() {
+    if (!this.state.pressedKey) {
+      this.setState({ pressedKey: 'Nothing was pressed yet' });
+    }
+
     return (
       <div className="App">
         <p className="App__message">{this.state.pressedKey}</p>
