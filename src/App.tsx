@@ -4,7 +4,7 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends Component<State> {
+export class App extends Component<{}, State> {
   state = {
     pressedKey: 'Nothing was pressed yet',
   };
