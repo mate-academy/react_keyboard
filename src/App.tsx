@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 export class App extends Component {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    message: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
@@ -15,16 +15,16 @@ export class App extends Component {
 
   onClick = (e: KeyboardEvent) => {
     this.setState({
-      pressedKey: `The last pressed key is [${e.key}]`,
+      message: `The last pressed key is [${e.key}]`,
     });
   };
 
   render() {
-    const { pressedKey } = this.state;
+    const { message } = this.state;
 
     return (
       <div className="App">
-        <p className="App__message">{pressedKey}</p>
+        <p className="App__message">{message}</p>
       </div>
     );
   }
