@@ -15,7 +15,7 @@ export class App extends Component {
 
   onClick = (e: KeyboardEvent) => {
     this.setState({
-      pressedKey: e.key,
+      pressedKey: `The last pressed key is [${e.key}]`,
     });
   };
 
@@ -24,7 +24,7 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <p className="App__message">{`The last pressed key is [${pressedKey}]`}</p>
+        <p className="App__message">{pressedKey}</p>
       </div>
     );
   }
