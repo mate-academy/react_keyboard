@@ -11,7 +11,7 @@ Make the `App` a class component with `pressedKey` in the `state`.
 - use `componentDidMount` to add `keyup` handler:
     ```ts
     // DON'T import KeyboardEvent from React, because it is a regular event
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
+    document.addEventListener('keyup', (event: KeyboardEvent) =>git s {
       console.log(event.key);
     });
     ```
@@ -22,4 +22,4 @@ Make the `App` a class component with `pressedKey` in the `state`.
 - Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
 - Use the [React TypeScript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript).
 - Open one more terminal and run tests with `npm test` to ensure your solution is correct.
-- Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_keyboard/) and add it to the PR description.
+- Replace `<your_account>` with your Github username in the [DEMO LINK](https://skomskiy.github.io/react_keyboard/) and add it to the PR description.
