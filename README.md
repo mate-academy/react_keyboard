@@ -11,7 +11,7 @@ Make the `App` a class component with `pressedKey` in the `state`.
 - use `componentDidMount` to add `keyup` handler:
     ```ts
     // DON'T import KeyboardEvent from React, because it is a regular event
-    document.addEventListener('keyup', (event: KeyboardEvent) =>git s {
+    document.addEventListener('keyup', (event: KeyboardEvent) => {
       console.log(event.key);
     });
     ```
