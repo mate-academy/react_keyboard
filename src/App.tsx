@@ -10,17 +10,15 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.ListenerTypeKey());
+    document.addEventListener('keyup', this.ListenerTypeKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.ListenerTypeKey());
+    document.removeEventListener('keyup', this.ListenerTypeKey);
   }
 
-  ListenerTypeKey = ():(event: KeyboardEvent) => void => {
-    return (event: KeyboardEvent) => {
-      this.setState({ key: event.key });
-    };
+  ListenerTypeKey = (event: KeyboardEvent) => {
+    this.setState({ key: event.key });
   };
 
   render() {
