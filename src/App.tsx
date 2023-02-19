@@ -8,7 +8,7 @@ export class App extends React.Component {
   componentDidMount() {
     document.addEventListener('keyup', this.handleClick);
   }
-  
+
   componentWillUnmount() {
     document.removeEventListener('keyup', this.handleClick);
   }
