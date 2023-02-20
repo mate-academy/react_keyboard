@@ -10,14 +10,14 @@ export class App extends Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.ListenerTypeKey);
+    document.addEventListener('keyup', this.handleKeyPressed);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.ListenerTypeKey);
+    document.removeEventListener('keyup', this.handleKeyPressed);
   }
 
-  ListenerTypeKey = (event: KeyboardEvent) => {
+  handleKeyPressed = (event: KeyboardEvent) => {
     this.setState({ key: event.key });
   };
 
@@ -26,9 +26,9 @@ export class App extends Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {
-            !this.state.key
-              ? 'Nothing was pressed yet'
-              : `The last pressed key is [${this.state.key}]`
+            this.state.key
+              ? `The last pressed key is [${this.state.key}]`
+              : 'Nothing was pressed yet'
           }
         </p>
       </div>
