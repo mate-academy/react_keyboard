@@ -6,13 +6,12 @@ type State = {
 };
 
 export class App extends Component<{}, State> {
+  state = {
+    pressedKey: '',
+  };
+
   constructor(props: {}) {
     super(props);
-
-    // eslint-disable-next-line react/state-in-constructor
-    this.state = {
-      pressedKey: '',
-    };
 
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
