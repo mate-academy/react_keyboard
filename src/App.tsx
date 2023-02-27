@@ -1,6 +1,10 @@
 import React from 'react';
 
-export class App extends React.Component {
+type State = {
+  pressButton: number | string;
+};
+
+export class App extends React.Component<{}, State> {
   state = {
     pressButton: 0,
   };
@@ -19,7 +23,7 @@ export class App extends React.Component {
 
   render() {
     const { pressButton } = this.state;
-    const text = pressButton === 0
+    const text = !pressButton
       ? 'Nothing was pressed yet'
       : `The last pressed key is [${pressButton}]`;
 
