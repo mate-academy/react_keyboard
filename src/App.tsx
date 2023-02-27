@@ -1,13 +1,8 @@
 import React from 'react';
 
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
 export class App extends React.Component {
   state = {
-    key: 'Nothing',
+    key: null,
   };
 
   componentDidMount() {
@@ -23,23 +18,14 @@ export class App extends React.Component {
   }
 
   render() {
-    if (this.state.key === 'Nothing') {
-      return (
-        <div className="App">
-          <p className="App__message">
-            Nothing was pressed yet
-          </p>
-        </div>
-      );
-    }
-
     return (
       <div className="App">
         <p className="App__message">
-          The last pressed key is
-          {' '}
-          {this.state.key}
+          {this.state.key
+            ? `The last pressed key is [${this.state.key}]`
+            : 'Nothing was pressed yet'}
         </p>
+
       </div>
     );
   }
