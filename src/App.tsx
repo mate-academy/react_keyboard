@@ -18,7 +18,7 @@ export class App extends Component<{}, State> {
   }
 
   handleClick = (event: KeyboardEvent) => {
-    this.setState({ key: `The last pressed key is  [${event.key}]` });
+    this.setState({ key: `The last pressed key is [${event.key}]` });
   };
 
   render() {
