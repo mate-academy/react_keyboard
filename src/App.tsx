@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  key: string | null;
+  key: string;
 };
 
 export class App extends Component<{}, State> {
   state = {
-    key: null,
+    key: '',
   };
 
   componentDidMount(): void {
