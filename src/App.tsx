@@ -5,7 +5,7 @@ interface State {
 }
 
 export class App extends Component<{}, State> {
-  state: Readonly<State> = {
+  state: State = {
     pressedKey: null,
   };
 
