@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 interface State {
-  pressedKey: string | null
+  pressedKey: string
 }
 
 export class App extends Component<{}, State> {
