@@ -6,7 +6,7 @@ interface State {
 
 export class App extends Component<{}, State> {
   state: State = {
-    pressedKey: null,
+    pressedKey: '',
   };
 
   componentDidMount() {
