@@ -1,7 +1,8 @@
 import React from 'react';
+import { PushButton } from './components/PushButton';
 
 export const App: React.FC = () => (
   <div className="App">
-    <p className="App__message">The last pressed key is [Enter]</p>
+    <PushButton />
   </div>
 );
