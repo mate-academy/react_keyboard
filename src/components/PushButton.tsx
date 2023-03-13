@@ -1,19 +1,19 @@
-import React from 'react';
+import { Component} from 'react';
 
 type State = {
   pushedButton: string;
 };
 
-export class PushButton extends React.Component<{}, State> {
+export class PushButton extends Component<{}, State> {
   state = {
     pushedButton: 'Nothing was pressed yet',
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     document.addEventListener('keyup', this.KeyboardsListener);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     document.removeEventListener('keyup', this.KeyboardsListener);
   }
 
