@@ -15,7 +15,7 @@ export class App extends React.Component {
 
   handleKeyUp = (event: KeyboardEvent): void => {
     this.setState({
-      keyMessage: `The last pressed key is ${event.key}`,
+      keyMessage: `The last pressed key is [${event.key}]`,
     });
   };
 
