@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 
 type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component {
+export class App extends Component<{}, State> {
   state: State = {
     pressedKey: '',
   };
