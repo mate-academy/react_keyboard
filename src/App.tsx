@@ -22,9 +22,13 @@ export class App extends Component {
 
     return (
       <div className="App">
-        {currentKey
-          ? <p className="App__message">{`The last pressed key is [${currentKey}]`}</p>
-          : <p>Nothing was pressed yet</p>}
+        <p className="App__message">
+          {
+            currentKey
+              ? `The last pressed key is [${currentKey}]`
+              : 'Nothing was pressed yet'
+          }
+        </p>
       </div>
     );
   }
