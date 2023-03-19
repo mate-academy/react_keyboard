@@ -1,23 +1,23 @@
 import React from 'react';
 
 type State = {
-  pressedKey: string | undefined,
+  pressedKey: string | null,
 };
 
 export class App extends React.Component<{}, State> {
   state = {
-    pressedKey: undefined,
+    pressedKey: null,
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.handleDocumentClick);
+    document.addEventListener('keyup', this.handleDocumentPressedKey);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.handleDocumentClick);
+    document.removeEventListener('keyup', this.handleDocumentPressedKey);
   }
 
-  handleDocumentClick = (event: KeyboardEvent) => {
+  handleDocumentPressedKey = (event: KeyboardEvent) => {
     this.setState({
       pressedKey: event.key,
     });
