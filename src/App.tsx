@@ -3,25 +3,33 @@ import React from 'react';
 type Props = {};
 
 type State = {
-  x: string;
+  pressedKey: string;
 };
 
 export class App extends React.Component<Props, State> {
   state = {
-    x: 'key',
+    pressedKey: 'key',
   };
 
   componentDidMount() {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ x: event.key });
+      this.setState({ pressedKey: event.key });
     });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.componentDidMount);
   }
 
   render(): React.ReactNode {
     return (
       <div className="App">
         <p className="App__message">
-          {`The last pressed key is [${this.state.x}]`}
+          {this.state.pressedKey === 'key' ? (
+            'Nothing was pressed yet'
+          ) : (
+            `The last pressed key is [${this.state.pressedKey}]`
+          )}
         </p>
       </div>
     );
