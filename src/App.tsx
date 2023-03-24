@@ -1,5 +1,4 @@
 /* eslint-disable react/sort-comp */
-/* eslint-disable max-len */
 import { Component } from 'react';
 
 type State = {
