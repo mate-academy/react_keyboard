@@ -1,7 +1,7 @@
 import React from 'react';
 
 export class App extends React.Component {
-  state = {
+  readonly state = {
     pressedKey: null,
   };
 
@@ -14,19 +14,19 @@ export class App extends React.Component {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    const k = event.key;
+    const { key } = event;
 
-    this.setState({ pressedKey: k });
+    this.setState({ pressedKey: key });
   };
 
   render() {
-    const { pressedKey: key } = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {key !== null
-            ? `The last pressed key is [${key}]`
+          { pressedKey
+            ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
