@@ -23,15 +23,14 @@ export class App extends Component<{}, State> {
 
   render() {
     const { pressedKey } = this.state;
+    const key = pressedKey
+      ? `The last pressed key is [${pressedKey}]`
+      : 'Nothing was pressed yet';
 
     return (
       <div className="App">
         <p className="App__message">
-          {
-            pressedKey
-              ? `The last pressed key is [${pressedKey}]`
-              : 'Nothing was pressed yet'
-          }
+          {key}
         </p>
       </div>
     );
