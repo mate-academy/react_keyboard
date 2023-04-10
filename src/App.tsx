@@ -1,7 +1,11 @@
 import { Component } from 'react';
 
-export class App extends Component {
-  state = {
+type State = {
+  key: string;
+}
+
+export class App extends Component<{}, State> {
+  state: Readonly<State> = {
     key: '',
   };
 
@@ -23,7 +27,7 @@ export class App extends Component {
     return (
       <div className="App">
         <p className="App__message">
-          { key ? `The last pressed key is ${key}` : "Nothing was pressed yet"}
+          { key !== '' ? `The last pressed key is [${key}]` : 'Nothing was pressed yet'}
         </p>
       </div>
     );
