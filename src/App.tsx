@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 
 interface State {
   key: null | string,
 }
 
-export class App extends React.PureComponent<{}, State> {
+export class App extends Component<{}, State> {
   state: Readonly<State> = {
     key: null,
   };
