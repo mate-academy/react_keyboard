@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  pressedKey: string;
+  pressedKey: string | null;
 };
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   componentDidMount(): void {
@@ -23,7 +23,7 @@ export class App extends Component<{}, State> {
 
   render() {
     const { pressedKey } = this.state;
-    const message = pressedKey.length > 0
+    const message = pressedKey
       ? `The last pressed key is [${pressedKey}]`
       : 'Nothing was pressed yet';
 
