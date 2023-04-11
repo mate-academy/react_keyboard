@@ -10,12 +10,18 @@ export class App extends React.PureComponent<{}, State> {
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      const { key } = event;
-
-      return this.setState({ key });
-    });
+    document.addEventListener('keyup', this.keyPressHandler);
   }
+
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.keyPressHandler);
+  }
+
+  keyPressHandler = (event: KeyboardEvent) => {
+    const { key } = event;
+
+    this.setState({ key });
+  };
 
   render() {
     const { key } = this.state;
