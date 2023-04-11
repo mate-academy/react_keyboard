@@ -5,7 +5,7 @@ interface State {
 }
 
 export class App extends React.PureComponent<{}, State> {
-  state = {
+  state: Readonly<State> = {
     key: null,
   };
 
