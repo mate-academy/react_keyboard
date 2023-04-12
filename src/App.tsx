@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 type State = {
-  pressedKey: string;
+  pressedKey: string | null;
 };
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   componentDidMount() {
