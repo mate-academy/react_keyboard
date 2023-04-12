@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 type State = {
   key: string;
 };
 
-export class App extends Component<{}, State> {
+export class App extends React.Component<{}, State> {
   state = {
     key: '',
   };
