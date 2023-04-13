@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 interface State {
-  key: null | string,
+  key: string | null,
 }
 
 export class App extends Component<{}, State> {
@@ -28,11 +28,13 @@ export class App extends Component<{}, State> {
 
     return (
       <div className="App">
-        {
-          !key
-            ? <p className="App__message">Nothing was pressed yet</p>
-            : <p className="App__message">{`The last pressed key is [${key}]`}</p>
-        }
+        <p className="App__message">
+          {
+            key
+              ? `${`The last pressed key is [${key}]`}`
+              : 'Nothing was pressed yet'
+          }
+        </p>
       </div>
     );
   }
