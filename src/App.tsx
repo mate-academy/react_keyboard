@@ -9,10 +9,6 @@ export class App extends React.Component {
     document.addEventListener('keyup', this.handlerFunc);
   }
 
-  componentDidUpdate(): void {
-    document.addEventListener('keyup', this.handlerFunc);
-  }
-
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handlerFunc);
   }
