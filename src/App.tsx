@@ -11,9 +11,9 @@ export class App extends React.Component<{}, State> {
 
   componentDidMount(): void {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ key: event.key});
+      this.setState({ key: event.key });
     });
-  };
+  }
 
   componentWillUnmount(): void {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
@@ -28,7 +28,7 @@ export class App extends React.Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {key
-            ? `The last pressed key is ${key}`
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
