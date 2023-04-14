@@ -12,30 +12,19 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (e: KeyboardEvent) => {
-      this.setState({
-        wasPresed: true,
-        keyPres: e.key,
-      });
-    });
+    document.addEventListener('keyup', this.handlePressKey.bind(this));
   }
 
   componentWillUnmount(): void {
-    document.addEventListener('keyup', (e: KeyboardEvent) => {
-      this.setState({
-        wasPresed: true,
-        keyPres: e.key,
-      });
-    });
+    document.addEventListener('keyup', this.handlePressKey.bind(this));
   }
 
-  // handlePressKey(e: KeyboardEvent) {
-  //   this.setState({
-  //     wasPresed: true,
-  //     keyPres: e.key,
-  //   });
-  // }
-  // => then I used  handlePressKey methot I got an error.
+  handlePressKey(e: KeyboardEvent) {
+    this.setState({
+      wasPresed: true,
+      keyPres: e.key,
+    });
+  }
 
   render() {
     return (
