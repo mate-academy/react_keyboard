@@ -5,8 +5,8 @@ type State = {
   pressedKey: string | null;
 };
 
-export class App extends React.Component<{}, State> {
-  state = {
+export class App extends React.Component {
+  state: Readonly<State> = {
     pressedKey: null,
   };
 
