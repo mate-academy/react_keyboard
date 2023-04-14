@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface State {
-  key: string;
+  pressedKey: string;
 }
 
-export class WhatIsPressed extends React.Component<{}, State> {
+export class App extends React.Component<{}, State> {
   state = {
-    key: 'Meta',
+    pressedKey: 'Meta',
   };
 
   componentDidMount() {
@@ -18,24 +18,20 @@ export class WhatIsPressed extends React.Component<{}, State> {
   }
 
   handleKeypress = (event: KeyboardEvent) => {
-    this.setState({ key: event.key });
+    this.setState({ pressedKey: event.key });
   };
 
   render() {
-    const { key } = this.state;
+    const { pressedKey } = this.state;
 
     return (
-      <p className="App__message">
-        {key === 'Meta'
-          ? 'Nothing was pressed yet'
-          : `The last pressed key is [${key}]`}
-      </p>
+      <div className="App">
+        <p className="App__message">
+          {pressedKey === 'Meta'
+            ? 'Nothing was pressed yet'
+            : `The last pressed key is [${pressedKey}]`}
+        </p>
+      </div>
     );
   }
 }
-
-export const App: React.FC = () => (
-  <div className="App">
-    <WhatIsPressed />
-  </div>
-);
