@@ -1,4 +1,3 @@
-// import { prependOnceListener } from 'process';
 import React from 'react';
 
 type State = {
