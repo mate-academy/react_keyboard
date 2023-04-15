@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 
 type State = {
   pressedKey: string | null;
 };
 
-export class App extends React.Component<{}, State> {
+export class App extends Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: null,
   };
