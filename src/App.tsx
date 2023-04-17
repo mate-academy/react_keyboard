@@ -9,7 +9,7 @@ export class App extends React.Component {
     pressedKey: null,
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handlePressKey);
   }
 
