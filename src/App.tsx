@@ -18,7 +18,9 @@ export class App extends Component<{}, State> {
   }
 
   keyPresser = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    this.setState({
+      pressedKey: event.key
+    });
   };
 
   render() {
