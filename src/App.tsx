@@ -13,7 +13,7 @@ export class App extends React.Component {
     document.addEventListener('keyup', this.handlePressKey);
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handlePressKey);
   }
 
