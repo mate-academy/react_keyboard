@@ -1,38 +1,37 @@
 import React from 'react';
 
 type State = {
-  wasPresed: boolean;
-  keyPres: null | string;
+  keyPress: null | string;
 };
 
 export class App extends React.Component<{}, State> {
   state = {
-    wasPresed: false,
-    keyPres: null,
+    keyPress: null,
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handlePressKey.bind(this));
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.addEventListener('keyup', this.handlePressKey.bind(this));
   }
 
   handlePressKey(e: KeyboardEvent) {
     this.setState({
-      wasPresed: true,
-      keyPres: e.key,
+      keyPress: e.key,
     });
   }
 
   render() {
+    const { keyPress } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {
-            this.state.wasPresed
-              ? `The last pressed key is [${this.state.keyPres}]`
+            keyPress
+              ? `The last pressed key is [${keyPress}]`
               : 'Nothing was pressed yet'
           }
         </p>
