@@ -1,19 +1,19 @@
 import { Component } from 'react';
 
 type State = {
-  pressedKey: string;
+  pressedKey: string | null;
 };
 
 export class App extends Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleDalateClick);
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handleDalateClick);
   }
 
