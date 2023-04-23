@@ -1,7 +1,7 @@
 import React from 'react';
 
 type State = {
-  key: string;
+  key: string | null;
 };
 
 export class App extends React.Component<{}, State> {
@@ -10,21 +10,23 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (e) => {
-      this.setState({ key: e.key });
+    document.addEventListener('keyup', (event) => {
+      this.setState({ key: event.key });
     });
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.setState, false);
+    document.removeEventListener('keyup', this.setState);
   }
 
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {this.state.key
-            ? `The last pressed key is [${this.state.key}]`
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
