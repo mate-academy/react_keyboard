@@ -30,7 +30,7 @@ export class KeyPressed extends Component {
 
     return (
       <>
-        {message2.length > 0 ? `The last pressed key is ${message2}` : 'Nothing was pressed yet'}
+        {message2.length > 0 ? `The last pressed key is [${message2}]` : 'Nothing was pressed yet'}
       </>
     );
   }
