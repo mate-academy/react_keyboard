@@ -10,11 +10,6 @@ export class KeyPressed extends Component {
       (event: KeyboardEvent) => this.keyBoardHandler(event));
   }
 
-  componentDidUpdate() {
-    document.addEventListener('keyup',
-      (event: KeyboardEvent) => this.keyBoardHandler(event));
-  }
-
   componentWillUnmount() {
     document.removeEventListener('keyup', this.keyBoardHandler);
   }
@@ -26,11 +21,11 @@ export class KeyPressed extends Component {
   };
 
   render() {
-    const message2 = this.state.keyPressed;
+    const { keyPressed } = this.state;
 
     return (
       <>
-        {message2.length > 0 ? `The last pressed key is [${message2}]` : 'Nothing was pressed yet'}
+        {keyPressed.length > 0 ? `The last pressed key is [${keyPressed}]` : 'Nothing was pressed yet'}
       </>
     );
   }
