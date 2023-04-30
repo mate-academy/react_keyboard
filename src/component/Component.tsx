@@ -1,14 +1,25 @@
 import { Component, ReactNode } from 'react';
 
-export class Key extends Component {
+type StateType = {
+  message: string;
+};
+
+export class Key extends Component<{}, StateType> {
   state = {
     message: 'Nothing was pressed yet',
   };
 
+  // eslint-disable-next-line react/sort-comp
+  handelDocumentKeyClick = (event: KeyboardEvent) => {
+    this.setState({ message: `The last pressed key is [${event.key}]` });
+  };
+
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ message: `The last pressed key is [${event.key}]` });
-    });
+    document.addEventListener('keyup', this.handelDocumentKeyClick);
+  }
+
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.handelDocumentKeyClick);
   }
 
   render(): ReactNode {
