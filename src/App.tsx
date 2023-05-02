@@ -1,11 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
-type State = {
+interface AppState {
   pressedKey: string | null;
-};
+}
 
-export class App extends React.Component<{}, State> {
+export class App extends React.Component<{}, AppState> {
   state = {
     pressedKey: null,
   };
