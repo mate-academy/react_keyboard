@@ -1,8 +1,8 @@
 import React from 'react';
 
-type State = {
+interface State {
   key: string | null,
-};
+}
 
 export class App extends React.Component<{}, State> {
   state = {
@@ -22,13 +22,13 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
-    const condition = this.state.key;
+    const { key } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {condition
-            ? `The last pressed key is [${condition}]`
+          {key
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
