@@ -5,19 +5,19 @@ interface State {
 }
 
 export class App extends React.Component<{}, State> {
-  state = {
+  state: State = {
     pressedKey: null,
   };
 
   componentDidMount() {
-    document.addEventListener('keypress', this.changeKeyUp);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.changeKeyUp);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  changeKeyUp = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
