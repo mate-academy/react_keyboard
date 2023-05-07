@@ -1,29 +1,31 @@
 import { Component } from 'react';
 
-type Message = {
-  message: string,
+type State = {
+  key: string | null,
 };
 
-export class App extends Component<{}, Message> {
+export class App extends Component<{}, State> {
   state = {
-    message: 'Nothing was pressed yet',
+    key: null,
   };
 
   componentDidMount(): void {
     document.addEventListener('keyup', (e) => {
       const keyUp = e.key;
-      const message = `The last pressed key is ${keyUp}`;
+      const key = `The last pressed key is ${keyUp}`;
 
-      this.setState({ message });
+      this.setState({ key });
     });
   }
 
   render() {
-    const { message } = this.state;
+    const { key } = this.state;
 
     return (
       <div className="App">
-        <p className="App__message">{message}</p>
+        <p className="App__message">
+          {key === null ? 'nothing was pressed yet' : key }
+        </p>
       </div>
     );
   }
