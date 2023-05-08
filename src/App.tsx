@@ -1,8 +1,8 @@
 import React from 'react';
 
-type State = {
+interface State {
   info: string | null;
-};
+}
 
 export class App extends React.Component <{}, State> {
   state = {
