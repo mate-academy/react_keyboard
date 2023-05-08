@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 
 type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<{}, State> {
-  state = {
+export class App extends Component<{}, State> {
+  state: Readonly<State> = {
     pressedKey: '',
   };
 
@@ -25,7 +25,7 @@ export class App extends React.Component<{}, State> {
     const { pressedKey } = this.state;
 
     const message = pressedKey
-      ? `The last pressed key is ${pressedKey}`
+      ? `The last pressed key is [${pressedKey}]`
       : 'Nothing was pressed yet';
 
     return (
