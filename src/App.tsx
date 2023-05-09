@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 
-export class App extends React.Component {
+export class App extends Component {
   state = {
-    lastKeyAp: 'Nothing was pressed yet',
+    lastKeyPressed: '',
   };
 
   componentDidMount() {
@@ -14,18 +14,16 @@ export class App extends React.Component {
   }
 
   keyPress = (event: KeyboardEvent) => {
-    this.setState({ lastKeyAp: event.key });
+    this.setState({ lastKeyPressed: event.key });
   };
 
   render() {
-    const { lastKeyAp } = this.state;
+    const { lastKeyPressed } = this.state;
 
     return (
       <div className="App">
-        <p className="App__message">{`The last pressed key is [${lastKeyAp}]`}</p>
+        <p className="App__message">{`The last pressed key is [${lastKeyPressed || 'Nothing was pressed yet'}]`}</p>
       </div>
     );
   }
 }
-
-export default App;
