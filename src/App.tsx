@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface State {
-  clickedKey: string | null;
+  pressedKey : string | null;
 }
 
 export class App extends React.Component<{}, State> {
-  state: State = {
-    clickedKey: null,
+  state = {
+    pressedKey: null,
   };
 
   componentDidMount() {
@@ -18,17 +18,17 @@ export class App extends React.Component<{}, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    this.setState({ clickedKey: event.key });
+    this.setState({ pressedKey: event.key });
   };
 
   render() {
-    const { clickedKey } = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {clickedKey
-            ? `The last pressed key is [${clickedKey}]`
+          {pressedKey
+            ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
