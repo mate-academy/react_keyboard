@@ -1,7 +1,13 @@
 import React from 'react';
 
-export class App extends React.Component {
-  state = {
+type Props = {};
+
+interface State {
+  pressedKey: string | null;
+}
+
+export class App extends React.Component<Props, State> {
+  state: Readonly<State> = {
     pressedKey: null,
   };
 
