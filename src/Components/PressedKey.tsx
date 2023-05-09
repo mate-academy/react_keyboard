@@ -32,7 +32,7 @@ export class PressedKey extends React.Component<{}, State> {
       <p className="App__message">
         {key === ''
           ? 'Nothing was pressed yet'
-          : `The last pressed key is [${key}]`}
+          : `The last pressed key is [${key}] `}
       </p>
     );
   }
