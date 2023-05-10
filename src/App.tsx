@@ -9,8 +9,6 @@ class KeyListener extends React.Component<{}, AppState> {
     pressedKey: '',
   };
 
-  introText = 'The last pressed key is [';
-
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyPress);
   }
@@ -24,10 +22,12 @@ class KeyListener extends React.Component<{}, AppState> {
   };
 
   render(): React.ReactNode {
+    const { pressedKey } = this.state;
+
     return (
       <>
-        {this.state.pressedKey
-          ? `The last pressed key is [${this.state.pressedKey}]`
+        {pressedKey
+          ? `The last pressed key is [${pressedKey}]`
           : 'Nothing was pressed yet'}
       </>
     );
