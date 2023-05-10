@@ -1,8 +1,8 @@
 import React from 'react';
 
-type State = {
+interface State {
   pressedKey: string | null;
-};
+}
 
 // eslint-disable-next-line
 export class App extends React.Component<{}, State> {
@@ -23,12 +23,14 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
           {
-            this.state.pressedKey
-              ? `The last pressed key is [${this.state.pressedKey}]`
+            pressedKey
+              ? `The last pressed key is [${pressedKey}]`
               : 'Nothing was pressed yet.'
           }
         </p>
