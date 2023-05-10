@@ -1,6 +1,10 @@
 import React from 'react';
 
-class KeyListener extends React.Component {
+interface AppState {
+  pressedKey: string,
+}
+
+class KeyListener extends React.Component<{}, AppState> {
   state = {
     pressedKey: '',
   };
@@ -16,11 +20,17 @@ class KeyListener extends React.Component {
   }
 
   handleKeyPress = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `${this.introText + event.key}]` });
+    this.setState({ pressedKey: event.key });
   };
 
   render(): React.ReactNode {
-    return <>{`${this.state.pressedKey || 'Nothing was pressed yet'}`}</>;
+    return (
+      <>
+        {this.state.pressedKey
+          ? `The last pressed key is [${this.state.pressedKey}]`
+          : 'Nothing was pressed yet'}
+      </>
+    );
   }
 }
 
