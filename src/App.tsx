@@ -4,7 +4,6 @@ interface State {
   pressedKey: string | null;
 }
 
-// eslint-disable-next-line
 export class App extends React.Component<{}, State> {
   state = {
     pressedKey: null,
@@ -31,7 +30,7 @@ export class App extends React.Component<{}, State> {
           {
             pressedKey
               ? `The last pressed key is [${pressedKey}]`
-              : 'Nothing was pressed yet.'
+              : 'Nothing was pressed yet'
           }
         </p>
       </div>
