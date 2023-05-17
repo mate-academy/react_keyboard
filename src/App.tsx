@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import React, { Key } from 'react';
 
-type State = {
+interface State {
   pressedKey: Key | null;
-};
+}
 
 export class App extends React.Component<{}, State> {
   state: State = {
@@ -12,24 +12,21 @@ export class App extends React.Component<{}, State> {
 
   componentDidMount() {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      console.log(event.key);
       this.setState({ pressedKey: event.key });
     });
   }
 
   componentWillUnmount() {
     document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      console.log(event.key);
+      this.setState({ pressedKey: event.key });
     });
   }
 
   render() {
     const { pressedKey } = this.state;
 
-    if (pressedKey) {
-      return <p>{`The last pressed key is [${pressedKey}]`}</p>;
-    }
-
-    return <p>Nothing was pressed yet</p>;
+    return pressedKey
+      ? <p>{`The last pressed key is [${pressedKey}]`}</p>
+      : <p>Nothing was pressed yet</p>;
   }
 }
