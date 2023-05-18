@@ -18,7 +18,6 @@ export class App extends Component<{}, State> {
   }
 
   handleKeyClick = (event: KeyboardEvent) => {
-    // console.log(event);
     this.setState({ logKey: event.key });
   };
 
