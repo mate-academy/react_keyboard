@@ -1,6 +1,6 @@
-import { Component } from 'react';
+import React from 'react';
 
-export class App extends Component {
+export class App extends React.Component {
   state = {
     pressedKey: null,
   };
