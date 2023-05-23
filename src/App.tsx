@@ -6,7 +6,7 @@ type State = {
 
 export class App extends Component<{}, State> {
   state = {
-    pressedKey: '',
+    pressedKey: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
@@ -17,9 +17,9 @@ export class App extends Component<{}, State> {
     document.removeEventListener('keyup', this.handleKeyup);
   }
 
-handleKeyup(event: KeyboardEvent) {
-  this.setState({ pressedKey: event.key });
-}
+  handleKeyup(event: KeyboardEvent) {
+    this.setState({ pressedKey: event.key });
+  }
 
   render() {
     return (
