@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props = {}; 
+type Props = {};
 
 type State = {
   pressedKey: string | null;
@@ -19,7 +19,7 @@ export class App extends React.Component< Props, State> {
     document.removeEventListener('keyup', this.handleKeyup);
   }
 
-  handleKeyup(event: KeyboardEvent) {
+  handleKeyup = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   }
 
