@@ -22,7 +22,7 @@ export class App extends Component<{}, State> {
     let { key, code } = e;
 
     if (code === 'Space') {
-      key = 'Space';
+      key = code;
     }
 
     this.setState({ pressedKey: key });
