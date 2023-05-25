@@ -18,13 +18,8 @@ export class App extends Component<{}, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    if (!event.key) {
-      this.setState({ pressedKey: null });
-    }
+      this.setState({ pressedKey: event.key || null});
 
-    if (event.key !== '') {
-      this.setState({ pressedKey: event.key });
-    }
   };
 
   render() {
