@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 type State = {
-  selectedKey: string;
+  selectedKey: string | null;
 };
 
 export class App extends Component<{}, State> {
   state = {
-    selectedKey: 'Nothing was pressed yet',
+    selectedKey: null,
   };
 
   componentDidMount() {
@@ -28,8 +28,8 @@ export class App extends Component<{}, State> {
       <div className="App">
         <p className="App__message">
           {
-            (currentKey === 'Nothing was pressed yet')
-              ? currentKey
+            (currentKey === null)
+              ? 'Nothing was pressed yet'
               : `The last pressed key is [${currentKey}]`
           }
         </p>
