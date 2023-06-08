@@ -5,21 +5,27 @@ type State = {
 };
 
 export class App extends Component<{}, State> {
-  state = {
+  state: Readonly<State> = {
     pressedKey: null,
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.addEventListener('keyup', this.handleKey);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: event.key });
-    });
+    document.removeEventListener('keyup', this.handleKey);
   }
+
+  handleKey = (event: KeyboardEvent) => {
+    let { key } = event;
+
+    if (event.code === 'Space') {
+      key = 'Space';
+    }
+
+    this.setState({ pressedKey: key });
+  };
 
   render() {
     const { pressedKey } = this.state;
