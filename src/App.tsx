@@ -6,7 +6,7 @@ type State = {
 
 export class App extends React.Component<{}, State> {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
   componentDidMount() {
@@ -19,7 +19,7 @@ export class App extends React.Component<{}, State> {
 
   handleDocumentClick = (event: KeyboardEvent) => {
     if (event.key) {
-      this.setState({ pressedKey: 'The last pressed key is [key]' });
+      this.setState({ pressedKey: 'The last pressed key is [event.key]' });
     }
   };
 
@@ -28,7 +28,11 @@ export class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        <p className="App__message">{ pressedKey }</p>
+        <p className="App__message">
+          { !pressedKey.length
+            ? 'Nothing was pressed yet'
+            : pressedKey}
+        </p>
       </div>
     );
   }
