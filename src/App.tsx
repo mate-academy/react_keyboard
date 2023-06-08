@@ -24,8 +24,12 @@ export class App extends Component<{}, State> {
   render() {
     const { key } = this.state;
 
-    return key
-      ? (<p>{`The last pressed key is [${key}]`}</p>)
-      : (<p>Nothing was pressed yet</p>);
+    const message = key
+      ? `The last pressed key is [${key}]`
+      : 'Nothing was pressed yet';
+
+    return (
+      <p className="App__message">{message}</p>
+    );
   }
 }
