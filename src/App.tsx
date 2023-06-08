@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
 
 type State = {
   pressedKey: string
@@ -17,7 +18,9 @@ export class App extends React.Component<{}, State> {
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+      this.setState({
+        pressedKey: `The last pressed key is [${event.key}]`,
+      });
     });
   }
 
@@ -27,7 +30,13 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          { pressedKey }
+          <Typography
+            variant="h5"
+            color="primary"
+            fontStyle="italic"
+          >
+            { pressedKey }
+          </Typography>
         </p>
       </div>
     );
