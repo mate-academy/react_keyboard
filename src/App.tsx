@@ -1,7 +1,11 @@
 import { Component } from 'react';
 
-export class App extends Component {
-  state = {
+type State = {
+  pressedKey: string | null,
+};
+
+export class App extends Component<{}, State> {
+  state: Readonly<State> = {
     pressedKey: null,
   };
 
@@ -15,6 +19,10 @@ export class App extends Component {
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
+
+    if (this.state.pressedKey === ' ') {
+      this.setState({ pressedKey: 'Space' });
+    }
   };
 
   render() {
