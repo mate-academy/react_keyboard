@@ -1,42 +1,35 @@
 import { Component } from 'react';
 
 type State = {
-  event: string | null;
+  pressedKey: string | null;
 };
 
 export class App extends Component<{}, State> {
-  state = {
-    event: null,
+  state: Readonly<State> = {
+    pressedKey: null,
   };
 
   componentDidMount() {
-    // console.log('This is component did mount');
-
-    document.addEventListener('keyup', (e) => {
-      // console.log(e); // 'a'
-      // console.log(e.key); // 'a'
-      this.setState({ event: e.key });
-    });
+    document.addEventListener('keyup', this.handleKeyup);
   }
 
   componentWillUnmount() {
-    const listener = (e: KeyboardEvent) => {
-      this.setState({ event: e.key });
-    };
-
-    document.removeEventListener('keyup', listener);
-    // console.log('this is component willUnMount');
+    document.removeEventListener('keyup', this.handleKeyup);
   }
 
+  handleKeyup = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  };
+
   render() {
-    // console.log('this is render');
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
           {
-            this.state.event
-              ? `The last pressed key is [${this.state.event}]`
+            pressedKey
+              ? `The last pressed key is [${pressedKey === ' ' ? 'Space' : pressedKey}]`
               : 'Nothing was pressed yet'
           }
 
