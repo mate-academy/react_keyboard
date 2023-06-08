@@ -30,8 +30,8 @@ export class App extends React.Component {
             keyPressed
               ? (
                 <>
-                  <span>The last pressed key is</span>
-                  <span className="App__key">{keyPressed}</span>
+                  <span>The last pressed key is </span>
+                  <span className="App__key">{`[${keyPressed}]`}</span>
                 </>
               )
               : 'Nothing was pressed yet'
