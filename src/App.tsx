@@ -11,18 +11,16 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
-    });
+    document.addEventListener('keyup', this.keyUpHandler);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        pressedKey: `The last pressed key is [${event.key}]`,
-      });
-    });
+    document.removeEventListener('keyup', this.keyUpHandler);
   }
+
+  keyUpHandler = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+  };
 
   render() {
     const { pressedKey } = this.state;
