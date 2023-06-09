@@ -2,7 +2,7 @@ import React from 'react';
 
 export class App extends React.Component {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: null,
   };
 
   componentDidMount() {
@@ -20,7 +20,9 @@ export class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <p className="App__message">{this.state.pressedKey}</p>
+        <p className="App__message">
+          {this.state.pressedKey || 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
