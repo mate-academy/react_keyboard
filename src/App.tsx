@@ -19,10 +19,6 @@ export class App extends React.Component<{}, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    if (!event.key) {
-      this.setState({ pressedKey: null });
-    }
-
     this.setState({ pressedKey: event.key });
   };
 
@@ -30,8 +26,8 @@ export class App extends React.Component<{}, State> {
     const { pressedKey } = this.state;
 
     return (
-      <div className="handleKey">
-        <p className="handleKey__info">
+      <div className="App">
+        <p className="App__message">
           {pressedKey
             ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
