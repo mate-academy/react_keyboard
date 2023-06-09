@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface State {
-  lastPressedKey: string;
+  lastPressedKey: string | null;
 }
 
 export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
-    lastPressedKey: '',
+    lastPressedKey: null,
   };
 
   componentDidMount() {
