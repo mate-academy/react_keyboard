@@ -18,11 +18,13 @@ export class App extends Component<{}, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    let { key } = event;
 
-    if (this.state.pressedKey === ' ') {
-      this.setState({ pressedKey: 'Space' });
+    if (event.code === 'Space') {
+      key = event.code;
     }
+
+    this.setState({ pressedKey: key });
   };
 
   render() {
