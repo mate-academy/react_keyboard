@@ -2,24 +2,24 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 
 type State = {
-  pressedKey: string
+  pressedKey: string | null;
 };
 
 export class App extends React.Component<{}, State> {
   state = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: null,
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.keyUpHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.keyUpHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  keyUpHandler = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+  handleKeyUp = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
   };
 
   render() {
@@ -33,7 +33,9 @@ export class App extends React.Component<{}, State> {
             color="primary"
             fontStyle="italic"
           >
-            { pressedKey }
+            {pressedKey
+              ? `The last pressed key is [${pressedKey}]`
+              : 'Nothing was pressed yet'}
           </Typography>
         </p>
       </div>
