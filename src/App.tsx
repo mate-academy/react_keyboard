@@ -1,23 +1,23 @@
 import { Component } from 'react';
 
 interface State {
-  key: string;
+  key: string | null;
 }
 
 export class App extends Component<{}, State> {
   state = {
-    key: '',
+    key: null,
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.keyboardHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.keyboardHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  keyboardHandler = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ key: event.key });
   };
 
