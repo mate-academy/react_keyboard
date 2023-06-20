@@ -6,20 +6,16 @@ export class App extends React.Component {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event) => {
-      this.handlerKeyUp(event);
-    });
+    document.addEventListener('keyup', this.handlerKeyUp);
   }
 
   componentDidUpdate() {
-    document.removeEventListener('keyup', (event) => {
-      this.handlerKeyUp(event);
-    });
+    document.removeEventListener('keyup', this.handlerKeyUp);
   }
 
-  handlerKeyUp(event: KeyboardEvent) {
+  handlerKeyUp = (event: KeyboardEvent) => {
     this.setState({ message: `The last pressed key is [${event.key}]` });
-  }
+  };
 
   render() {
     const { message } = this.state;
