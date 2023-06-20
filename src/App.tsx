@@ -22,16 +22,18 @@ export class App extends React.Component {
 
     return (
       <div className="App">
-        {pressedKey === null ? (
-          <p>Nothing was pressed yet</p>
-        ) : (
-          <p>
-            The last pressed key is
-            [
-            {pressedKey}
-            ]
-          </p>
-        )}
+        <section className="App__message">
+          {pressedKey === null ? (
+            <p>Nothing was pressed yet</p>
+          ) : (
+            <p>
+              The last pressed key is
+              [
+              {pressedKey}
+              ]
+            </p>
+          )}
+        </section>
       </div>
     );
   }
