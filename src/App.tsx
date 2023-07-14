@@ -4,7 +4,7 @@ type State = {
   lastKeyPressed: string
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component {
   state: State = {
     lastKeyPressed: '',
   };
