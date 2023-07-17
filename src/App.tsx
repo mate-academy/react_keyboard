@@ -36,7 +36,7 @@ export class App extends React.Component<{}, State> {
                 ]
               </p>
             )
-            : <p className="App__message">Nothing was pressed yet message</p>
+            : <p className="App__message">Nothing was pressed yet</p>
         }
       </div>
     );
