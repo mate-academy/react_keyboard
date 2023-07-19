@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { AppAsFC } from './AppAsFC/AppAsFC';
-
 export class App extends React.Component {
   state = {
     key: '',
@@ -29,8 +27,6 @@ export class App extends React.Component {
               : ('Nothing was pressed yet')}
           </p>
         </div>
-
-        <AppAsFC />
       </>
     );
   }
