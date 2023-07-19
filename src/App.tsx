@@ -13,14 +13,6 @@ export class App extends React.PureComponent {
     document.addEventListener('keyup', this.handleKeyPress);
   }
 
-  componentDidUpdate(prevState: Readonly<State>): boolean {
-    if (this.state.message !== prevState.message) {
-      return true;
-    }
-
-    return false;
-  }
-
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyPress);
   }
