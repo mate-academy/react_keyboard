@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import React, { KeyboardEvent } from "react";
+import React, { KeyboardEvent } from 'react';
 
 type State = {
   pressedKey: string;
@@ -7,25 +6,32 @@ type State = {
 
 export class App extends React.Component<State> {
   state: Readonly<State> = {
-    pressedKey: "",
+    pressedKey: '',
   };
+
   componentDidMount(): void {
-    document.addEventListener("keyup", this.handleChange);
+    document.addEventListener('keyup', this.handleChange);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener("keyup", this.handleChange);
+    document.removeEventListener('keyup', this.handleChange);
   }
 
   handleChange = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
+
   render() {
     const { pressedKey } = this.state;
+
     return (
       <div className="App">
         {pressedKey ? (
-          <p className="App__message">The last pressed key is [{pressedKey}]</p>
+          <p className="App__message">
+            The last pressed key is [
+            {pressedKey}
+            ]
+          </p>
         ) : (
           <p className="App__message">Nothing was pressed yet</p>
         )}
