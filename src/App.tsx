@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 
 type State = {
   pressedKey: string;
@@ -17,7 +17,8 @@ export class App extends React.Component<State> {
     document.removeEventListener('keyup', this.handleChange);
   }
 
-  handleChange = (event: KeyboardEvent) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleChange = (event:KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
