@@ -5,7 +5,7 @@ export class App extends React.Component {
     message: 'Nothing was pressed yet',
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     document.addEventListener('keyup', this.handlePressedKey);
   }
 
