@@ -4,8 +4,8 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<State, {}> {
-  state: State = {
+export class App extends React.Component {
+  state: Readonly<State> = {
     pressedKey: '',
   };
 
