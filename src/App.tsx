@@ -4,7 +4,7 @@ type State = {
   currentButton: string | null;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     currentButton: null,
   };
@@ -22,13 +22,15 @@ export class App extends React.Component<State> {
   };
 
   render() {
+    const { currentButton } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {!this.state.currentButton ? (
+          {!currentButton ? (
             'Nothing was pressed yet'
           ) : (
-            `The last pressed key is [${this.state.currentButton}]`
+            `The last pressed key is [${currentButton}]`
           )}
         </p>
       </div>
