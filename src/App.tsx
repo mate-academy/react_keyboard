@@ -19,8 +19,11 @@ export class App extends Component {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey.length > 0 && `The last pressed key is [${pressedKey}]`}
-          {pressedKey.length === 0 && 'Nothing was pressed yet'}
+          {pressedKey.length > 0 ? (
+            `The last pressed key is [${pressedKey}]`
+          ) : (
+            'Nothing was pressed yet'
+          )}
         </p>
       </div>
     );
