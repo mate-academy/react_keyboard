@@ -9,15 +9,15 @@ export class App extends React.Component<{}, State> {
     currentButton: null,
   };
 
-  UNSAFE_componentWillMount(): void {
-    document.removeEventListener('keyup', this.handleCurrentBatton);
-  }
-
   componentDidMount(): void {
-    document.addEventListener('keyup', this.handleCurrentBatton);
+    document.addEventListener('keyup', this.handleCurrentButton);
   }
 
-  handleCurrentBatton = (event: KeyboardEvent) => {
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.handleCurrentButton);
+  }
+
+  handleCurrentButton = (event: KeyboardEvent) => {
     this.setState({ currentButton: event.key });
   };
 
