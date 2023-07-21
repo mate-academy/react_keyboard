@@ -9,8 +9,7 @@ export class App extends React.Component {
     pressedKey: '',
   };
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillMount(): void {
+  componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyClick);
   }
 
