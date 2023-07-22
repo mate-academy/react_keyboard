@@ -1,7 +1,7 @@
 import React from 'react';
 
 type State = {
-  key: '' | null;
+  key: string | null;
 };
 
 export class App extends React.Component {
