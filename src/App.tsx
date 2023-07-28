@@ -10,10 +10,14 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handlerEnter);
+    document.addEventListener('keyup', this.handlePrint);
   }
 
-  handlerEnter = (event: KeyboardEvent) => {
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handlePrint);
+  }
+
+  handlePrint = (event: KeyboardEvent) => {
     const { key } = event;
 
     this.setState({ enter: key });
