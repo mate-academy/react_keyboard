@@ -1,13 +1,10 @@
 import React from 'react';
 
-type Props = {
-};
-
 type State = {
   key: string;
 };
 
-export class App extends React.Component<Props, State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     key: '',
   };
