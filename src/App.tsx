@@ -5,9 +5,7 @@ type State = {
 };
 
 export class App extends React.Component<{}, State> {
-  state: State = {
-    key: '',
-  };
+  state: State = { key: '' };
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
@@ -17,7 +15,7 @@ export class App extends React.Component<{}, State> {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  handleKeyUp = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent): void => {
     this.setState({ key: event.key });
   };
 
@@ -26,15 +24,13 @@ export class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        {key ? (
-          <p className="App__message">
-            The last pressed key is [
-            {key}
-            ]
-          </p>
-        ) : (
-          <p className="App__message">Nothing was pressed yet</p>
-        )}
+        <p className="App__message">
+          {key ? (
+            `The last pressed key is [${key}]`
+          ) : (
+            'Nothing was pressed yet'
+          )}
+        </p>
       </div>
     );
   }
