@@ -1,7 +1,11 @@
 import React from 'react';
 
+type State = {
+  pressKey: string;
+};
+
 export class App extends React.Component {
-  state = {
+  state: State = {
     pressKey: '',
   };
 
