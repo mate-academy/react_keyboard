@@ -4,16 +4,16 @@ type State = {
   pressKey: string;
 };
 
-export class App extends React.Component {
-  state: State = {
+export class App extends React.Component<{}, State> {
+  state: Readonly<State> = {
     pressKey: '',
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
   }
 
-  componentWillUnmount(): void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
