@@ -1,12 +1,5 @@
 import React from 'react';
 
-// export const App: React.FC = () => (
-//   <div className="App">
-//     <p className="App__message">The last pressed key is [Enter]</p>
-//   </div>
-// );
-
-// eslint-disable-next-line react/prefer-stateless-function
 export class App extends React.Component {
   state = {
     pressedKey: null,
