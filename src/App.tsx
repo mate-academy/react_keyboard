@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface State {
-  lastKey: string,
+  lastKey: string | null,
 }
 
 export class App extends React.Component<{}, State> {
   state: State = {
-    lastKey: 'Nothing was pressed yet',
+    lastKey: null,
   };
 
   componentDidMount() {
@@ -22,10 +22,12 @@ export class App extends React.Component<{}, State> {
   };
 
   render() {
+    const { lastKey } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {`${this.state.lastKey}`}
+          {lastKey || 'Nothing was pressed yet'}
         </p>
       </div>
     );
