@@ -4,7 +4,7 @@ type State = {
   key: string,
 };
 // eslint-disable-next-line react/prefer-stateless-function
-export class App extends React.Component {
+export class App extends React.Component<{}, State> {
   state: State = {
     key: '',
   };
@@ -22,11 +22,13 @@ export class App extends React.Component {
   };
 
   render() {
+    const { key } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.key
-            ? `The last pressed key is [${this.state.key}]`
+          {key
+            ? `The last pressed key is [${key}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
