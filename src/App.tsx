@@ -32,23 +32,25 @@ export class App extends React.Component<{}, State> {
 
     if (!key) {
       content = (
-        <p>
+        <>
           Nothing was pressed yet
-        </p>
+        </>
       );
     } else {
       content = (
-        <p>
+        <>
           The last pressed key is
           {' '}
           {key}
-        </p>
+        </>
       );
     }
 
     return (
-      <div>
-        { content }
+      <div className="App">
+        <p className="App__message">
+          { content }
+        </p>
       </div>
     );
   }
