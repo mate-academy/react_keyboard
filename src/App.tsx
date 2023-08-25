@@ -39,9 +39,7 @@ export class App extends React.Component<{}, State> {
     } else {
       content = (
         <>
-          The last pressed key is
-          {' '}
-          {key}
+          {`The last pressed key is [${key}]`}
         </>
       );
     }
