@@ -27,11 +27,9 @@ export class LastPressedKey2 extends React.PureComponent<{}, State> {
 
     return (
       <div>
-        {!key ? (
-          <p>Nothing was pressed yet</p>
-        ) : (
-          <p className="App__message">{`The last pressed key is [${key}]`}</p>
-        )}
+        <p className="App__message">
+          {key ? `The last pressed key is [${key}]` : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
