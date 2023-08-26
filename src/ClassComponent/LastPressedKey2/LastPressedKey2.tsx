@@ -4,7 +4,7 @@ type State = {
   key: string;
 };
 
-export class App extends React.PureComponent<{}, State> {
+export class LastPressedKey2 extends React.PureComponent<{}, State> {
   state: State = {
     key: '',
   };
@@ -15,6 +15,7 @@ export class App extends React.PureComponent<{}, State> {
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyPress);
+    // console.log('componentWillUnmount LastPressedKey2');
   }
 
   handleKeyPress = (event: KeyboardEvent) => {
