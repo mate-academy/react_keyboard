@@ -1,7 +1,11 @@
 import React from 'react';
+// eslint-disable-next-line max-len
+import { LastPressedKey2 } from './ClassComponent/LastPressedKey2/LastPressedKey2';
+import { LastPressedKey } from './FunctionalComponent/LastPressedKey';
 
 export const App: React.FC = () => (
   <div className="App">
-    <p className="App__message">The last pressed key is [Enter]</p>
+    <LastPressedKey2 />
+    <LastPressedKey />
   </div>
 );
