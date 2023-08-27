@@ -2,7 +2,6 @@ import React from 'react';
 
 export class App extends React.Component {
   state = {
-    wasKeyPressed: false,
     keyPressed: null,
   };
 
@@ -16,29 +15,18 @@ export class App extends React.Component {
 
   handleKeyPress = (event: KeyboardEvent) => {
     this.setState({
-      wasKeyPressed: true,
       keyPressed: event.key,
     });
   };
 
   render() {
-    const { wasKeyPressed, keyPressed } = this.state;
-
-    if (wasKeyPressed) {
-      return (
-        <div className="App">
-          <p className="App__message">
-            The last pressed key is
-            {' '}
-            {keyPressed}
-          </p>
-        </div>
-      );
-    }
+    const { keyPressed } = this.state;
 
     return (
       <div className="App">
-        <p className="App__message">Nothing was pressed yet</p>
+        <p className="App__message">
+          {keyPressed ? `The last pressed key is ${keyPressed}` : "Nothing was pressed yet"}
+        </p>
       </div>
     );
   }
