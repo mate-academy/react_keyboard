@@ -1,9 +1,8 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
 export class App extends React.Component {
   state = {
-    keyPressed: undefined,
+    keyPressed: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
@@ -15,24 +14,15 @@ export class App extends React.Component {
   }
 
   handleKeyPressed = (event: KeyboardEvent) => {
-    this.setState({ keyPressed: event.key });
+    this.setState({ keyPressed: `The last pressed key is [${event.key}]` });
   };
 
   render() {
-    if (this.state.keyPressed) {
-      return (
-        <div className="App">
-          <p className="App__message">
-            The last pressed key is
-            {` [${this.state.keyPressed}]`}
-          </p>
-        </div>
-      );
-    }
-
     return (
       <div className="App">
-        <p className="App__message">Nothing was pressed yet</p>
+        <p className="App__message">
+          {this.state.keyPressed}
+        </p>
       </div>
     );
   }
