@@ -28,21 +28,9 @@ export class App extends React.Component<{}, State> {
 
   render() {
     const { key } = this.state;
-    let content;
-
-    if (!key) {
-      content = (
-        <>
-          Nothing was pressed yet
-        </>
-      );
-    } else {
-      content = (
-        <>
-          {`The last pressed key is [${key}]`}
-        </>
-      );
-    }
+    const content = key
+      ? `Ostatnio naciśnięty klawisz to [${key}]`
+      : 'Nic nie zostało jeszcze naciśnięte';
 
     return (
       <div className="App">
