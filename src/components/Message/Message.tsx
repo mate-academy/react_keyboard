@@ -12,16 +12,16 @@ export class Message extends React.Component<Props, State> {
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ query: event.key });
-    });
+    document.addEventListener('keyup', this.handleKeyboardUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ query: event.key });
-    });
+    document.removeEventListener('keyup', this.handleKeyboardUp);
   }
+
+  handleKeyboardUp = (event: KeyboardEvent) => {
+    this.setState({ query: event.key });
+  };
 
   render() {
     const { query } = this.state;
