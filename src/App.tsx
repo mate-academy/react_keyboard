@@ -32,5 +32,4 @@ export class App extends React.Component {
   }
 }
 
-
 // code pushed with a --no-verify flag beacause of Cypress rpoblems
