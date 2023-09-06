@@ -8,7 +8,7 @@ type State = {
 export class App extends React.Component {
   state: State = {
     pressedKey: '',
-    isKeyUp: true,
+    isKeyUp: false,
   };
 
   componentDidMount(): void {
@@ -20,7 +20,7 @@ export class App extends React.Component {
   }
 
   handlePressedKey = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key });
+    this.setState({ pressedKey: event.key, isKeyUp: true });
   };
 
   render() {
