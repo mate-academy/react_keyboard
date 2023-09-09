@@ -34,9 +34,7 @@ export class App extends React.PureComponent<State> {
           <p
             className="App__message"
           >
-            The last pressed key is [
-            {pressedKey}
-            ]
+            {`The last pressed key is [${pressedKey}]`}
             <button
               type="button"
               className="delete"
