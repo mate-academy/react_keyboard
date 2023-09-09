@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 export const App: React.FC = () => {
   const [key, setKey] = useState('');
 
-  const handleKeyPress = (event: KeyboardEvent) => {
-    setKey(event.key);
-  };
-
   useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      setKey(event.key);
+    };
+
     document.addEventListener('keyup', handleKeyPress);
 
     return () => {
       document.removeEventListener('keyup', handleKeyPress);
     };
-  }, [key]);
+  }, []);
 
   return (
     <div className="App">
