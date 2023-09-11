@@ -1,5 +1,8 @@
 import React from 'react';
-import { State } from '../types/State';
+
+type State = {
+  pressedKey: string,
+};
 
 export class AppMessage extends React.Component {
   state: State = {
