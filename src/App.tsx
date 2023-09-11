@@ -1,23 +1,22 @@
 import React from 'react';
 
-export class App extends React.PureComponent {
+export class App extends React.PureComponent<{}, { pressedKey: string }> {
   state = {
-    key: '',
+    pressedKey: '',
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        key: event.key,
-      });
-    });
+    document.addEventListener('keyup', (event) => this.handlePressedKey(event));
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({
-        key: event.key,
-      });
+    document.removeEventListener('keyup',
+      (event) => this.handlePressedKey(event));
+  }
+
+  handlePressedKey(event: KeyboardEvent): void {
+    this.setState({
+      pressedKey: event.key,
     });
   }
 
@@ -25,7 +24,7 @@ export class App extends React.PureComponent {
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.key ? `The last pressed key is [${this.state.key}]` : 'Nothing was pressed yet'}
+          {this.state.pressedKey ? `The last pressed key is [${this.state.pressedKey}]` : 'Nothing was pressed yet'}
         </p>
       </div>
     );
