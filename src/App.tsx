@@ -6,7 +6,6 @@ type State = {
   pressedKey: string;
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
 export class App extends PureComponent<Props, State> {
   state: State = { pressedKey: '' };
 
