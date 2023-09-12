@@ -1,10 +1,12 @@
 import React from 'react';
 
+type Props = {};
+
 type State = {
   pressedKey: string;
 };
 
-export class App extends React.PureComponent<State> {
+export class App extends React.PureComponent<Props, State> {
   state: State = {
     pressedKey: '',
   };
