@@ -4,7 +4,7 @@ type State = {
   pressedKey: string,
 };
 
-export class AppMessage extends React.Component {
+export class AppMessage extends React.Component<{}, State> {
   state: State = {
     pressedKey: '',
   };
