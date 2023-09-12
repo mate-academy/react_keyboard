@@ -24,13 +24,13 @@ export class App extends React.Component<{}, State> {
   render() {
     return (
       <div className="App">
-        <a href="/" className="App__message">
+        <p className="App__message">
           {this.state.pressedKey
             ? (
               `The last pressed key is [${this.state.pressedKey}]`
             )
             : 'Nothing was pressed yet'}
-        </a>
+        </p>
       </div>
     );
   }
