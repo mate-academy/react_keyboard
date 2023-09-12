@@ -4,7 +4,7 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.PureComponent<State> {
+export class App extends React.PureComponent<{}, State> {
   state: State = {
     pressedKey: '',
   };
@@ -28,7 +28,7 @@ export class App extends React.PureComponent<State> {
       <div className="App">
         <p className="App__message">
           {pressedKey
-            ? `The last pressed key is [${this.state.pressedKey}]`
+            ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
