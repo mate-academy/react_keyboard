@@ -26,10 +26,10 @@ export class App extends React.PureComponent<{}, State> {
 
     return (
       <div className="App">
-        <p className="App_message">
+        <p className="App__message">
           {pressedKey
-            ? (`The last pressed key is [${pressedKey}]`)
-            : ('Nothing was pressed yet')}
+            ? `The last pressed key is [${pressedKey}]`
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
