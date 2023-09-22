@@ -6,7 +6,7 @@ type State = {
 
 export class App extends React.Component<{}, State> {
   state: State = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
   componentDidMount() {
@@ -25,9 +25,11 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          The last pressed key is [
-          {this.state.pressedKey}
-          ]
+          {this.state.pressedKey ? (
+            `The last pressed key is [${this.state.pressedKey}]`
+          ) : (
+            'Nothing was pressed yet'
+          )}
         </p>
       </div>
     );
