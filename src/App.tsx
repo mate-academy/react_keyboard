@@ -50,7 +50,7 @@ export class App extends React.Component {
         {this.state.pressedButton
           ? (
             <p className="App__message">
-              {`The last pressed key is ${this.state.pressedButton}`}
+              {`The last pressed key is [${this.state.pressedButton}]`}
             </p>
           ) : (
             <p className="App__message">
