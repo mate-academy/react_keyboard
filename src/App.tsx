@@ -36,7 +36,7 @@ class App extends Component<{}, AppState> {
         {key === textInfo ? (
           <p className="App__message">{key}</p>
         ) : (
-          <p className="App__message">{`The last pressed key is ${key}`}</p>
+          <p className="App__message">{`The last pressed key is [${key}]`}</p>
         )}
       </div>
     );
