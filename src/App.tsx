@@ -14,7 +14,7 @@ export class App extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.handlerKeyPress);
+    document.addEventListener('keyup', this.handlerKeyPress);
   }
 
   handlerKeyPress = (event: KeyboardEvent) => {
