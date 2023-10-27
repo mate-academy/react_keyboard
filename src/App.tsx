@@ -1,24 +1,20 @@
 import React from 'react';
 
-type State = {
-  keys :string
-};
-// eslint-disable-next-line react/prefer-stateless-function
-export class App extends React.Component<State> {
-  state:State = {
+export class App extends React.Component {
+  state = {
     keys: 'Nothing was pressed yet',
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', this.handlebooton);
   }
 
-  componentWillUnmount():void {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handlebooton);
   }
 
   handlebooton = (event: KeyboardEvent) => {
-    this.setState({ keys: `The last pressed key is [${event.key}]` });
+    this.setState({ keys: `The last pressed keys is [${event.key}]` });
   };
 
   render() {
