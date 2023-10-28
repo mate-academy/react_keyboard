@@ -1,9 +1,14 @@
 import ReactDOM from 'react-dom';
-import { App } from './App';
+import React from 'react';
+import { App } from './components/App/App';
+import { App1 } from './components/App1/App1';
 
 import './index.scss';
 
 ReactDOM.render(
-  <App />,
+  <div>
+    <App />
+    <App1 />
+  </div>,
   document.getElementById('root'),
 );
