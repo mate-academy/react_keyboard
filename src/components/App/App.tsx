@@ -31,7 +31,7 @@ export class App extends React.Component<Props, State> {
         {!currentKey
           && <p className="App__message">Nothing was pressed yet</p>}
         {currentKey
-          && <p className="App__message">{`The last pressed key is ${currentKey}`}</p>}
+          && <p className="App__message">{`The last pressed key is [${currentKey}]`}</p>}
       </div>
     );
   }
