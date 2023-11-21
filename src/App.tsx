@@ -25,7 +25,7 @@ export class App extends React.Component {
         {keyPressed ? (
           <p className="App__message">{`The last pressed key is [${keyPressed}]`}</p>
         ) : (
-          <p>Nothing was pressed yet</p>
+          <p className="App__message">Nothing was pressed yet</p>
         )}
       </div>
     );
