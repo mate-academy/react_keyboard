@@ -4,7 +4,7 @@ interface State {
   pressedKey?: string,
 }
 
-export class App extends React.PureComponent<State> {
+export class App extends React.Component {
   state: State = {
     pressedKey: '',
   };
