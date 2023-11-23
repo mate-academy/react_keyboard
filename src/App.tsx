@@ -4,7 +4,7 @@ type Props = {
   pressedKey: string;
 };
 
-export class App extends React.PureComponent<Props> {
+export class App extends React.PureComponent<{}, Props> {
   state = {
     pressedKey: 'key',
   };
