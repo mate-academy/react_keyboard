@@ -1,32 +1,40 @@
 import React, { } from 'react';
 
-export class App extends React.Component {
-  state = {
-    pressedKeyв: '',
-  };
 
-  pressKeydup() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState(() => this.state.pressedKeyв = event.key)
-    });
-  }
+type Props = {
+  pressKey: string;
+  oneRender: boolean;
+}
+
+export class App extends React.Component<Props> {
+  state = {
+    pressKey: '',
+    oneRender: false,
+  };
 
   componentDidMount() {
-    this.pressKeydup();
-  };
-
-  componentWillUnmount() {
-    document.removeEventListener('remuv',this.pressKeydup)
+    document.addEventListener('keyup', this.pressKeyboard);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.pressKeyboard);
+  }
+
+  pressKeyboard = (event: KeyboardEvent) => {
+    this.setState({ pressKey: event.key, oneRender: true })
+  };
+
   render() {
+
+    const { pressKey, oneRender } = this.state;
+
     return (
       <div className="App">
         <p
           className="App__message"
         >
-          {this.state.pressedKeyв
-            ? `The last pressed key is [${this.state.pressedKeyв}]`
+          {oneRender
+            ? `The last pressed key is [${pressKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
