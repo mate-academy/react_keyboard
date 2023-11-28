@@ -1,12 +1,6 @@
 import React, { } from 'react';
 
-
-type Props = {
-  pressKey: string;
-  oneRender: boolean;
-}
-
-export class App extends React.Component<Props> {
+export class App extends React.Component {
   state = {
     pressKey: '',
     oneRender: false,
@@ -21,11 +15,10 @@ export class App extends React.Component<Props> {
   }
 
   pressKeyboard = (event: KeyboardEvent) => {
-    this.setState({ pressKey: event.key, oneRender: true })
+    this.setState({ pressKey: event.key, oneRender: true });
   };
 
   render() {
-
     const { pressKey, oneRender } = this.state;
 
     return (
