@@ -27,11 +27,11 @@ export class App extends React.Component<{}, State> {
 
     if (!pressedKey) {
       content = (
-        <p>Nothing was pressed yet</p>
+        <p className="App__message">Nothing was pressed yet</p>
       );
     } else {
       content = (
-        <p>
+        <p className="App__message">
           The last pressed key is [
           {pressedKey}
           ]
