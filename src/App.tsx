@@ -5,7 +5,7 @@ type State = {
 };
 
 export class App extends React.Component {
-  state: Readonly<State> = {
+  state: State = {
     pressedKey: '',
   };
 
@@ -22,9 +22,9 @@ export class App extends React.Component {
       <div className="App">
         <p className="App__message">
 
-          {!this.state.pressedKey
+          {!pressedKey
             ? 'Nothing was pressed yet'
-            : `he last pressed key is [${pressedKey}]`}
+            : `The last pressed key is [${pressedKey}]`}
         </p>
       </div>
     );
