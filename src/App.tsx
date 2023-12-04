@@ -4,7 +4,7 @@ type State = {
   pressedKey: string | null;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     pressedKey: null,
   };
@@ -31,7 +31,6 @@ export class App extends React.Component<State> {
         {pressedKey
           ? <p className="App__message">{`The last pressed key is [${pressedKey}]`}</p>
           : <p className="App__message">Nothing was pressed yet</p>}
-        {/* <p className="App__message">The last pressed key is [Enter]</p> */}
       </div>
     );
   }
