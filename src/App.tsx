@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 
 export class App extends PureComponent {
   state = {
@@ -21,17 +21,15 @@ export class App extends PureComponent {
     const { key } = this.state;
 
     return (
-      <>
-        <div className="App">
-          <p
-            className="App__message"
-          >
-            {key
-              ? `The last pressed key is ${key}`
-              : 'Nothing was pressed yet'}
-          </p>
-        </div>
-      </>
+      <div className="App">
+        <p
+          className="App__message"
+        >
+          {key
+            ? `The last pressed key is [${key}]`
+            : 'Nothing was pressed yet'}
+        </p>
+      </div>
     );
   }
 }
