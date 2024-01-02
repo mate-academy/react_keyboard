@@ -23,7 +23,7 @@ export class App extends React.PureComponent {
         <p className="App__message">
           {this.state.pressedKey === ''
             ? 'Nothing was pressed yet'
-            : `The Last Key Pressed is [${this.state.pressedKey}]`}
+            : `The last pressed key is [${this.state.pressedKey}]`}
         </p>
       </div>
     );
