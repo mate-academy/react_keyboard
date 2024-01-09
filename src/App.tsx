@@ -16,9 +16,9 @@ export const App: React.FC = () => {
   return (
     <div className="App">
       <p className="App__message">
-        The last pressed key is [
-        {key}
-        ]
+        {key.length > 0
+          ? `The last pressed key is [${key}]`
+          : 'Nothing was pressed yet'}
       </p>
     </div>
   );
