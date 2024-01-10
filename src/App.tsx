@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppFC } from './AppFC';
 
 type State = {
   pressedKey: string;
@@ -6,7 +7,7 @@ type State = {
 
 export class App extends React.Component {
   state: State = {
-    pressedKey: 'Tab',
+    pressedKey: '',
   };
 
   componentDidMount = (): void => {
@@ -26,10 +27,18 @@ export class App extends React.Component {
 
     return (
       <div className="App">
-        <p className="App__message">
-          The last pressed key is
-          {` [${pressedKey}]`}
-        </p>
+        {pressedKey
+          ? (
+            <p className="App__message">
+              The last pressed key is
+              {` [${pressedKey}]`}
+            </p>
+          )
+          : (
+            <p> Nothing was pressed yet</p>
+          )}
+
+        <AppFC />
       </div>
     );
   }
