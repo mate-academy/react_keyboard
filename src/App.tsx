@@ -10,7 +10,9 @@ export const App: React.FC = () => {
 
     document.addEventListener('keyup', handlePressedKey);
 
-    return () => {};
+    return () => {
+      document.removeEventListener('keyup', handlePressedKey);
+    };
   }, []);
 
   return (
