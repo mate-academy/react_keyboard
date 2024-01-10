@@ -3,7 +3,12 @@ import { App } from './App';
 
 import './index.scss';
 
+const initialState = {
+  pressed: false,
+  key: '',
+};
+
 ReactDOM.render(
-  <App />,
+  <App {...initialState} />,
   document.getElementById('root'),
 );
