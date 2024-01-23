@@ -1,34 +1,28 @@
-import React from 'react';
+import { PureComponent } from 'react';
 
-type Props = {};
-
-type State = {
-  keyPressed: string;
-};
-
-export class App extends React.Component<Props, State> {
+export class App extends PureComponent {
   state = {
-    keyPressed: '',
+    pressedKey: null,
   };
 
-  componentDidMount(): void {
+  componentDidMount() {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ keyPressed: event.key });
+      this.setState({ pressedKey: event.key });
     });
   }
 
-  componentWillUnmount(): void {
-    document.removeEventListener('keyup', (event: KeyboardEvent) => {
-      this.setState({ keyPressed: event.key });
-    });
+  componentWillUnmount() {
+    document.removeEventListener('keyup', () => null);
   }
 
   render() {
-    const { keyPressed } = this.state;
-
     return (
       <div className="App">
-        {keyPressed ? `The last pressed key is "${keyPressed}"` : 'Nothing was pressed yet'}
+        <p className="App__message">
+          {this.state.pressedKey
+            ? `The last pressed key is [${this.state.pressedKey}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
