@@ -4,9 +4,9 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<{}, State> {
+export class App extends React.PureComponent<{}, State> {
   state: State = {
-    pressedKey: '',
+    pressedKey: 'Nothing was pressed yet',
   };
 
   componentDidMount(): void {
@@ -18,20 +18,18 @@ export class App extends React.Component<{}, State> {
   }
 
   handleDocumentKeyUp = (event: KeyboardEvent): void => {
-    this.setState({ pressedKey: event.key });
+    this.setState({
+      pressedKey: `The last pressed key is [${event.key}]`,
+    });
   };
 
-  render(): JSX.Element {
+  render() {
     const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey ? (
-            `The last pressed key is [${pressedKey}]`
-          ) : (
-            'Nothing was pressed yet'
-          )}
+          {pressedKey}
         </p>
       </div>
     );
