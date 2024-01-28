@@ -28,12 +28,12 @@ export default class App extends Component {
       <div className="App">
         {key ? (
           <p className="App__message">
-            The last pressed is [
+            The last pressed key is [
             { key }
             ]
           </p>
         ) : (
-          <p>Nothing was pressed yet</p>
+          <p className="App__message">Nothing was pressed yet</p>
         )}
       </div>
     );
