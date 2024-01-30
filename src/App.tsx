@@ -1,10 +1,12 @@
 import React from 'react';
 
+type Props = {};
+
 type State = {
   message: string;
 };
 
-export class App extends React.PureComponent<State> {
+export class App extends React.PureComponent<Props, State> {
   state = {
     message: 'Nothing was pressed yet',
   };
