@@ -4,7 +4,7 @@ type State = {
   message: string,
 };
 
-export class App extends React.PureComponent<State> {
+export class App extends React.PureComponent<{}, State> {
   state: State = {
     message: 'Nothing was pressed yet',
   };
