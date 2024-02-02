@@ -5,7 +5,7 @@ type State = {
 };
 
 export class App extends React.PureComponent<State> {
-  state = {
+  state: State = {
     message: 'Nothing was pressed yet',
   };
 
