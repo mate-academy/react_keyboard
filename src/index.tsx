@@ -4,6 +4,6 @@ import { App } from './App';
 import './index.scss';
 
 ReactDOM.render(
-  <App />,
+  <App name="Nothing was pressed yet" />,
   document.getElementById('root'),
 );
