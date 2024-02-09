@@ -4,6 +4,6 @@ import { App } from './App';
 import './index.scss';
 
 ReactDOM.render(
-  <App />,
+  <App letter="" />,
   document.getElementById('root'),
 );
