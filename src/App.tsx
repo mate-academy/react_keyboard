@@ -26,19 +26,15 @@ export class App extends React.Component<{}, AppState> {
   };
 
   render() {
-    const { pressKey } = this.state;
+    const message = this.state.pressKey === null
+      ? 'Nothing was pressed yet'
+      : `The last pressed key is [${this.state.pressKey}]`;
 
     return (
-      <div>
-        {pressKey ? (
-          <p>
-            The last pressed key is [
-            {pressKey}
-            ]
-          </p>
-        ) : (
-          <p>Nothing was pressed yet</p>
-        )}
+      <div className="App">
+        <p className="App__message">
+          {message}
+        </p>
       </div>
     );
   }
