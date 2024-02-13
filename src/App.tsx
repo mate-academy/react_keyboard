@@ -1,24 +1,26 @@
 import React from 'react';
 
 type State = {
-  pressedKey: string,
+  pressedKey: string | null,
 };
 
 const DEFAULT_MESSAGE = 'Nothing was pressed yet';
 
 export class App extends React.Component {
   state: State = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.changePressedKey(event.key);
-    });
+    document.addEventListener('keyup', this.handlePressedKey);
   }
 
-  changePressedKey = (key: string) => {
-    this.setState({ pressedKey: key });
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.handlePressedKey);
+  }
+
+  handlePressedKey = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
   };
 
   render() {
