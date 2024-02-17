@@ -1,20 +1,16 @@
 import React from 'react';
 
-/* type State = {
-  pressedKey: string;
-}; */
-
 export class App extends React.Component {
   state = {
     pressedKey: 'Nothing was pressed yet',
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyDown);
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   handleKeyDown = (event: KeyboardEvent) => {
