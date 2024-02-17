@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class App extends React.Component {
+export class App extends React.PureComponent {
   state = {
     pressedKey: '',
   };
@@ -18,14 +18,12 @@ export class App extends React.Component {
   };
 
   render() {
-    const { pressedKey } = this.state;
-
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey === ''
+          {this.state.pressedKey === ''
             ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey}]`}
+            : `The last pressed key is [${this.state.pressedKey}]`}
         </p>
       </div>
     );
