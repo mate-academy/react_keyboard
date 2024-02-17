@@ -6,7 +6,7 @@ export class App extends React.PureComponent {
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyDown);
+    document.addEventListener('keyup', this.handleKeyDown);
   }
 
   componentWillUnmount() {
