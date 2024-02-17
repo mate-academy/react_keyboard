@@ -6,11 +6,11 @@ export class App extends React.PureComponent {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handleKeyDown);
+    document.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyDown);
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   handleKeyDown = (event: KeyboardEvent) => {
