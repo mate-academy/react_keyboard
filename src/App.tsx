@@ -4,7 +4,7 @@ type State = {
   pressedKey: string;
 };
 
-type Props = {}
+type Props = {};
 
 export class App extends React.Component<Props, State> {
   state: State = {
