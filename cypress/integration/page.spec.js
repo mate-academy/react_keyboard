@@ -12,9 +12,10 @@ Cypress.on('fail', (e) => {
 
 describe('Page', () => {
   beforeEach(() => {
-    if (failed) Cypress.runner.stop();
+    // if (failed) Cypress.runner.stop();
 
     cy.visit('/');
+    page.message().should('exist');
   });
 
   it('should show the default message', () => {
