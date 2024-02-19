@@ -15,6 +15,7 @@ describe('Page', () => {
     if (failed) Cypress.runner.stop();
 
     cy.visit('/');
+    page.message().should('exist');
   });
 
   it('should show the default message', () => {
