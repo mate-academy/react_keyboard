@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface State {
   pressedKey: string;
@@ -6,9 +6,9 @@ interface State {
 
 export class App extends React.PureComponent {
   state: State = {
-    pressedKey: '',
+    pressedKey: "",
   };
-
+  
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
   }
@@ -19,18 +19,18 @@ export class App extends React.PureComponent {
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
-  };
+  }
 
   render() {
     const { pressedKey } = this.state;
 
     return (
       <div className="App">
-        {pressedKey === '' ? (
-          <p className="App__message">Nothing was pressed yet</p>
-        ) : (
-          <p className="App__message">The last pressed key is [{pressedKey}]</p>
-        )}
+        {
+          pressedKey === ''
+            ? <p className="App__message">Nothing was pressed yet</p>
+            : <p className="App__message">The last pressed key is [{pressedKey}]</p>
+        }
       </div>
     );
   }
