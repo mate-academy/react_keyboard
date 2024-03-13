@@ -21,11 +21,11 @@ export class App extends React.Component {
     const { pressedKey } = this.state;
 
     return (
-      <div>
+      <div className="App">
         {pressedKey ? (
-          <p>The last pressed key is [{pressedKey}]</p>
+          <p className="App__message">The last pressed key is [{pressedKey}]</p>
         ) : (
-          <p>Nothing was pressed yet</p>
+          <p className="App__message">Nothing was pressed yet</p>
         )}
       </div>
     );
