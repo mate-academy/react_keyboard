@@ -5,7 +5,7 @@ type State = {
   handleMessage: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state = {
     pressedKey: '',
     handleMessage: 'Nothing was pressed yet',
