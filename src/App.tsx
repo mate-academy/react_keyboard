@@ -11,27 +11,27 @@ export class App extends React.Component<State> {
     handleMessage: 'Nothing was pressed yet',
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     document.addEventListener('keyup', this.handlePressedKey);
-  };
+  }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handlePressedKey);
-  };
+  }
 
-  handlePressedKey = (event: any) => {
+  handlePressedKey = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key }, () => {
       this.handleMessage();
     });
   };
 
-  handleMessage = () => {
+  handleMessage() {
     if (this.state.pressedKey !== '') {
       this.setState({
         handleMessage: `The last pressed key is [${this.state.pressedKey}]`,
       });
     }
-  };
+  }
 
   render() {
     return (
