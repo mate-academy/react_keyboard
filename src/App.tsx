@@ -2,14 +2,14 @@ import React from 'react';
 
 type State = {
   pressedKey: string;
-}
+};
 
 type Props = {};
 
 export class App extends React.Component<Props, State> {
   state: State = {
     pressedKey: '',
-  }
+  };
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
@@ -20,8 +20,8 @@ export class App extends React.Component<Props, State> {
   }
 
   handleKeyUp = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: event.key})
-  }
+    this.setState({ pressedKey: event.key });
+  };
 
   render() {
     const key = this.state.pressedKey;
@@ -32,6 +32,6 @@ export class App extends React.Component<Props, State> {
           {key ? `The last pressed key is [${key}]` : 'Nothing was pressed yet'}
         </p>
       </div>
-    )
+    );
   }
-};
+}
