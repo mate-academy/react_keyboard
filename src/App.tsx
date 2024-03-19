@@ -13,12 +13,10 @@ export class App extends React.Component<{}, State> {
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
-    console.log('some message');
   }
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyUp);
-    console.log('some message');
   }
 
   handleKeyUp = (event: KeyboardEvent): void => {
