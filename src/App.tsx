@@ -3,29 +3,31 @@ import React from 'react';
 type State = {
   pressedKey: string;
   pressed: boolean;
-}
+};
 
 export class App extends React.Component<{}, State> {
-
   state: State = {
     pressedKey: '',
     pressed: false,
-  }
+  };
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
+    console.log('some message');
   }
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyUp);
+    console.log('some message');
   }
 
   handleKeyUp = (event: KeyboardEvent): void => {
     this.setState({ pressed: true, pressedKey: `[${event.key}]` });
-  }
+  };
 
   render() {
     const { pressedKey, pressed } = this.state;
+
     return (
       <div>
         {pressed ? (
@@ -36,5 +38,4 @@ export class App extends React.Component<{}, State> {
       </div>
     );
   }
-
 }
