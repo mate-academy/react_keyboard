@@ -35,29 +35,3 @@ export class App extends React.Component<{}, State> {
     );
   }
 }
-
-// export const App: React.FC = () => {
-//   // const [currentKey, setCurrentKey] = useState('');
-
-//   // useEffect(() => {
-//   //   const hanndleDocKeyvoard = (event: KeyboardEvent) => {
-//   //     setCurrentKey(event.key);
-//   //   };
-
-//   //   document.addEventListener('keydown', hanndleDocKeyvoard);
-
-//   //   return () => {
-//   //     document.removeEventListener('keydown', hanndleDocKeyvoard);
-//   //   };
-//   // }, []);
-
-//   return (
-//     <div className="App">
-//       <p className="App__message">
-//         {currentKey
-//           ? `The last pressed key is [${currentKey}]`
-//           : `Nothing was pressed yet`}
-//       </p>
-//     </div>
-//   );
-// };
