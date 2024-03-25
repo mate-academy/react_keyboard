@@ -1,0 +1,106 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1711366498831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711366504310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-export class App: React.FC = () => (\n+export class App extends = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1711366514704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-export class App extends = () => (\n+export class App extends React.Component = () => {(\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1711366521163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-export class App extends React.Component = () => {(\n+export class App extends React.Component = () => {}\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n-);\n+}\n"
+                },
+                {
+                    "date": 1711366529604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+import React from 'react';\n+\n+export class App extends React.Component = () => {\n+  render()\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+}\n"
+                },
+                {
+                    "date": 1711366538961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,10 @@\n import React from 'react';\n \n export class App extends React.Component = () => {\n-  render()\n+  render(\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n-}\n-import React from 'react';\n \n-export class App extends React.Component = () => {}\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n+  )\n }\n"
+                },
+                {
+                    "date": 1711366579694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import React from 'react';\n \n export class App extends React.Component = () => {\n-  render(\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-\n+  render()\n+    <div className=\"App\">\n+      <p className=\"App__message\">The last pressed key is [Enter]</p>\n+    </div>\n   )\n }\n"
+                },
+                {
+                    "date": 1711366590395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n export class App extends React.Component = () => {\n-  render()\n+  render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is [Enter]</p>\n     </div>\n-  )\n-}\n+  }\n+};\n"
+                },
+                {
+                    "date": 1711366598481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-export class App extends React.Component = () => {\n+export class App extends React.Component> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is [Enter]</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711366607418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import React from 'react';\n \n-export class App extends React.Component> {\n+type Props\n+\n+export class App extends React.Component<Props> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is [Enter]</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711366617827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import React from 'react';\n \n-type Props\n+type Props = {\n+  \n+}\n \n export class App extends React.Component<Props> {\n   render() {\n     <div className=\"App\">\n"
+                },
+                {
+                    "date": 1711366625320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n \n type Props = {\n-  \n+  lastKey: string;\n }\n \n export class App extends React.Component<Props> {\n   render() {\n"
+                },
+                {
+                    "date": 1711366631330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n \n export class App extends React.Component<Props> {\n   render() {\n     <div className=\"App\">\n-      <p className=\"App__message\">The last pressed key is [Enter]</p>\n+      <p className=\"App__message\">The last pressed key is </p>\n     </div>\n   }\n };\n"
+                },
+                {
+                    "date": 1711366704006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n \n export class App extends React.Component<Props> {\n   render() {\n     <div className=\"App\">\n-      <p className=\"App__message\">The last pressed key is </p>\n+      <p className=\"App__message\">The last pressed key is</p>\n     </div>\n   }\n };\n"
+                },
+                {
+                    "date": 1711366761642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n type Props = {\n   lastKey: string;\n }\n \n-export class App extends React.Component<Props> {\n+export class App extends React.Component<[Props]> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711366768371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\n \n-type Props = {\n-  lastKey: string;\n-}\n+// type Props = {\n+//   lastKey: string;\n+// }\n \n-export class App extends React.Component<[Props]> {\n+export class App extends React.Component<{}> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711366828599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n // type Props = {\n //   lastKey: string;\n // }\n \n-export class App extends React.Component<{}> {\n+ class App extends React.Component<{}> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711366834881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,13 @@\n // type Props = {\n //   lastKey: string;\n // }\n \n- class App extends React.Component<{}> {\n+class App extends React.Component<{}> {\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n   }\n };\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1711367007160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,5 @@\n     </div>\n   }\n };\n \n-export default App;\n+\n"
+                },
+                {
+                    "date": 1711367044082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n // type Props = {\n //   lastKey: string;\n // }\n \n-class App extends React.Component<{}> {\n+export class App extends React.Component<{}> {\n+  \n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711367049371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n //   lastKey: string;\n // }\n \n export class App extends React.Component<{}> {\n-  \n+  state = {\n+    lastP\n+  }\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n     </div>\n"
+                },
+                {
+                    "date": 1711367057589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n // }\n \n export class App extends React.Component<{}> {\n   state = {\n-    lastPressed = null;\n+    lastPressed: null;\n   }\n   render() {\n     <div className=\"App\">\n       <p className=\"App__message\">The last pressed key is</p>\n"
+                },
+                {
+                    "date": 1711367094153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import React from 'react';\n+\n+// type Props = {\n+//   lastKey: string;\n+// }\n+\n+export class App extends React.Component<{}> {\n+  state = {\n+    lastPressed: null,\n+  }\n+  render() {\n+    <div className=\"App\">\n+      <p className=\"App__message\">The last pressed key is {this.state.lastPressed}</p>\n+    </div>\n+  }\n+};\n+\n+\n"
+                }
+            ],
+            "date": 1711366498831,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\nexport class App: React.FC = () => (\n  <div className=\"App\">\n    <p className=\"App__message\">The last pressed key is [Enter]</p>\n  </div>\n);\n"
+        }
+    ]
+}
