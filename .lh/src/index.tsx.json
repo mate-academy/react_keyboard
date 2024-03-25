@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1711366270778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711366840125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createRoot } from 'react-dom/client';\n-import { App } from './App';\n+import  App  from './App';\n \n import './index.scss';\n import React from 'react';\n \n"
+                },
+                {
+                    "date": 1711367185512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import { createRoot } from 'react-dom/client';\n-import  App  from './App';\n+import { App } from './App';\n \n import './index.scss';\n-import React from 'react';\n \n createRoot(document.getElementById('root') as HTMLElement).render(<App />);\n"
+                },
+                {
+                    "date": 1711367231652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { createRoot } from 'react-dom/client';\n import { App } from './App';\n \n import './index.scss';\n+import React from 'react';\n \n createRoot(document.getElementById('root') as HTMLElement).render(<App />);\n"
+                }
+            ],
+            "date": 1711366270778,
+            "name": "Commit-0",
+            "content": "import { createRoot } from 'react-dom/client';\nimport { App } from './App';\n\nimport './index.scss';\nimport React from 'react';\n\ncreateRoot(document.getElementById('root') as HTMLElement).render(<App />);\n"
+        }
+    ]
+}
