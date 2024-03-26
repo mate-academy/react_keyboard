@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/index.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1711454570263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711454577204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+export def iframe {\n+  display: none;\n+}\n+\n+html {\n+  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n+}\n"
+                },
+                {
+                    "date": 1711454584957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,7 @@\n-export def iframe {\n+ iframe {\n   display: none;\n }\n \n html {\n   font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n }\n-export iframe {\n-  display: none;\n-}\n-\n-html {\n-  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n-}\n"
+                },
+                {
+                    "date": 1711454591478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,7 @@\n \n html {\n   font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n }\n+\n+ex\n+po\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1711454674642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+ iframe {\n+  display: none;\n+}\n+\n+html {\n+  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n+}\n"
+                }
+            ],
+            "date": 1711454570263,
+            "name": "Commit-0",
+            "content": "export iframe {\n  display: none;\n}\n\nhtml {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n}\n"
+        }
+    ]
+}

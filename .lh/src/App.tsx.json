@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1711452250059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711452255719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\n \n+type State = {\n+  \n+}\n \n-\n export const App: React.FC = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n"
+                },
+                {
+                    "date": 1711452281537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n \n type State = {\n-  \n+  pressedKey\n }\n \n export const App: React.FC = () => (\n   <div className=\"App\">\n"
+                },
+                {
+                    "date": 1711452353886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+// type State = {\n+//   pressedKey: boolean;\n+// }\n+\n+export const App: React.FC = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452399739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,9 @@\n // type State = {\n //   pressedKey: boolean;\n // }\n \n-export const App: React.FC = () => (\n+export const App exte: React.FC = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n-import React from 'react';\n-\n-type State = {\n-  pressedKey\n-}\n-\n-export const App: React.FC = () => (\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-);\n"
+                },
+                {
+                    "date": 1711452405270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+// type State = {\n+//   pressedKey: boolean;\n+// }\n+\n+export const App extends : React.FC = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452414893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,9 @@\n // type State = {\n //   pressedKey: boolean;\n // }\n \n-export const App extends : React.FC = () => (\n+export c App extends : React.FC = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n-import React from 'react';\n-\n-// type State = {\n-//   pressedKey: boolean;\n-// }\n-\n-export const App exte: React.FC = () => (\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-);\n"
+                },
+                {
+                    "date": 1711452425067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+// type State = {\n+//   pressedKey: boolean;\n+// }\n+\n+export class App extends React = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452434898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,9 @@\n // type State = {\n //   pressedKey: boolean;\n // }\n \n-export class App extends React = () => (\n+export class App extends React.Compo = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n-import React from 'react';\n-\n-// type State = {\n-//   pressedKey: boolean;\n-// }\n-\n-export c App extends : React.FC = () => (\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-);\n"
+                },
+                {
+                    "date": 1711452442053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n // type State = {\n //   pressedKey: boolean;\n // }\n \n-export class App extends React.Compo = () => (\n+export class App extends React.Component< = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1711452447478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+// type State = {\n+//   pressedKey: boolean;\n+// }\n+\n+export class App extends React.Component<{}, State = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452456026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+type State = {\n+  pressedKey: boolean;\n+}\n+\n+export class App extends React.Component<{}, State> = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452465088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,31 +3,9 @@\n type State = {\n   pressedKey: boolean;\n }\n \n-export class App extends React.Component<{}, State> = () => (\n+export class App extends React.Component<{}, State,> = () => (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n-import React from 'react';\n-\n-// type State = {\n-//   pressedKey: boolean;\n-// }\n-\n-export class App extends React.Component<{}, State = () => (\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-);\n-import React from 'react';\n-\n-// type State = {\n-//   pressedKey: boolean;\n-// }\n-\n-export class App extends React.Component< = () => (\n-  <div className=\"App\">\n-    <p className=\"App__message\">The last pressed key is [Enter]</p>\n-  </div>\n-);\n"
+                },
+                {
+                    "date": 1711452476057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\n+\n+type State = {\n+  pressedKey: boolean;\n+}\n+\n+export class App extends React.Component<{}, State> = () => (\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n+);\n"
+                },
+                {
+                    "date": 1711452497489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n type State = {\n   pressedKey: boolean;\n }\n \n-export class App extends React.Component<{}, State>  (\n+export class App extends React.Component<{}, State> (\n   <div className=\"App\">\n     <p className=\"App__message\">The last pressed key is [Enter]</p>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1711452503570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+import React from 'react';\n+\n+type State = {\n+  pressedKey: boolean;\n+}\n+\n+export class App extends React.Component<{}, State> {\n+\n+}\n+  <div className=\"App\">\n+    <p className=\"App__message\">The last pressed key is [Enter]</p>\n+  </div>\n"
+                }
+            ],
+            "date": 1711452250058,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n\n\n\nexport const App: React.FC = () => (\n  <div className=\"App\">\n    <p className=\"App__message\">The last pressed key is [Enter]</p>\n  </div>\n);\n"
+        }
+    ]
+}
