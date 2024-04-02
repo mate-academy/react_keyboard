@@ -19,10 +19,6 @@ export class App extends React.Component<{}, State> {
     document.addEventListener('keyup', this.handlerClickKeyButton);
   }
 
-  shouldComponentUpdate(nextState: Readonly<State>): boolean {
-    return nextState.keyUp !== this.state.keyUp;
-  }
-
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handlerClickKeyButton);
   }
