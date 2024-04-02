@@ -1,6 +1,10 @@
 import React from 'react';
 
-export class App extends React.Component {
+interface State {
+  lastKey: string;
+}
+
+export class App extends React.Component<{}, State> {
   state = {
     lastKey: '',
   };
