@@ -27,7 +27,7 @@ class App extends React.Component<{}, State> {
     return (
       <div>
         {pressedKey ? (
-          <p>The last pressed key is {pressedKey}</p>
+          <p>The last pressed key is [{pressedKey}]</p>
         ) : (
           <p>Nothing was pressed yet</p>
         )}
