@@ -1,10 +1,6 @@
 import React from 'react';
 
-type Props = {
-  changeMessage: string;
-};
-
-export class App extends React.Component<Props> {
+export class App extends React.Component {
   state = {
     changeMessage: 'Nothing was pressed yet',
   };

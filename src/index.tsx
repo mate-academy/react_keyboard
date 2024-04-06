@@ -3,10 +3,4 @@ import { App } from './App';
 
 import './index.scss';
 
-const initialState = {
-  changeMessage: 'Nothing was pressed yet',
-};
-
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <App {...initialState} />,
-);
+createRoot(document.getElementById('root') as HTMLElement).render(<App />);
