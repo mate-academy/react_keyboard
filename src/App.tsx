@@ -1,10 +1,10 @@
 import React from 'react';
 
-type State = {
+type Props = {
   changeMessage: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<Props> {
   state = {
     changeMessage: 'Nothing was pressed yet',
   };
@@ -16,10 +16,6 @@ export class App extends React.Component<State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyup);
-  }
-
-  componentWillUnmount() {
     document.addEventListener('keydown', this.handleKeyup);
   }
 
