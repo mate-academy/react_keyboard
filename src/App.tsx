@@ -12,7 +12,11 @@ export class App extends React.Component {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyup);
+    document.addEventListener('keyup', this.handleKeyup);
+  }
+
+  componentWillAnmount() {
+    document.removeEventListener('keyup', this.handleKeyup);
   }
 
   render() {
