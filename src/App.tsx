@@ -8,7 +8,7 @@ export class App extends React.Component {
 
   handleKeyPress = (event: KeyboardEvent) => {
     this.setState({
-      message: `🌈 The last pressed key is [${event.key}]  👀 `,
+      message: `The last pressed key is [${event.key}]`,
       cat: 1,
     });
   };
@@ -30,4 +30,4 @@ export class App extends React.Component {
     );
   }
 }
-//
+
