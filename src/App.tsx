@@ -1,10 +1,12 @@
 import React from 'react';
 
+type Props = {};
+
 type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<Props, State> {
   state: State = {
     pressedKey: `Nothing was pressed yet`,
   };
@@ -21,7 +23,7 @@ export class App extends React.Component<State> {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  render(): React.ReactNode {
+  render() {
     const { pressedKey } = this.state;
 
     return (
