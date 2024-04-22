@@ -1,10 +1,12 @@
 import React from 'react';
 
+type AppState = {
+  key: string | null
+}
+
 export class App extends React.Component {
-  state: {
-    key: string;
-  } = {
-    key: '',
+  state: AppState = {
+    key: null,
   };
 
   // handler for key
