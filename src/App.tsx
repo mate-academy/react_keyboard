@@ -4,7 +4,7 @@ type State = {
   pressKey: string | null;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component {
   state: State = {
     pressKey: null,
   };
