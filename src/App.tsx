@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 interface AppState {
   pressedKey: string | null;
 }
 
-class App extends Component<AppState, AppState> {
+class App extends Component<{}, AppState> {
   state: AppState = {
     pressedKey: null,
   };
