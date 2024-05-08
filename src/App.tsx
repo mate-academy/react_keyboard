@@ -15,12 +15,10 @@ export class App extends React.Component {
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleDocumentKeybordClick);
-    window.console.log('componentDidMount');
   }
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleDocumentKeybordClick);
-    window.console.log('componentWillUnmount');
   }
 
   render() {
