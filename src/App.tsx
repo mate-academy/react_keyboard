@@ -4,7 +4,7 @@ interface AppState {
   pressedKey: string | null;
 }
 
-export class App extends React.Component<[], AppState> {
+export class App extends React.Component<{}, AppState> {
   state: AppState = {
     pressedKey: null,
   };
