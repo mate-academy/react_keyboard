@@ -4,7 +4,7 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component {
   state: State = {
     pressedKey: '',
   };
@@ -35,5 +35,3 @@ export class App extends React.Component<State> {
     );
   }
 }
-
-export default App;
