@@ -4,18 +4,20 @@ type Props = {
   pressedKey: string;
 };
 
-export class App extends React.Component<Props> {
-  state = {
+export class App extends React.Component {
+  state: Props = {
     pressedKey: 'Nothing was pressed yet',
-  }
+  };
 
-  handleKeyPressed = ((event: KeyboardEvent) => {
-    this.setState({ pressedKey: 'The last pressed key is ' + '[' + event.key + ']' });
-  });
+  handleKeyPressed = (event: KeyboardEvent) => {
+    this.setState({
+      pressedKey: 'The last pressed key is ' + '[' + event.key + ']',
+    });
+  };
 
   componentDidMount() {
     window.document.addEventListener('keyup', this.handleKeyPressed);
-  };
+  }
 
   componentWillUnmount() {
     window.document.removeEventListener('keyup', this.handleKeyPressed);
