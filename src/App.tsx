@@ -4,7 +4,7 @@ type State = {
   keyPressed: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component {
   state: State = {
     keyPressed: '',
   };
@@ -17,7 +17,7 @@ export class App extends React.Component<State> {
     document.addEventListener('keyup', this.handleKeyPressed);
   }
 
-  componentWillUnmoun(): void {
+  componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyPressed);
   }
 
