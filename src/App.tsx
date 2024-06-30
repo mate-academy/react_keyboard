@@ -1,13 +1,15 @@
-import { Component } from 'react';
+import React from 'react';
+import { Props } from './types/PressedKey';
 
-interface Props {
-  pressedKey: string | null;
-}
-
-export class App extends Component<{}, Props> {
+export class App extends React.Component<{}, Props> {
   state: Props = {
     pressedKey: null,
   };
+
+  constructor(props: Props) {
+    super(props);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+  }
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
