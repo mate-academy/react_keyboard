@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export const App: React.FC = () => {
-  const [key, setKey] = useState('');
+  const [key, setKey] = useState<string>('');
 
   useEffect(() => {
     const handleKeyBoardEvent = (event: KeyboardEvent) => {
@@ -14,7 +14,7 @@ export const App: React.FC = () => {
     return () => {
       document.removeEventListener('keyup', handleKeyBoardEvent);
     };
-  });
+  }, []);
 
   return (
     <div className="App">
