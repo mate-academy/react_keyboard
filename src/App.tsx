@@ -4,7 +4,7 @@ interface AppState {
   pressedKey: string;
 }
 
-export class App extends Component<AppState> {
+export class App extends Component<{}, AppState> {
   state: AppState = {
     pressedKey: '',
   };
