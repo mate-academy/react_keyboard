@@ -28,7 +28,7 @@ export class App extends Component<{}, AppState> {
       <div className="App">
         <p className="App__message">
           {pressedKey
-            ? `The last pressed key is ${pressedKey}`
+            ? `The last pressed key is [${pressedKey}]`
             : 'Nothing was pressed yet'}
         </p>
       </div>
