@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Keyboard } from './components/keyboard';
 
@@ -6,10 +6,18 @@ export const App: React.FC = () => {
   const [keyUp, setKeyUp] = useState('');
   const [pressedKey, setPressedKey] = useState(false);
 
-  // document.addEventListener('keyup', (event: KeyboardEvent) => {
-  //   setKeyUp(event.key);
-  //   setPressedKey(true);
-  // });
+  const onKey = (event: KeyboardEvent) => {
+    setKeyUp(event.key);
+    setPressedKey(true);
+  };
+
+  useEffect(() => {
+    document.addEventListener('keyup', onKey);
+
+    return () => {
+      document.removeEventListener('keyup', onKey);
+    };
+  }, []);
 
   const defoultMessege = 'Nothing was pressed yet';
 
@@ -18,12 +26,7 @@ export const App: React.FC = () => {
       {!pressedKey ? (
         <p className="App__message">{defoultMessege}</p>
       ) : (
-        // <KeyboardMessage keyUp={keyUp} />
-        <Keyboard
-          keyUp={keyUp}
-          setKeyUp={setKeyUp}
-          setPressedKey={setPressedKey}
-        />
+        <Keyboard keyUp={keyUp} />
       )}
     </div>
   );
