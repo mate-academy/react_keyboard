@@ -1,12 +1,12 @@
 import React from 'react';
 
 type State = {
-  pressedKey?: string;
+  pressedKey?: string | null;
 };
 
 export class App extends React.Component<State> {
   state: State = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
