@@ -5,7 +5,7 @@ type AppState = {
   message: string;
 };
 
-class App extends React.Component<{}, AppState> {
+class App extends React.Component<AppState> {
   // Инициализация состояния как поле класса
   state: AppState = {
     key: '', // Хранит нажатую клавишу
