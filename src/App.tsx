@@ -1,7 +1,17 @@
 import React from 'react';
 
-export const App: React.FC = () => (
-  <div className="App">
-    <p className="App__message">The last pressed key is [Enter]</p>
-  </div>
-);
+export class App extends React.Component {
+  state = {
+    pressedKey: 'Nothing was pressed yet',
+  };
+
+  render() {
+    const { pressedKey } = this.state;
+
+    return (
+      <div className="App">
+        <p className="App__message">{pressedKey}</p>
+      </div>
+    );
+  }
+}
