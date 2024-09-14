@@ -8,7 +8,7 @@ export class App extends React.Component {
   pressedKeyId = 0;
 
   handleClick = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `The last pressed key is ${event.key}` });
+    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
   };
 
   componentDidMount() {
