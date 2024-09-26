@@ -5,3 +5,24 @@ iframe {
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+
+  background-color: rgb(38, 85, 165);
+}
+
+.App {
+  padding: 25px;
+
+  background-color: rgb(28, 171, 135);
+  border-radius: 10px;
+
+  &__message {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+  }
+}
