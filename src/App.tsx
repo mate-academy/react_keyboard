@@ -5,12 +5,9 @@ interface AppState {
 }
 
 export class App extends Component<{}, AppState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      pressedKey: 'Nothing was pressed yet',
-    };
-  }
+  state: AppState = {
+    pressedKey: 'Nothing was pressed yet',
+  };
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
