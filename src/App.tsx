@@ -7,7 +7,7 @@ import React from 'react';
 // );
 
 interface State {
-  lastPressedKey: string | null;
+  lastPressedKey: null | string;
 }
 
 export class App extends React.Component<State> {
