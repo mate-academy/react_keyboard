@@ -2,16 +2,12 @@ import { Component } from 'react';
 
 type State = {
   pressedKey: string | null;
-}
+};
 
 export class App extends Component<{}, State> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      pressedKey: null,
-    };
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-  }
+  state: State = {
+    pressedKey: null,
+  };
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
@@ -21,9 +17,9 @@ export class App extends Component<{}, State> {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  handleKeyUp(event: KeyboardEvent) {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
-  }
+  };
 
   render() {
     const { pressedKey } = this.state;
