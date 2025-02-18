@@ -1,25 +1,31 @@
-# React Keyboard
+# Keyboard
 
-> [React + Typescript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript)
+## 🎮 About the Project
+A **React-based Keyboard Component** that listens for keypress events and displays the message of the **last pressed key** on the screen.  
+This component demonstrates handling keyboard events and rendering interactive messages dynamically.
 
-Make the `App` a class component with `pressedKey` in the `state`.
+## 🚀 Tech Stack
+- **HTML** (BEM methodology for structured markup)  
+- **CSS** (Bulma for styling)  
+- **JavaScript** (Core interactivity)  
+- **TypeScript** (Ensuring type safety)  
+- **React** (Component-based architecture)  
+- **ReactDOM** (Efficient rendering and updates)  
 
-> Here is [the working version](https://mate-academy.github.io/react_keyboard/)
+## 🛠️ Tools & Dependencies
+- **ESLint** – Code quality and linting  
+- **Prettier** – Code formatting  
+- **Cypress** – End-to-end testing  
+- **Mochawesome** – Test reporting  
+- **Babel** – JavaScript compiler  
 
-- before any key was pressed show the `Nothing was pressed yet` message;
-- when a key is pressed show a `The last pressed key is [key]` message;
-- use `componentDidMount` to add `keyup` handler:
-    ```ts
-    // DON'T import KeyboardEvent from React, because it is a regular event
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      console.log(event.key);
-    });
-    ```
-- use `removeEventListener` to remove a global handler in `componentWillUnmount`.
+## 📌 Features
+✅ Displays the **last pressed key**  
+✅ Fully interactive and reactive UI  
+✅ TypeScript ensures type safety  
 
-## Instructions
-- Install Prettier Extention and use this [VSCode settings](https://mate-academy.github.io/fe-program/tools/vscode/settings.json) to enable format on save.
-- Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
-- Use the [React TypeScript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript).
-- Open one more terminal and run tests with `npm test` to ensure your solution is correct.
-- Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_keyboard/) and add it to the PR description.
+## 🌐 Demo
+🔗 [Live Demo](https://AndriiZakharenko.github.io/keyboard/)
+
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/react_keyboard)
