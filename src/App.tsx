@@ -10,11 +10,11 @@ export class App extends React.Component {
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
-    const newKey = event.key;
+    const newPressedKey = event.key;
     const { pressedKey } = this.state;
 
-    if (newKey !== pressedKey) {
-      this.setState({ pressedKey: newKey });
+    if (newPressedKey !== pressedKey) {
+      this.setState({ pressedKey: newPressedKey });
     }
   };
 
