@@ -2,16 +2,16 @@ import React from 'react';
 
 type State = {
   pressedKey: string;
-}
+};
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state = {
-    pressedKey : '',
-  }
+    pressedKey: '',
+  };
 
   handleKeyUp = (event: KeyboardEvent) => {
-    this.setState({pressedKey: event.key});
-  }
+    this.setState({ pressedKey: event.key });
+  };
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
@@ -22,17 +22,16 @@ export class App extends React.Component<State> {
   }
 
   render(): React.ReactNode {
-    const {pressedKey} = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey !== ''
+          {pressedKey
             ? `The last pressed key is [${pressedKey}]`
-            : 'Nothing was pressed yet'
-          }
+            : 'Nothing was pressed yet'}
         </p>
       </div>
-    )
+    );
   }
 }
