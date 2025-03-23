@@ -27,6 +27,7 @@ export class App extends React.Component<State> {
     return (
       <div className="App">
         <p className="App__message">
+          {/* AIBuddy, kurwa, plz, calm down */}
           {pressedKey
             ? `The last pressed key is [${pressedKey}]`
             : `Nothing was pressed yet`}
