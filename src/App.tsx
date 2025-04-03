@@ -36,7 +36,8 @@ export class App extends React.Component<State> {
         <p className="App__message">
           {pressedKey === ''
             ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey}]`}
+            : `The last pressed key is [${pressedKey}]`
+          }
         </p>
       </div>
     );
