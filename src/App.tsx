@@ -19,23 +19,29 @@ export class App extends React.Component<Props, State> {
     pressKey: '',
   };
 
-  documentKeyUpHandler = (event: KeyboardEvent) => {
+  handleDocumentKeyUp = (event: KeyboardEvent) => {
     event.preventDefault();
     this.setState({ pressKey: event.key });
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.documentKeyUpHandler);
+    document.addEventListener('keyup', this.handleDocumentKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.documentKeyUpHandler);
+    document.removeEventListener('keyup', this.handleDocumentKeyUp);
   }
 
   render(): React.ReactNode {
     return (
       <div className="App">
-        <p className="App__message">{`${this.state.pressKey ? `${`The last pressed key is [${this.state.pressKey}]`}` : 'Nothing was pressed yet'}`}</p>
+        <p className="App__message">
+          {`${
+            this.state.pressKey
+              ? `${`The last pressed key is [${this.state.pressKey}]`}`
+              : 'Nothing was pressed yet'
+          }`}
+        </p>
       </div>
     );
   }
