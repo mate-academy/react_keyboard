@@ -15,12 +15,10 @@ export class App extends Component<{}, AppState> {
   };
 
   componentDidMount() {
-    // Add global keyup event listener
     document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    // Remove global keyup event listener to prevent memory leaks
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
