@@ -3,7 +3,7 @@ import React from 'react';
 type State = {
   key: string | null;
 };
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     key: null,
   };
