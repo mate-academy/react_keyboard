@@ -21,11 +21,11 @@ export class App extends React.Component<Props, State> {
   };
 
   componentDidMount(): void {
-    window.addEventListener('keyup', this.keyHandler);
+    window.addEventListener('keydown', this.keyHandler);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.keyHandler);
+    window.removeEventListener('keydown', this.keyHandler);
   }
 
   render() {
