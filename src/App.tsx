@@ -12,7 +12,7 @@ export const App: React.FC = () => {
 
     return () => {
       window.removeEventListener('keydown', handleClick);
-    }
+    };
   }, []);
 
   return (
