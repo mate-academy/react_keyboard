@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 
 type State = {
   keyPressed: string;
@@ -17,7 +17,7 @@ export class KeyboardInput extends React.Component {
     window.removeEventListener('keyup', this.handleKeyChange);
   }
 
-  handleKeyChange = (event: React.KeyboardEvent) => {
+  handleKeyChange = (event: KeyboardEvent) => {
     event.preventDefault();
     this.setState({ keyPressed: event.key });
   };
