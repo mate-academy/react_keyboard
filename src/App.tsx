@@ -5,31 +5,29 @@ type State = {
   changed: boolean;
 };
 
-export class App extends React.Component {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     keyName: '',
     changed: false,
   };
 
+  handleKeyDown = (e: KeyboardEvent) => {
+    this.setState({
+      keyName: e.key,
+      changed: true,
+    });
+  };
+
   componentDidMount(): void {
+    window.addEventListener('keydown', this.handleKeyDown);
+
     this.setState({
       keyName: 'Nothing was pressed yet',
     });
   }
 
-  componentDidUpdate(
-    // prevProps: Readonly<{}>,
-    // prevState: Readonly<{}>,
-    // snapshot?: any,
-  ): void {
-    // const changed = prevState.keyName !== this.state.keyName;
-
-    window.addEventListener('keydown', e => {
-      this.setState({
-        keyName: e.key,
-        changed: true,
-      });
-    });
+  componentWillUnmount(): void {
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
   render() {
