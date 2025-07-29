@@ -5,7 +5,7 @@ type State = {
   isKey: boolean;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: '',
     isKey: false,
