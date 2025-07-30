@@ -23,3 +23,4 @@ Make the `App` a class component with `pressedKey` in the `state`.
 - Use the [React TypeScript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript).
 - Open one more terminal and run tests with `npm test` to ensure your solution is correct.
 - Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_keyboard/) and add it to the PR description.
+ 
