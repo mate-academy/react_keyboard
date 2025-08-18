@@ -4,8 +4,8 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.PureComponent {
-  state = {
+export class App extends React.PureComponent<{}, State> {
+  state: State = {
     pressedKey: '',
   };
 
@@ -20,6 +20,7 @@ export class App extends React.PureComponent {
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
+
   render() {
     return (
       <div className="App">
