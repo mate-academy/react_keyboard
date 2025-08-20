@@ -1,11 +1,11 @@
-mport React from 'react';
+import React from 'react';
 
 export class App extends React.Component {
   state = {
     pressedKey: 'Nothing was pressed yet',
   };
 
-  handleKeyUp = (event) => {
+  handleKeyUp = event => {
     this.setState({
       pressedKey: event.key,
     });
