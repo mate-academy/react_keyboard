@@ -3,10 +3,14 @@ import React from 'react';
 export class App extends React.Component {
   state = {
     message: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
-    this.setState({ message: `The last pressed key is ${event.key}` });
+    this.setState({
+      pressedKey: event.key,
+      message: `The last pressed key is `,
+    });
   };
 
   componentDidMount(): void {
@@ -18,9 +22,13 @@ export class App extends React.Component {
   }
 
   render() {
+    const { message, pressedKey } = this.state;
+
     return (
       <div className="App">
-        <p className="App__message">{this.state.message}</p>
+        <p className="App__message">
+          {message} {pressedKey}
+        </p>
       </div>
     );
   }
