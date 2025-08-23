@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface StateType {
-  pressedKey: string;
+  pressedKey: string | null;
 }
 
 export class App extends React.Component {
   state: StateType = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: null,
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
@@ -23,10 +23,10 @@ export class App extends React.Component {
   ): void {
     if (
       this.state.pressedKey !== prevState.pressedKey &&
-      !this.state.pressedKey.startsWith('The last pressed key is')
+      this.state.pressedKey !== null
     ) {
       this.setState({
-        pressedKey: `The last pressed key is [${this.state.pressedKey}]`,
+        pressedKey: this.state.pressedKey,
       });
     }
   }
@@ -40,7 +40,11 @@ export class App extends React.Component {
 
     return (
       <div className="App">
-        <p className="App__message">{pressedKey}</p>
+        <p className="App__message">
+          {pressedKey
+            ? `The last pressed key is [${pressedKey}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
