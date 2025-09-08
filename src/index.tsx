@@ -3,6 +3,4 @@ import { App } from './App';
 
 import './index.scss';
 
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <App presedKey="" />,
-);
+createRoot(document.getElementById('root') as HTMLElement).render(<App />);
