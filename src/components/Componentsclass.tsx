@@ -3,17 +3,17 @@ import React from 'react';
 type Props = {};
 
 type State = {
-  pressedKey: string | null;
+  message: string;
 };
 
-export class App extends React.PureComponent<Props, State> {
+export class Classcomponents extends React.PureComponent<Props, State> {
   state: State = {
-    pressedKey: 'Nothing was pressed yet',
+    message: 'Nothing was pressed yet',
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: `The last pressed key is [${event.key}]`,
+      message: `The last pressed key is [${event.key}]`,
     });
   };
 
@@ -28,11 +28,7 @@ export class App extends React.PureComponent<Props, State> {
   render() {
     return (
       <div className="App">
-        {this.state.pressedKey === null ? (
-          <p className="App__message">{this.state.pressedKey}</p>
-        ) : (
-          <p className="App__message">{this.state.pressedKey}</p>
-        )}
+        <p className="App__message">{this.state.message}</p>
       </div>
     );
   }
