@@ -6,8 +6,9 @@ type State = {
 
 export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
-    pressedKey: "",
-  }
+    pressedKey: '',
+  };
+
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
