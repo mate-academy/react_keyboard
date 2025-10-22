@@ -4,7 +4,12 @@
     "src"
   ],
   "compilerOptions": {
-    "sourceMap": false,
-    "types": ["node", "cypress"]
+    "jsx": "react-jsx", // Это нужно для поддержки JSX синтаксиса в React 17 и выше
+    "module": "ESNext", // Для правильной работы с модулями
+    "target": "ESNext", // Современные фичи JavaScript
+    "strict": true, // Для строгой типизации
+    "esModuleInterop": true, // Для поддержки CommonJS
+    "skipLibCheck": true, // Для пропуска проверки типов в библиотеках
+    "forceConsistentCasingInFileNames": true
   }
 }
