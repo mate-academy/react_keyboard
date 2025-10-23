@@ -9,16 +9,16 @@ export class App extends React.Component<{}, State> {
     pressedKey: 'Nothing was pressed yet',
   };
 
-  handleKeyDown = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyDown);
+    window.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
+    window.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
@@ -35,33 +35,3 @@ export class App extends React.Component<{}, State> {
     );
   }
 }
-
-// const [lastKey, setLastKey] = useState<string>('');
-// const [keyHistory, setKeyHistory] = useState<string[]>([]);
-
-// useEffect(() => {
-//   const handleKeyDown = (event: KeyboardEvent) => {
-//     setLastKey(event.key);
-//     setKeyHistory(prevHistory => [...prevHistory, event.key]);
-//   };
-
-//   window.addEventListener('keyup', handleKeyDown);
-
-//   return () => {
-//     window.removeEventListener('keydown', handleKeyDown);
-//   };
-// }, []);
-
-// componentWillUnmount() {
-//   window.removeEventListener('keydown', handleKeyDown);
-// }
-//   return (
-//     <div className="App">
-//       {keyHistory.length > 0 ? (
-//         <p className="App__message">The last pressed key is [{lastKey}]</p>
-//       ) : (
-//         <p className="App__message">Nothing was pressed yet</p>
-//       )}
-//     </div>
-//   );
-// };
