@@ -1,46 +1,31 @@
-import React,  { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
-interface AppProps {
-  keyHistory: string[] | null;
-  lastKey: string;
-
-}
-export const App: React.FC<AppProps>= () => {
+export const App: React.FC= () => {
   const [lastKey, setLastKey] = useState<string>('');
   const [keyHistory, setKeyHistory] = useState<string[]>([]);
-  
-  React.useEffect(() => {
-  const handleKeyDown = (event: KeyboardEvent) => {
-    setLastKey(event.key);
-  }
 
-  const keyDownListener = React.useCallback(handleKeyDown, []);
-  
-    const handleKeyUp = (event: KeyboardEvent) => {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       setLastKey(event.key);
-    };
-    window.addEventListener('keyup', handleKeyUp);
-    return () => {
+      setKeyHistory((prevHistory) => [...prevHistory, event.key]);
+    }
+      window.addEventListener('keyup', handleKeyDown);
+          return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
-  React.useEffect(() => {
-    document.addEventListener('keydown', keyDownListener);
-    return () => {
-      document.removeEventListener('keydown', keyDownListener);
-    };
-  }, [keyDownListener]);
 
-  componentWillUnmount() {
-    document.removeEventListener('keydown', keyDownListener);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('keydown', handleKeyDown);
+  // }
   return (
     <div className="App">
-      {keyHistory ? (
+      {keyHistory.length > 0 ? (
         <p className="App__message">The last pressed key is [{lastKey}]</p>
       ) : (
-        <p className="App__message">No key pressed yet</p>
+        <p className="App__message">Nothing was pressed yet</p>
       )}
     </div>
   );
