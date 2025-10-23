@@ -29,7 +29,7 @@ export class App extends React.Component<{}, AppState> {
         <p className="App_message">
           {this.state.pressedKey
             ? `The last pressed key is [${this.state.pressedKey}]`
-            : 'No key pressed yet'}
+            : 'Nothing was pressed yet'}
         </p>
       </div>
     );
