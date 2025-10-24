@@ -7,32 +7,32 @@ import React from 'react';
 // );
 
 interface State {
-  message: string;
+  pressedKey: string;
 }
 
 interface Props {}
 
 export class App extends React.Component<Props, State> {
   state: State = {
-    message: 'Nothing was pressed yet',
+    pressedKey: '',
   };
 
-  listener = (event: KeyboardEvent) => {
-    this.setState({ message: `The last pressed key is [${event.key}]` });
+  handleKeyUp = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.listener);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.listener);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render(): React.ReactNode {
     return (
       <div className="App">
-        <p className="App__message">{this.state.message}</p>
+        <p className="App__message">{`The last pressed key is [${this.state.pressedKey}]`}</p>
       </div>
     );
   }
