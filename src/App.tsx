@@ -8,7 +8,7 @@ export class App extends React.Component<{}, State> {
     pressedKey: '',
   };
 
-  handlerKeyUp = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
