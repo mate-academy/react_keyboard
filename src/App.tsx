@@ -9,7 +9,7 @@ export class App extends React.Component<{}, State> {
     pressedKey: null,
   };
 
-  handleKeyUp = event => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
