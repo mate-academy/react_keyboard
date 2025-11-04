@@ -3,19 +3,27 @@ import React from 'react';
 type State = {
   lastPressedKey: string;
 };
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     lastPressedKey: '',
   };
 
+  reference: ((event: KeyboardEvent) => void) | null = null;
+
   componentDidMount() {
-    document.addEventListener('keydown', event => {
-      this.setState({ lastPressedKey: event.key });
-    });
+    this.reference = (event: KeyboardEvent) => {
+      this.setState({
+        lastPressedKey: event.key,
+      });
+    };
+
+    document.addEventListener('keyup', this.reference);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', () => {});
+    if (this.reference) {
+      document.removeEventListener('keyup', this.reference);
+    }
   }
 
   render() {
