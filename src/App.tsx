@@ -13,7 +13,6 @@ export class App extends React.Component<Props, State> {
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
-    console.log(event.key);
   };
 
   componentDidMount(): void {
