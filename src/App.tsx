@@ -16,11 +16,11 @@ export class App extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyPress);
+    document.addEventListener('keyup', this.handleKeyPress);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyPress);
+    document.removeEventListener('keyup', this.handleKeyPress);
   }
 
   render() {
