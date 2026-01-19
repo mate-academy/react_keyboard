@@ -1,28 +1,24 @@
 import React from 'react';
 
-type Props = {
-  pressedKey: string;
-};
-
 type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<Props, State> {
+export class App extends React.Component<{}, State> {
   state: State = {
     pressedKey: '',
   };
 
-  handlerKey = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.handlerKey);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.handlerKey);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
