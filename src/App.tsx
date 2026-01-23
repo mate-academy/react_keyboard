@@ -23,13 +23,15 @@ export class App extends React.Component<{}, State> {
 
   render() {
     const { pressedKey } = this.state;
+    //prettier-ignore
 
     return (
       <div className="App">
         <p className="App__message">
           {pressedKey === null
             ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey}]`}
+            : `The last pressed key is [${pressedKey}]`
+          }
         </p>
       </div>
     );
