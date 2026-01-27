@@ -4,9 +4,9 @@ type State = {
   pressedKey: string | null;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: State = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   handleKeyPressChange = (event: KeyboardEvent) => {
@@ -15,26 +15,23 @@ export class App extends React.Component<State> {
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyPressChange);
-  };
+  }
 
   componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyPressChange);
-  };
-
-
+  }
 
   render() {
     const { pressedKey } = this.state;
 
     return (
       <div className="App">
-        {pressedKey === ''
-          ? (<p className="App__message">Nothing was pressed yet</p>)
-          : (<p className="App__message">The last pressed key is [{pressedKey}]</p>)}
+        {pressedKey === null ? (
+          <p className="App__message">Nothing was pressed yet</p>
+        ) : (
+          <p className="App__message">The last pressed key is [{pressedKey}]</p>
+        )}
       </div>
     );
   }
 }
-
-
-
