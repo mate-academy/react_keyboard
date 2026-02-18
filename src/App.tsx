@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 type State = {
   pressedKey: string | null;
@@ -9,6 +10,7 @@ export class App extends React.Component {
   };
 
   handleKeypress = (event: KeyboardEvent) => {
+    console.log(event.key);
     this.setState({ pressedKey: event.key });
   };
 
