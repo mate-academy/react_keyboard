@@ -1,4 +1,3 @@
-tsx;
 // Importa o React, que é necessário para criar componentes baseados em classes
 import React from 'react';
 // Define um tipo chamado "State" para o estado do componente App.
