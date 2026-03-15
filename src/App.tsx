@@ -15,11 +15,11 @@ export class App extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.keyEvent);
+    document.addEventListener('keyup', this.keyEvent);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keyEvent);
+    document.removeEventListener('keyup', this.keyEvent);
   }
 
   render() {
