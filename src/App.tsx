@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
 const AppFunctionalComponent: React.FC = () => {
-  const [lastPressedKey, setLastPressedKey] = useState('');
+  const [pressedKey, setPressedKey] = useState('');
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      setLastPressedKey(event.key);
+      setPressedKey(event.key);
     };
 
-    window.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('keyup', handleKeyPress);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyPress);
+      window.removeEventListener('keyup', handleKeyPress);
     };
   }, []);
 
   return (
     <div className="App">
       <p className="App__message">
-        {lastPressedKey === ''
+        {pressedKey === ''
           ? 'Nothing was pressed yet'
-          : `The last pressed key is [${lastPressedKey}]`}
+          : `The last pressed key is [${pressedKey}]`}
       </p>
     </div>
   );
@@ -28,30 +28,30 @@ const AppFunctionalComponent: React.FC = () => {
 
 class AppClassComponent extends React.Component {
   state = {
-    lastPressedKey: '',
+    pressedKey: '',
   };
 
   handleKeyPress = (event: KeyboardEvent) => {
-    this.setState({ lastPressedKey: event.key });
+    this.setState({ pressedKey: event.key });
   };
 
   componentDidMount(): void {
-    window.addEventListener('keydown', this.handleKeyPress);
+    window.addEventListener('keyup', this.handleKeyPress);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('keydown', this.handleKeyPress);
+    window.removeEventListener('keyup', this.handleKeyPress);
   }
 
   render() {
-    const { lastPressedKey } = this.state;
+    const { pressedKey } = this.state;
 
     return (
       <div className="App">
         <p className="App__message">
-          {lastPressedKey === ''
+          {pressedKey === ''
             ? 'Nothing was pressed yet'
-            : `The last pressed key is [${lastPressedKey}]`}
+            : `The last pressed key is [${pressedKey}]`}
         </p>
       </div>
     );
