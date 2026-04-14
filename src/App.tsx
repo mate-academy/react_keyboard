@@ -8,10 +8,10 @@ const AppFunctionalComponent: React.FC = () => {
       setPressedKey(event.key);
     };
 
-    window.addEventListener('keyup', handleKeyPress);
+    document.addEventListener('keyup', handleKeyPress);
 
     return () => {
-      window.removeEventListener('keyup', handleKeyPress);
+      document.removeEventListener('keyup', handleKeyPress);
     };
   }, []);
 
@@ -36,11 +36,11 @@ class AppClassComponent extends React.Component {
   };
 
   componentDidMount(): void {
-    window.addEventListener('keyup', this.handleKeyPress);
+    document.addEventListener('keyup', this.handleKeyPress);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.handleKeyPress);
+    document.removeEventListener('keyup', this.handleKeyPress);
   }
 
   render() {
