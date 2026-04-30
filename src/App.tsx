@@ -34,7 +34,7 @@ export class App extends React.Component<State> {
 
     return (
       <div className="App">
-        <p className="App__message">The last pressed key is [{pressedKey}]</p>
+        <p className="App__message">The last pressed key is {pressedKey}</p>
       </div>
     );
   }
