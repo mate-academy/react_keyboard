@@ -14,11 +14,11 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyUp);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.handleKeyUp);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
@@ -27,9 +27,10 @@ export class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <p className="App__message">
-          {pressedKey === null
-            ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey}]` // Додаємо [ ] сюди
+          {
+            pressedKey === null
+              ? 'Nothing was pressed yet'
+              : `The last pressed key is [${pressedKey}]` // Додаємо [ ] сюди
           }
         </p>
       </div>
