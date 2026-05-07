@@ -8,18 +8,18 @@ export class App extends React.Component<State> {
     pressedKey: 'Nothing was pressed yet',
   };
 
-  keyupHandler = (e: KeyboardEvent) => {
+  handleKeyUp = (e: KeyboardEvent) => {
     this.setState({
       pressedKey: `The last pressed key is [${e.key}]`,
     });
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyupHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.keyupHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
