@@ -4,14 +4,14 @@ export const App: React.FC = () => {
   const [pressedKey, setPressedKey] = useState<string>('');
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      setPressedKey(event.key);
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keyup', (event: KeyboardEvent) =>
+      setPressedKey(event.key),
+    );
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keyup', (event: KeyboardEvent) =>
+        setPressedKey(event.key),
+      );
     };
   }, []);
 
