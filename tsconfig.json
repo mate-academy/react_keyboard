@@ -2,7 +2,6 @@
   "extends": "@mate-academy/students-ts-config",
   "include": ["src"],
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
     "sourceMap": false,
     "types": ["node", "cypress"],
     "jsx": "react-jsx"
