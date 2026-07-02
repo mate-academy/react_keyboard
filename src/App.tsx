@@ -1,40 +1,38 @@
 import React from 'react';
 
-interface State{
+interface State {
   value: string;
 }
-export class App extends React.Component<{}, State>{
+export class App extends React.Component<{}, State> {
   state: State = {
     value: '',
-  }
+  };
 
-  handeKeyUp = (event: KeyboardEvent) => {
-    this.setState({value: event.key});
-  }
+  handleKeyUp  = (event: KeyboardEvent) => {
+    this.setState({ value: event.key });
+  };
 
   componentDidMount(): void {
-    this.setState({value: ''});
+    this.setState({ value: '' });
   }
 
   componentDidUpdate(): void {
-    document.addEventListener('keyup', this.handeKeyUp);
+    document.addEventListener('keyup', this.handleKeyUp );
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.handeKeyUp);
+    document.removeEventListener('keyup', this.handleKeyUp );
   }
 
   render(): React.ReactNode {
-
-    return(
-    <div className="App">
-      <p className="App__message">
-        {this.state.value === '' ? 'Nothing was pressed yet'
-        : `The last pressed key is [${this.state.value}]`
-        }
-      </p>
-    </div>
-    )
+    return (
+      <div className="App">
+        <p className="App__message">
+          {this.state.value === ''
+            ? 'Nothing was pressed yet'
+            : `The last pressed key is [${this.state.value}]`}
+        </p>
+      </div>
+    );
   }
-
-};
+}
