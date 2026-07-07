@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { State } from './types/State';
+export type State = {
+  pressedKey: null | string;
+};
 
 export class App extends React.Component {
   state: State = {
-    pressedKey: 'Nothing was pressed yet',
+    pressedKey: null,
   };
 
   handleKeyup = (event: KeyboardEvent) => {
-    this.setState({ pressedKey: `The last pressed key is [${event.key}]` });
+    this.setState({ pressedKey: event.key });
   };
 
   componentDidMount(): void {
@@ -22,6 +24,12 @@ export class App extends React.Component {
   render() {
     const { pressedKey } = this.state;
 
-    return <p className="App__message">{pressedKey}</p>;
+    return (
+      <p className="App__message">
+        {pressedKey
+          ? `The last pressed key is [${pressedKey}]`
+          : 'Nothing was pressed yet'}
+      </p>
+    );
   }
 }
