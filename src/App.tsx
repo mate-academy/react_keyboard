@@ -1,7 +1,35 @@
 import React from 'react';
 
-export const App: React.FC = () => (
-  <div className="App">
-    <p className="App__message">The last pressed key is [Enter]</p>
-  </div>
-);
+export type State = {
+  pressedKey: null | string;
+};
+
+export class App extends React.Component {
+  state: State = {
+    pressedKey: null,
+  };
+
+  handleKeyup = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  };
+
+  componentDidMount(): void {
+    document.addEventListener('keyup', this.handleKeyup);
+  }
+
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.handleKeyup);
+  }
+
+  render() {
+    const { pressedKey } = this.state;
+
+    return (
+      <p className="App__message">
+        {pressedKey
+          ? `The last pressed key is [${pressedKey}]`
+          : 'Nothing was pressed yet'}
+      </p>
+    );
+  }
+}
