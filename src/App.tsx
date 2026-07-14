@@ -4,19 +4,13 @@ type State = {
   pressedKey: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: '',
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
-  };
-
-  handleChange = () => {
-    this.setState({
-      message: `The last pressed key is [${this.state.pressedKey}]`,
-    });
   };
 
   componentDidMount() {
