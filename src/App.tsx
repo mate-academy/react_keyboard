@@ -2,13 +2,11 @@ import React from 'react';
 
 type State = {
   pressedKey: string;
-  message: string;
 };
 
 export class App extends React.Component<State> {
   state: Readonly<State> = {
     pressedKey: '',
-    message: 'Nothing was pressed yet',
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
@@ -22,11 +20,11 @@ export class App extends React.Component<State> {
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyUp);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.handleKeyUp);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
