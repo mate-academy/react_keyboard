@@ -25,10 +25,12 @@ export class App extends Component<{}, State> {
     const { pressedKey } = this.state;
 
     return (
-      <div>
-        {pressedKey === null
-          ? 'Nothing was pressed yet'
-          : `The last pressed key is [${pressedKey}]`}
+      <div className="App">
+        <p className="App__message">
+          {pressedKey === null
+            ? 'Nothing was pressed yet'
+            : `The last pressed key is [${pressedKey}]`}
+        </p>
       </div>
     );
   }
