@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
 interface State {
-  pressedKey: string | null
+  pressedKey: string | null;
 }
 
 export class App extends Component<{}, State> {
-  state : State = {
-    pressedKey: null
+  state: State = {
+    pressedKey: null,
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
       pressedKey: event.key
     });
-  }
+  };
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
@@ -24,7 +24,8 @@ export class App extends Component<{}, State> {
   }
 
   render() {
-    const { pressedKey } = this.state
+    const { pressedKey } = this.state;
+
     return (
       <div className="App">
         <p className="App__message">
@@ -35,4 +36,4 @@ export class App extends Component<{}, State> {
       </div>
     );
   }
-};
+}
