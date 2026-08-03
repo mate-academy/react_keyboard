@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type State = {
   pressedKey: string;
@@ -14,11 +14,11 @@ export class App extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyUp);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.handleKeyUp);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
