@@ -2,15 +2,14 @@ import React from 'react';
 
 type State = {
   pressedKey: string;
-}
+};
 
 export class App extends React.Component {
   state: State = {
     pressedKey: '',
   };
 
-  keyboardHandler = (event: KeyboardEvent) => {
-    console.log(event.key);
+  handleKeyUp = (event: KeyboardEvent) => {
     this.setState({
       pressedKey: event.key,
     });
@@ -24,7 +23,7 @@ export class App extends React.Component {
     document.removeEventListener('keyup', this.keyboardHandler);
   }
 
-  render () {
+  render() {
     return (
       <div className="App">
         {this.state.pressedKey ? (
@@ -34,5 +33,5 @@ export class App extends React.Component {
         )}
       </div>
     );
-  };
+  }
 }
