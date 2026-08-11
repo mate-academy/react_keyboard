@@ -16,11 +16,11 @@ export class App extends React.Component {
   };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.keyboardHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.keyboardHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
