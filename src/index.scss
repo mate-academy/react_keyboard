@@ -1,7 +1,5 @@
-iframe {
-  display: none;
-}
-
-html {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+.App {
+  &__message {
+    text-align: center;
+  }
 }
