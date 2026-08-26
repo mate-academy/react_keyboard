@@ -17,7 +17,7 @@ export class App extends React.Component<{}, State> {
     document.addEventListener('keyup', this.handleKeyUp);
   }
 
-  componentWillUnount() {
+  componentWillUnmount() {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
@@ -27,7 +27,7 @@ export class App extends React.Component<{}, State> {
     const msg =
       pressedKey === ''
         ? 'Nothing was pressed yet'
-        : `The last pressed key is [${pressedKey}]`;
+        : `The last pressed key is ${pressedKey}`;
 
     return (
       <div className="App">
