@@ -1,24 +1,24 @@
 import React from 'react';
 
 type State = {
-  pressedKey: string;
+  pressedKey: string | null;
 };
-export class App extends React.PureComponent<State> {
+export class App extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
-    pressedKey: '',
+    pressedKey: null,
   };
 
   handleKeyUp = (event: KeyboardEvent): void => {
     this.setState({ pressedKey: event.key });
   };
 
-  componentDidMount = (): void => {
+  componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyUp);
-  };
+  }
 
-  componentWillUnmount = (): void => {
+  componentWillUnmount(): void {
     document.removeEventListener('keyup', this.handleKeyUp);
-  };
+  }
 
   render() {
     return (
