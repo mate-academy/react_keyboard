@@ -8,10 +8,11 @@ export class App extends React.Component<{}, State> {
     pressedKey: 'Nothing was pressed yet',
   };
 
-  handleKeyUp = (pressed: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
+    console.log(event.key); // eslint-disable-line no-console
 
     this.setState({
-      pressedKey: `The last pressed key is [${pressed.key}]`,
+      pressedKey: `The last pressed key is [${event.key}]`,
     });
   };
 
