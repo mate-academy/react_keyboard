@@ -9,7 +9,6 @@ export class App extends React.Component<{}, State> {
   };
 
   handleKeyUp = (pressed: KeyboardEvent) => {
-    console.log(pressed.key);
 
     this.setState({
       pressedKey: `The last pressed key is [${pressed.key}]`,
