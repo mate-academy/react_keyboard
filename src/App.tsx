@@ -9,6 +9,8 @@ export class App extends React.Component<State> {
   };
 
   handleKeyPress = (event: KeyboardEvent) => {
+    // eslint-disable-next-line no-console
+    console.log(event.key);
     this.setState({ pressedKey: event.key });
   };
 
@@ -23,13 +25,11 @@ export class App extends React.Component<State> {
   render() {
     return (
       <div className="App">
-        {this.state.pressedKey.length ? (
-          <p className="App__message">
-            The last pressed key is [{this.state.pressedKey}]
-          </p>
-        ) : (
-          <p className="App__message">Nothing was pressed yet</p>
-        )}
+        <p className="App__message">
+          {this.state.pressedKey.length
+            ? `The last pressed key is [${this.state.pressedKey}]`
+            : 'Nothing was pressed yet'}
+        </p>
       </div>
     );
   }
