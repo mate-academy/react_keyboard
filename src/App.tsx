@@ -14,9 +14,7 @@ export class App extends React.Component {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
-      this.handleKeyPressed(event);
-    });
+    document.addEventListener('keyup', this.handleKeyPressed);
   }
 
   componentWillUnmount() {
