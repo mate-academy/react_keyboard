@@ -1,14 +1,13 @@
 import React from 'react';
 
 export class App extends React.Component {
-
   state = {
     lastPressedKey: '',
   };
 
   handleKeyPress = (keyEvent: KeyboardEvent) => {
     this.setState({ lastPressedKey: keyEvent.key });
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyPress);
@@ -19,17 +18,15 @@ export class App extends React.Component {
   }
 
   render() {
-
     return (
       <div className="App">
-      {
-        this.state.lastPressedKey === '' ? (
-        <p className="App__message">Nothing was pressed yet</p>
+        {this.state.lastPressedKey === '' ? (
+          <p className="App__message">Nothing was pressed yet</p>
         ) : (
-        <p className="App__message">The last pressed key is [{this.state.lastPressedKey}]</p>
-        )
-        }
-
+          <p className="App__message">
+            The last pressed key is [{this.state.lastPressedKey}]
+          </p>
+        )}
       </div>
     );
   }
